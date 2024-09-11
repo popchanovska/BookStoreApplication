@@ -1,0 +1,16 @@
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/bin/Debug/net8.0/BookApplication.Repository.deps.json
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/bin/Debug/net8.0/BookApplication.Repository.dll
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/bin/Debug/net8.0/BookApplication.Repository.pdb
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/bin/Debug/net8.0/BookApplication.Domain.dll
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/bin/Debug/net8.0/BookApplication.Domain.pdb
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookApplication.Repository.csproj.AssemblyReference.cache
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookApplication.Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookApplication.Repository.AssemblyInfoInputs.cache
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookApplication.Repository.AssemblyInfo.cs
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookApplication.Repository.csproj.CoreCompileInputs.cache
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookApplication.Repository.sourcelink.json
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookAppl.9D1F37C6.Up2Date
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookApplication.Repository.dll
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/refint/BookApplication.Repository.dll
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/BookApplication.Repository.pdb
+/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/Debug/net8.0/ref/BookApplication.Repository.dll
