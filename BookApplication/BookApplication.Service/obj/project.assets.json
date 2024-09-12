@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Service\\BookApplication.Service.csproj",
+      "projectUniqueName": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Service\\BookApplication.Service.csproj",
       "projectName": "BookApplication.Service",
-      "projectPath": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Service\\BookApplication.Service.csproj",
+      "projectPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Service\\BookApplication.Service.csproj",
       "packagesPath": "C:\\Users\\E\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Service\\obj\\",
+      "outputPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\E\\AppData\\Roaming\\NuGet\\NuGet.Config",

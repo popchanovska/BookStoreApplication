@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookApplication.Domain
-build_property.ProjectDir = C:\Users\E\Desktop\FINKI\IS\BookApplication\BookApplication.Domain\
+build_property.ProjectDir = C:\Users\E\Desktop\BookStoreApplication\BookStoreApplication\BookApplication\BookApplication.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

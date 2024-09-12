@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DJJNMsCNYiwe32i85Qg6VXyy7frTdPINV4jbW+rWE4sb3+NtZvrYgY94tVPpvIT6mvhpD/XeknoYMd7cuoPe9A==",
+  "dgSpecHash": "QECowqJKNLovIQW/kLG4GivDqiFFNF3EkNJJlWxrNHv7YeWBu9JBj+0qfCAqQV2+RFQGKJSa8s5S4DHG2FvlLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
+  "projectFilePath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\E\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\E\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

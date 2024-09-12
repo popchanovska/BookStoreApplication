@@ -1670,6 +1670,33 @@
             "rid": "win"
           }
         }
+      },
+      "BookApplication.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.2"
+        },
+        "compile": {
+          "bin/placeholder/BookApplication.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookApplication.Domain.dll": {}
+        }
+      },
+      "BookApplication.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BookApplication.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.2"
+        },
+        "compile": {
+          "bin/placeholder/BookApplication.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookApplication.Repository.dll": {}
+        }
       }
     }
   },
@@ -4518,10 +4545,22 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "BookApplication.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BookApplication.Domain/BookApplication.Domain.csproj",
+      "msbuildProject": "../BookApplication.Domain/BookApplication.Domain.csproj"
+    },
+    "BookApplication.Repository/1.0.0": {
+      "type": "project",
+      "path": "../BookApplication.Repository/BookApplication.Repository.csproj",
+      "msbuildProject": "../BookApplication.Repository/BookApplication.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BookApplication.Domain >= 1.0.0",
+      "BookApplication.Repository >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 8.0.2",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.2",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.2",
@@ -4535,11 +4574,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
+      "projectUniqueName": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
       "projectName": "BookApplication.Web",
-      "projectPath": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
+      "projectPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
       "packagesPath": "C:\\Users\\E\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Web\\obj\\",
+      "outputPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\E\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4555,7 +4594,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj": {
+              "projectPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj"
+            },
+            "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj": {
+              "projectPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

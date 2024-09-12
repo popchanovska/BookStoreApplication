@@ -1,26 +1,60 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\",
+  "WorkspaceRootPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\e\\desktop\\finki\\is\\bookapplication\\bookapplication.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.repository\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\e\\desktop\\finki\\is\\bookapplication\\bookapplication.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\finki\\is\\bookapplication\\bookapplication.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69208C71-9AE2-4CE4-A1B8-7C8390188C50}|BookApplication.Service\\BookApplication.Service.csproj|c:\\users\\e\\desktop\\finki\\is\\bookapplication\\bookapplication.service\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\publisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\publisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\enums\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\enums\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\identity\\bookappuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\identity\\bookappuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\bookapplication.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\bookapplication.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69208C71-9AE2-4CE4-A1B8-7C8390188C50}|BookApplication.Service\\BookApplication.Service.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.service\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69208C71-9AE2-4CE4-A1B8-7C8390188C50}|BookApplication.Service\\BookApplication.Service.csproj|solutionrelative:bookapplication.service\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|c:\\users\\e\\desktop\\finki\\is\\bookapplication\\bookapplication.repository\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +64,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,68 +80,182 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Web\\appsettings.json",
-              "RelativeDocumentMoniker": "BookApplication.Web\\appsettings.json",
-              "ToolTip": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Web\\appsettings.json",
-              "RelativeToolTip": "BookApplication.Web\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-18T16:24:02.129Z",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "BookApplication.Repository\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\ApplicationDbContext.cs",
+              "RelativeToolTip": "BookApplication.Repository\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T21:55:22.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Web\\Program.cs",
-              "RelativeDocumentMoniker": "BookApplication.Web\\Program.cs",
-              "ToolTip": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Web\\Program.cs",
-              "RelativeToolTip": "BookApplication.Web\\Program.cs",
+              "DocumentIndex": 8,
+              "Title": "BookAppUser.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Identity\\BookAppUser.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Identity\\BookAppUser.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Identity\\BookAppUser.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Identity\\BookAppUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T21:40:30.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Enums\\Genre.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Enums\\Genre.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Enums\\Genre.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Enums\\Genre.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T21:38:13.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BookApplication.Domain",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\BookApplication.Domain.csproj",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
+              "RelativeToolTip": "BookApplication.Domain\\BookApplication.Domain.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-12T21:37:30.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Book.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Book.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Book.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Domain\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T21:08:01.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Program.cs",
+              "RelativeDocumentMoniker": "BookApplication.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Program.cs",
+              "RelativeToolTip": "BookApplication.Web\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-18T16:23:51.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
-              "RelativeDocumentMoniker": "BookApplication.Domain\\Class1.cs",
-              "ToolTip": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
-              "RelativeToolTip": "BookApplication.Domain\\Class1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Address.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Address.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Address.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Domain\\Address.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T16:23:15.237Z",
+              "WhenOpened": "2024-09-12T21:52:09.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Service\\Class1.cs",
-              "RelativeDocumentMoniker": "BookApplication.Service\\Class1.cs",
-              "ToolTip": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Service\\Class1.cs",
-              "RelativeToolTip": "BookApplication.Service\\Class1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "BookApplication.Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\appsettings.json",
+              "RelativeToolTip": "BookApplication.Web\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-18T16:24:02.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Author.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Author.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Author.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Author.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Domain\\Author.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T16:22:45.998Z",
+              "WhenOpened": "2024-09-12T21:43:07.044Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
-              "RelativeDocumentMoniker": "BookApplication.Repository\\Class1.cs",
-              "ToolTip": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
-              "RelativeToolTip": "BookApplication.Repository\\Class1.cs",
+              "Title": "Publisher.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Publisher.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Publisher.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Publisher.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Domain\\Publisher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T21:48:10.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\BaseEntity.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Domain\\BaseEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-18T16:21:45.397Z",
+              "WhenOpened": "2024-09-12T21:07:54.516Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
+              "RelativeToolTip": "..\\..\\..\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:23:15.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Class1.cs",
+              "RelativeDocumentMoniker": "BookApplication.Service\\Class1.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Class1.cs",
+              "RelativeToolTip": "BookApplication.Service\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:22:45.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
+              "RelativeToolTip": "..\\..\\..\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:21:45.397Z"
             }
           ]
         }

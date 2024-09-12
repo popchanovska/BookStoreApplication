@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj": {}
+    "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj": {
+    "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
         "projectName": "BookApplication.Domain",
-        "projectPath": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
+        "projectPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
         "packagesPath": "C:\\Users\\E\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\obj\\",
+        "outputPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\E\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
