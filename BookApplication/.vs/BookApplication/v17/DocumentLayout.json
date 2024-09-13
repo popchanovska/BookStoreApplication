@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.repository\\interface\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\interface\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.repository\\implementation\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\implementation\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.repository\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.repository\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.repository\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,18 +55,6 @@
       "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\bookinshoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\bookinshoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -53,10 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\enums\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\enums\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\identity\\bookappuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\identity\\bookappuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\e\\desktop\\bookstoreapplication\\bookstoreapplication\\bookapplication\\bookapplication.domain\\bookapplication.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -80,8 +92,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "BookApplication.Repository\\Implementation\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\OrderRepository.cs",
+              "RelativeToolTip": "BookApplication.Repository\\Implementation\\OrderRepository.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAUwCQAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:00:12.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "BookApplication.Repository\\Interface\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IOrderRepository.cs",
+              "RelativeToolTip": "BookApplication.Repository\\Interface\\IOrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T13:59:16.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\UserRepository.cs",
+              "RelativeDocumentMoniker": "BookApplication.Repository\\Implementation\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\UserRepository.cs",
+              "RelativeToolTip": "BookApplication.Repository\\Implementation\\UserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T13:51:03.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "BookApplication.Repository\\Interface\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IUserRepository.cs",
+              "RelativeToolTip": "BookApplication.Repository\\Interface\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T13:48:02.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\Repository.cs",
+              "RelativeDocumentMoniker": "BookApplication.Repository\\Implementation\\Repository.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\Repository.cs",
+              "RelativeToolTip": "BookApplication.Repository\\Implementation\\Repository.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwDwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T13:46:08.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IRepository.cs",
+              "RelativeDocumentMoniker": "BookApplication.Repository\\Interface\\IRepository.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IRepository.cs",
+              "RelativeToolTip": "BookApplication.Repository\\Interface\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T13:41:58.993Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -96,33 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BookInShoppingCart.cs",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\BookInShoppingCart.cs",
-              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\BookInShoppingCart.cs",
-              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\BookInShoppingCart.cs",
-              "RelativeToolTip": "BookApplication.Domain\\Domain\\BookInShoppingCart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T22:14:03.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ShoppingCart.cs",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\ShoppingCart.cs",
-              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\ShoppingCart.cs",
-              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\ShoppingCart.cs",
-              "RelativeToolTip": "BookApplication.Domain\\Domain\\ShoppingCart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T22:13:28.729Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "BookInOrder.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\BookInOrder.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\BookInOrder.cs",
@@ -130,12 +194,24 @@
               "RelativeToolTip": "BookApplication.Domain\\Domain\\BookInOrder.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T22:12:50.138Z",
+              "WhenOpened": "2024-09-12T22:12:50.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Order.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Order.cs",
+              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Order.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Domain\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T22:11:58.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "BookApplication.Repository\\ApplicationDbContext.cs",
@@ -143,12 +219,11 @@
               "RelativeToolTip": "BookApplication.Repository\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T21:55:22.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T21:55:22.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Book.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Book.cs",
@@ -161,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\BaseEntity.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\BaseEntity.cs",
@@ -169,12 +244,11 @@
               "RelativeToolTip": "BookApplication.Domain\\Domain\\BaseEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T21:07:54.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T21:07:54.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Author.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Author.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Author.cs",
@@ -182,12 +256,11 @@
               "RelativeToolTip": "BookApplication.Domain\\Domain\\Author.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T21:43:07.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T21:43:07.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Address.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Address.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Address.cs",
@@ -195,25 +268,11 @@
               "RelativeToolTip": "BookApplication.Domain\\Domain\\Address.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T21:52:09.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T21:52:09.818Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Order.cs",
-              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Order.cs",
-              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Order.cs",
-              "RelativeToolTip": "BookApplication.Domain\\Domain\\Order.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T22:11:58.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Genre.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Enums\\Genre.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Enums\\Genre.cs",
@@ -225,19 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BookAppUser.cs",
-              "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Identity\\BookAppUser.cs",
-              "RelativeDocumentMoniker": "BookApplication.Domain\\Identity\\BookAppUser.cs",
-              "ToolTip": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Identity\\BookAppUser.cs",
-              "RelativeToolTip": "BookApplication.Domain\\Identity\\BookAppUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T21:40:30.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "BookApplication.Domain.csproj",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
               "RelativeDocumentMoniker": "BookApplication.Domain\\BookApplication.Domain.csproj",
@@ -245,11 +292,12 @@
               "RelativeToolTip": "BookApplication.Domain\\BookApplication.Domain.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-12T21:37:30.882Z"
+              "WhenOpened": "2024-09-12T21:37:30.882Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Program.cs",
               "RelativeDocumentMoniker": "BookApplication.Web\\Program.cs",
@@ -261,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Web\\appsettings.json",
               "RelativeDocumentMoniker": "BookApplication.Web\\appsettings.json",
@@ -273,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Publisher.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Publisher.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Publisher.cs",
@@ -285,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
@@ -297,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Class1.cs",
               "RelativeDocumentMoniker": "BookApplication.Service\\Class1.cs",
@@ -309,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
