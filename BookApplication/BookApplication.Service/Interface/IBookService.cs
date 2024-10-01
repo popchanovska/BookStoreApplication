@@ -7,6 +7,6 @@ public interface IBookService
     List<Book> GetAllBooks();
     Book getDetailsForBook(Guid? id);
     void CreateNewBook(Book b);
-    void UpdateExistingBook(Guid id);
+    void UpdateExistingBook(Book b);
     void DeleteBook(Guid id);
 }

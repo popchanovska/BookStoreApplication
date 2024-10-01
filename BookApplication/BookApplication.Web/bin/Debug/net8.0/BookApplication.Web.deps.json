@@ -10,6 +10,7 @@
         "dependencies": {
           "BookApplication.Domain": "1.0.0",
           "BookApplication.Repository": "1.0.0",
+          "BookApplication.Service": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.2",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.2",
           "Microsoft.AspNetCore.Identity.UI": "8.0.2",
@@ -1995,6 +1996,15 @@
         "runtime": {
           "BookApplication.Repository.dll": {}
         }
+      },
+      "BookApplication.Service/1.0.0": {
+        "dependencies": {
+          "BookApplication.Domain": "1.0.0",
+          "BookApplication.Repository": "1.0.0"
+        },
+        "runtime": {
+          "BookApplication.Service.dll": {}
+        }
       }
     }
   },
@@ -3186,6 +3196,11 @@
       "sha512": ""
     },
     "BookApplication.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BookApplication.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

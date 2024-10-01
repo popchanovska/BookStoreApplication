@@ -2940,6 +2940,20 @@
         "runtime": {
           "bin/placeholder/BookApplication.Repository.dll": {}
         }
+      },
+      "BookApplication.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BookApplication.Domain": "1.0.0",
+          "BookApplication.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookApplication.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookApplication.Service.dll": {}
+        }
       }
     }
   },
@@ -8173,12 +8187,18 @@
       "type": "project",
       "path": "../BookApplication.Repository/BookApplication.Repository.csproj",
       "msbuildProject": "../BookApplication.Repository/BookApplication.Repository.csproj"
+    },
+    "BookApplication.Service/1.0.0": {
+      "type": "project",
+      "path": "../BookApplication.Service/BookApplication.Service.csproj",
+      "msbuildProject": "../BookApplication.Service/BookApplication.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "BookApplication.Domain >= 1.0.0",
       "BookApplication.Repository >= 1.0.0",
+      "BookApplication.Service >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 8.0.2",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.2",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.2",
@@ -8219,6 +8239,9 @@
             },
             "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj": {
               "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj"
+            },
+            "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\BookApplication.Service.csproj": {
+              "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\BookApplication.Service.csproj"
             }
           }
         }

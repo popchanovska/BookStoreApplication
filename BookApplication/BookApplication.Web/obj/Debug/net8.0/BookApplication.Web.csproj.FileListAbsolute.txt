@@ -714,3 +714,5 @@ C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\B
 C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Web\bin\Debug\net8.0\BookApplication.Service.dll
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Web\bin\Debug\net8.0\BookApplication.Service.pdb

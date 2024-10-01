@@ -28,9 +28,8 @@ public class BookService : IBookService
         _bookRepository.Insert(b);
     }
 
-    public void UpdateExistingBook(Guid id)
+    public void UpdateExistingBook(Book b)
     {
-        Book b = _bookRepository.Get(id);
         _bookRepository.Update(b);
     }
 

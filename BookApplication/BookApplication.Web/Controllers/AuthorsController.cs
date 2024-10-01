@@ -7,34 +7,35 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
 using BookApplication.Repository;
+using Microsoft.AspNetCore.Authorization;
+using BookApplication.Service.Interface;
 
 namespace BookApplication.Web.Controllers
 {
     public class AuthorsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IAuthorService _authorService;
 
-        public AuthorsController(ApplicationDbContext context)
+        public AuthorsController(IAuthorService authorService)
         {
-            _context = context;
+            _authorService = authorService;
         }
 
         // GET: Authors
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Authors.ToListAsync());
+            return View(_authorService.GetAllAuthors());
         }
 
         // GET: Authors/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public IActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var author = await _context.Authors
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var author = _authorService.getDetailsForAuthor(id);
             if (author == null)
             {
                 return NotFound();
@@ -54,27 +55,26 @@ namespace BookApplication.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FirstName,LastName,Biography,DateOfBirth,Image,Id")] Author author)
+        public IActionResult Create([Bind("FirstName,LastName,Biography,DateOfBirth,Image,Id")] Author author)
         {
             if (ModelState.IsValid)
             {
                 author.Id = Guid.NewGuid();
-                _context.Add(author);
-                await _context.SaveChangesAsync();
+                _authorService.CreateNewAuthor(author);
                 return RedirectToAction(nameof(Index));
             }
             return View(author);
         }
 
         // GET: Authors/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public IActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var author = await _context.Authors.FindAsync(id);
+            var author = _authorService.getDetailsForAuthor(id);
             if (author == null)
             {
                 return NotFound();
@@ -87,7 +87,7 @@ namespace BookApplication.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("FirstName,LastName,Biography,DateOfBirth,Image,Id")] Author author)
+        public IActionResult Edit(Guid id, [Bind("FirstName,LastName,Biography,DateOfBirth,Image,Id")] Author author)
         {
             if (id != author.Id)
             {
@@ -98,8 +98,7 @@ namespace BookApplication.Web.Controllers
             {
                 try
                 {
-                    _context.Update(author);
-                    await _context.SaveChangesAsync();
+                    _authorService.UpdateExistingAuthor(author);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -118,15 +117,14 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Authors/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public IActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var author = await _context.Authors
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var author = _authorService.getDetailsForAuthor(id) as Author;
             if (author == null)
             {
                 return NotFound();
@@ -138,21 +136,19 @@ namespace BookApplication.Web.Controllers
         // POST: Authors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public IActionResult DeleteConfirmed(Guid id)
         {
-            var author = await _context.Authors.FindAsync(id);
-            if (author != null)
+            if (id != null)
             {
-                _context.Authors.Remove(author);
+                _authorService.DeleteAuthor(id);
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AuthorExists(Guid id)
         {
-            return _context.Authors.Any(e => e.Id == id);
+            return _authorService.getDetailsForAuthor(id) != null;
         }
     }
 }

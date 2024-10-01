@@ -1,6 +1,11 @@
 using BookApplication.Domain.Identity;
 using BookApplication.Repository;
+using BookApplication.Repository.Implementation;
+using BookApplication.Repository.Interface;
+using BookApplication.Service.Implementation;
+using BookApplication.Service.Interface;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +19,15 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<BookAppUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IUserRepository),typeof(UserRepository));
+builder.Services.AddScoped(typeof(IOrderRepository),typeof(OrderRepository));
+
+builder.Services.AddTransient<IOrderService, OrderService>();
+builder.Services.AddTransient<IBookService, BookService>();
+builder.Services.AddTransient<IAuthorService, AuthorService>();
+
+
 
 var app = builder.Build();
 
