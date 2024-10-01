@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Web/BookApplication.Web.csproj": {}
+    "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj": {}
   },
   "projects": {
-    "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj": {
+    "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
         "projectName": "BookApplication.Domain",
-        "projectPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj",
-        "packagesPath": "/Users/bojanognenov/.nuget/packages/",
-        "outputPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/obj/",
+        "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
+        "packagesPath": "C:\\Users\\ferdzo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bojanognenov/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ferdzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,34 +66,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/BookApplication.Repository.csproj": {
+    "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/BookApplication.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj",
         "projectName": "BookApplication.Repository",
-        "projectPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/BookApplication.Repository.csproj",
-        "packagesPath": "/Users/bojanognenov/.nuget/packages/",
-        "outputPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/obj/",
+        "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj",
+        "packagesPath": "C:\\Users\\ferdzo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bojanognenov/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ferdzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj": {
-                "projectPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj"
+              "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj": {
+                "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj"
               }
             }
           }
@@ -136,37 +140,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Web/BookApplication.Web.csproj": {
+    "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Web/BookApplication.Web.csproj",
+        "projectUniqueName": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
         "projectName": "BookApplication.Web",
-        "projectPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Web/BookApplication.Web.csproj",
-        "packagesPath": "/Users/bojanognenov/.nuget/packages/",
-        "outputPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Web/obj/",
+        "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
+        "packagesPath": "C:\\Users\\ferdzo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bojanognenov/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ferdzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj": {
-                "projectPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj"
+              "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj": {
+                "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj"
               },
-              "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/BookApplication.Repository.csproj": {
-                "projectPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Repository/BookApplication.Repository.csproj"
+              "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj": {
+                "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\BookApplication.Repository.csproj"
               }
             }
           }
@@ -203,8 +209,14 @@
               "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             }
           },
           "imports": [
@@ -226,7 +238,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

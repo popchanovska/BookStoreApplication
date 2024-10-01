@@ -811,24 +811,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/bojanognenov/.nuget/packages/": {}
+    "C:\\Users\\ferdzo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
       "projectName": "BookApplication.Domain",
-      "projectPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/BookApplication.Domain.csproj",
-      "packagesPath": "/Users/bojanognenov/.nuget/packages/",
-      "outputPath": "/Users/bojanognenov/Desktop/IS/BookApplication/BookApplication.Domain/obj/",
+      "projectPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
+      "packagesPath": "C:\\Users\\ferdzo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/bojanognenov/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\ferdzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -873,7 +875,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -24,3 +24,16 @@ C:\Users\E\Desktop\BookStoreApplication\BookStoreApplication\BookApplication\Boo
 C:\Users\E\Desktop\BookStoreApplication\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\refint\BookApplication.Domain.dll
 C:\Users\E\Desktop\BookStoreApplication\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.pdb
 C:\Users\E\Desktop\BookStoreApplication\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\ref\BookApplication.Domain.dll
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\bin\Debug\net8.0\BookApplication.Domain.deps.json
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\bin\Debug\net8.0\BookApplication.Domain.dll
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\bin\Debug\net8.0\BookApplication.Domain.pdb
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.csproj.AssemblyReference.cache
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.AssemblyInfoInputs.cache
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.AssemblyInfo.cs
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.sourcelink.json
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.dll
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\refint\BookApplication.Domain.dll
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\BookApplication.Domain.pdb
+C:\Users\ferdzo\Source\Repos\popchanovska\BookStoreApplication\BookApplication\BookApplication.Domain\obj\Debug\net8.0\ref\BookApplication.Domain.dll
