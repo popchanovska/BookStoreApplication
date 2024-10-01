@@ -1,0 +1,57 @@
+# Ignore build outputs
+[Bb]in/
+[Oo]bj/
+
+/.idea
+.DS_Store
+
+# User-specific files
+*.rsuser
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.vs/
+
+# Visual Studio Code settings
+.vscode/
+
+# Backup & Log Files
+*.log
+*.bak
+*.swp
+
+# Package directories
+**/node_modules/
+**/packages/
+
+# Debug output
+*.pdb
+*.ilk
+*.obj
+*.tmp
+*.cache
+*.csproj.user
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Others
+# Ignore temporary files
+*.tmp
+*.temp
+*.diff
+*.patch
+*.orig
+*.rej
