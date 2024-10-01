@@ -26,6 +26,9 @@ builder.Services.AddScoped(typeof(IOrderRepository),typeof(OrderRepository));
 builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<IBookService, BookService>();
 builder.Services.AddTransient<IAuthorService, AuthorService>();
+builder.Services.AddTransient<IPublisherService, PublisherService>();
+
+
 
 
 

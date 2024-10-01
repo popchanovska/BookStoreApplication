@@ -61,7 +61,10 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CoverImage)
+                    @*  @Html.DisplayFor(modelItem => item.CoverImage)*@
+                    <img class="card-img-top" src="@item.CoverImage" alt="Card image cap">
+
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PublicatonYear)

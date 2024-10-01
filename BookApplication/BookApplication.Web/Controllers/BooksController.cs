@@ -15,10 +15,12 @@ namespace BookApplication.Web.Controllers
     {
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
-        public BooksController(IBookService bookService, IAuthorService authorService)
+        private readonly IPublisherService _publisherService;
+        public BooksController(IBookService bookService, IAuthorService authorService, IPublisherService publisherService)
         {
             _bookService = bookService;
             _authorService = authorService;
+            _publisherService = publisherService;   
         }
 
         // GET: Books
@@ -48,7 +50,9 @@ namespace BookApplication.Web.Controllers
         public IActionResult Create()
         {
             ViewData["AuthorId"] = new SelectList(_authorService.GetAllAuthors(), "Id", "Biography");
-            //ViewData["PublisherId"] = new SelectList(.Publishers, "Id", "Email");
+
+
+            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Email");
             return View();
         }
 
@@ -66,7 +70,7 @@ namespace BookApplication.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorId"] = new SelectList(_authorService.GetAllAuthors(), "Id", "Biography", book.AuthorId);
-            //ViewData["PublisherId"] = new SelectList(_context.Publishers, "Id", "Email", book.PublisherId);
+            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Email", book.PublisherId);
             return View(book);
         }
 
@@ -78,13 +82,13 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var book = _authorService.getDetailsForAuthor(id);
+            var book = _bookService.getDetailsForBook(id);
             if (book == null)
             {
                 return NotFound();
             }
             ViewData["AuthorId"] = new SelectList(_authorService.GetAllAuthors(), "Id", "Biography", book.Id);
-            //ViewData["PublisherId"] = new SelectList(_context.Publishers, "Id", "Email", book.PublisherId);
+            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Email", book.PublisherId);
             return View(book);
         }
 
@@ -120,7 +124,7 @@ namespace BookApplication.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorId"] = new SelectList(_authorService.GetAllAuthors(), "Id", "Biography", book.AuthorId);
-            //ViewData["PublisherId"] = new SelectList(_context.Publishers, "Id", "Email", book.PublisherId);
+            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Email", book.PublisherId);
             return View(book);
         }
 
