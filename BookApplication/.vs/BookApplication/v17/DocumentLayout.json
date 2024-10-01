@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.web\\views\\books\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\views\\books\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.web\\views\\books\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\views\\books\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.domain\\enums\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\enums\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.web\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.web\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.web\\bookapplication.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\bookapplication.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69208C71-9AE2-4CE4-A1B8-7C8390188C50}|BookApplication.Service\\BookApplication.Service.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.service\\implementation\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{69208C71-9AE2-4CE4-A1B8-7C8390188C50}|BookApplication.Service\\BookApplication.Service.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.service\\implementation\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69208C71-9AE2-4CE4-A1B8-7C8390188C50}|BookApplication.Service\\BookApplication.Service.csproj|solutionrelative:bookapplication.service\\implementation\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|solutionrelative:bookapplication.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5333B42B-5FFE-4CF8-AA3A-A4AC076FC155}|BookApplication.Web\\BookApplication.Web.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.web\\views\\authors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -83,10 +103,6 @@
       "RelativeMoniker": "D:0:0:{EBE1C12D-D561-4661-B8EE-69721E509558}|BookApplication.Repository\\BookApplication.Repository.csproj|solutionrelative:bookapplication.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.domain\\domain\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -111,10 +127,6 @@
       "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\domain\\publisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.domain\\enums\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\enums\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|c:\\users\\ferdzo\\source\\repos\\popchanovska\\bookstoreapplication\\bookapplication\\bookapplication.domain\\bookapplication.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{B974C1B4-1376-4F62-A730-1970425615DB}|BookApplication.Domain\\BookApplication.Domain.csproj|solutionrelative:bookapplication.domain\\bookapplication.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -135,21 +147,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookApplication.Web",
-              "DocumentMoniker": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
-              "RelativeDocumentMoniker": "BookApplication.Web\\BookApplication.Web.csproj",
-              "ToolTip": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj*",
-              "RelativeToolTip": "BookApplication.Web\\BookApplication.Web.csproj*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-01T11:21:31.82Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
@@ -168,46 +167,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthorService.cs",
-              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Implementation\\AuthorService.cs",
-              "RelativeDocumentMoniker": "BookApplication.Service\\Implementation\\AuthorService.cs",
-              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Implementation\\AuthorService.cs",
-              "RelativeToolTip": "BookApplication.Service\\Implementation\\AuthorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T11:12:02.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IBookService.cs",
-              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IBookService.cs",
-              "RelativeDocumentMoniker": "BookApplication.Service\\Interface\\IBookService.cs",
-              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IBookService.cs",
-              "RelativeToolTip": "BookApplication.Service\\Interface\\IBookService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T10:51:09.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Views\\Books\\Create.cshtml",
+              "RelativeDocumentMoniker": "BookApplication.Web\\Views\\Books\\Create.cshtml",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Views\\Books\\Create.cshtml",
+              "RelativeToolTip": "BookApplication.Web\\Views\\Books\\Create.cshtml",
+              "ViewState": "AQIAADUAAAAAAAAAAAAnwEAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T11:56:20.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AuthorsController.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Controllers\\AuthorsController.cs",
               "RelativeDocumentMoniker": "BookApplication.Web\\Controllers\\AuthorsController.cs",
               "ToolTip": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Controllers\\AuthorsController.cs",
               "RelativeToolTip": "BookApplication.Web\\Controllers\\AuthorsController.cs",
-              "ViewState": "AQIAAIUAAAAAAAAAAADwv5YAAABCAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJYAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T10:52:52.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Program.cs",
               "RelativeDocumentMoniker": "BookApplication.Web\\Program.cs",
@@ -220,7 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "IRepository.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IRepository.cs",
               "RelativeDocumentMoniker": "BookApplication.Repository\\Interface\\IRepository.cs",
@@ -233,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\UserRepository.cs",
               "RelativeDocumentMoniker": "BookApplication.Repository\\Implementation\\UserRepository.cs",
@@ -246,46 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "BookApplication.Repository\\Interface\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IUserRepository.cs",
-              "RelativeToolTip": "BookApplication.Repository\\Interface\\IUserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T13:48:02.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IAuthorService.cs",
-              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IAuthorService.cs",
-              "RelativeDocumentMoniker": "BookApplication.Service\\Interface\\IAuthorService.cs",
-              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IAuthorService.cs*",
-              "RelativeToolTip": "BookApplication.Service\\Interface\\IAuthorService.cs*",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAkwA4AAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T11:12:30.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BookService.cs",
-              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Implementation\\BookService.cs",
-              "RelativeDocumentMoniker": "BookApplication.Service\\Implementation\\BookService.cs",
-              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Implementation\\BookService.cs",
-              "RelativeToolTip": "BookApplication.Service\\Implementation\\BookService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwB4AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T11:12:04.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "BookApplication.Web\\Controllers\\HomeController.cs",
@@ -298,7 +245,137 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Enums\\Genre.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Enums\\Genre.cs",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Enums\\Genre.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Enums\\Genre.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAcwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T21:38:13.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Views\\Books\\Index.cshtml",
+              "RelativeDocumentMoniker": "BookApplication.Web\\Views\\Books\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Views\\Books\\Index.cshtml",
+              "RelativeToolTip": "BookApplication.Web\\Views\\Books\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T11:53:11.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "BookApplication.Web\\Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "BookApplication.Web\\Controllers\\BooksController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T11:37:48.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Book.cs",
+              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Book.cs",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Book.cs",
+              "RelativeToolTip": "BookApplication.Domain\\Domain\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T21:08:01.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IBookService.cs",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IBookService.cs",
+              "RelativeDocumentMoniker": "BookApplication.Service\\Interface\\IBookService.cs",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IBookService.cs",
+              "RelativeToolTip": "BookApplication.Service\\Interface\\IBookService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T10:51:09.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookApplication.Web",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
+              "RelativeDocumentMoniker": "BookApplication.Web\\BookApplication.Web.csproj",
+              "ToolTip": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\BookApplication.Web.csproj",
+              "RelativeToolTip": "BookApplication.Web\\BookApplication.Web.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-01T11:21:31.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthorService.cs",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Implementation\\AuthorService.cs",
+              "RelativeDocumentMoniker": "BookApplication.Service\\Implementation\\AuthorService.cs",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Implementation\\AuthorService.cs",
+              "RelativeToolTip": "BookApplication.Service\\Implementation\\AuthorService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T11:12:02.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "BookApplication.Repository\\Interface\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IUserRepository.cs",
+              "RelativeToolTip": "BookApplication.Repository\\Interface\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T13:48:02.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IAuthorService.cs",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IAuthorService.cs",
+              "RelativeDocumentMoniker": "BookApplication.Service\\Interface\\IAuthorService.cs",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IAuthorService.cs",
+              "RelativeToolTip": "BookApplication.Service\\Interface\\IAuthorService.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAkwA4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T11:12:30.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Implementation\\BookService.cs",
+              "RelativeDocumentMoniker": "BookApplication.Service\\Implementation\\BookService.cs",
+              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Implementation\\BookService.cs",
+              "RelativeToolTip": "BookApplication.Service\\Implementation\\BookService.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwB4AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T11:12:04.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Views\\Authors\\Index.cshtml",
               "RelativeDocumentMoniker": "BookApplication.Web\\Views\\Authors\\Index.cshtml",
@@ -311,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Views\\Authors\\Edit.cshtml",
               "RelativeDocumentMoniker": "BookApplication.Web\\Views\\Authors\\Edit.cshtml",
@@ -324,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\Views\\Authors\\Details.cshtml",
               "RelativeDocumentMoniker": "BookApplication.Web\\Views\\Authors\\Details.cshtml",
@@ -337,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "20241001105802_db.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Migrations\\20241001105802_db.cs",
               "RelativeDocumentMoniker": "BookApplication.Repository\\Migrations\\20241001105802_db.cs",
@@ -350,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Interface\\IOrderService.cs",
               "RelativeDocumentMoniker": "BookApplication.Service\\Interface\\IOrderService.cs",
@@ -363,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\OrderRepository.cs",
               "RelativeDocumentMoniker": "BookApplication.Repository\\Implementation\\OrderRepository.cs",
@@ -375,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Interface\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "BookApplication.Repository\\Interface\\IOrderRepository.cs",
@@ -388,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\Implementation\\Repository.cs",
               "RelativeDocumentMoniker": "BookApplication.Repository\\Implementation\\Repository.cs",
@@ -400,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "BookInOrder.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\BookInOrder.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\BookInOrder.cs",
@@ -412,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Order.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Order.cs",
@@ -424,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Repository\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "BookApplication.Repository\\ApplicationDbContext.cs",
@@ -436,19 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Book.cs",
-              "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Book.cs",
-              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Book.cs",
-              "RelativeToolTip": "BookApplication.Domain\\Domain\\Book.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T21:08:01.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\BaseEntity.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\BaseEntity.cs",
@@ -460,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "Address.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Address.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Address.cs",
@@ -472,19 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Genre.cs",
-              "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Enums\\Genre.cs",
-              "RelativeDocumentMoniker": "BookApplication.Domain\\Enums\\Genre.cs",
-              "ToolTip": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Enums\\Genre.cs",
-              "RelativeToolTip": "BookApplication.Domain\\Enums\\Genre.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T21:38:13.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "BookApplication.Domain.csproj",
               "DocumentMoniker": "C:\\Users\\ferdzo\\Source\\Repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\BookApplication.Domain.csproj",
               "RelativeDocumentMoniker": "BookApplication.Domain\\BookApplication.Domain.csproj",
@@ -497,7 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Web\\appsettings.json",
               "RelativeDocumentMoniker": "BookApplication.Web\\appsettings.json",
@@ -509,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "Publisher.cs",
               "DocumentMoniker": "C:\\Users\\ferdzo\\source\\repos\\popchanovska\\BookStoreApplication\\BookApplication\\BookApplication.Domain\\Domain\\Publisher.cs",
               "RelativeDocumentMoniker": "BookApplication.Domain\\Domain\\Publisher.cs",
@@ -521,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Domain\\Class1.cs",
@@ -533,7 +586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\E\\Desktop\\BookStoreApplication\\BookStoreApplication\\BookApplication\\BookApplication.Service\\Class1.cs",
@@ -545,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\E\\Desktop\\FINKI\\IS\\BookApplication\\BookApplication.Repository\\Class1.cs",
