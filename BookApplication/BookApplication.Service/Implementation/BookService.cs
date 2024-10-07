@@ -1,3 +1,4 @@
+using System.Text;
 using BookApplication.Domain.Domain;
 using BookApplication.Repository.Interface;
 using BookApplication.Service.Interface;
@@ -25,6 +26,7 @@ public class BookService : IBookService
 
     public void CreateNewBook(Book b)
     {
+        b.CoverImage = UploadImage.ConvertImageToBase64(b.CoverImage);
         _bookRepository.Insert(b);
     }
 

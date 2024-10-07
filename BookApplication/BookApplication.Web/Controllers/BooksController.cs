@@ -49,10 +49,10 @@ namespace BookApplication.Web.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
-            ViewData["AuthorId"] = new SelectList(_authorService.GetAllAuthors(), "Id", "Biography");
+            // ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", _authorService.GetNamesForAuthors().ToString());
+            ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", "FullName");
 
-
-            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Email");
+            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Name");
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace BookApplication.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AuthorId,Title,ISBN,Price,CoverImage,PublicatonYear,IsHardcover,Rating,Genre,PublisherId,Id")] Book book)
+        public IActionResult Create([Bind("AuthorId,Title,ISBN,Price,CoverImage,PublicatonYear,IsHardcover,Rating,Genre,PublisherId,Id")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -69,8 +69,8 @@ namespace BookApplication.Web.Controllers
                 _bookService.CreateNewBook(book);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_authorService.GetAllAuthors(), "Id", "Biography", book.AuthorId);
-            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Email", book.PublisherId);
+            ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", "FullName");
+            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Name", book.PublisherId);
             return View(book);
         }
 
@@ -87,8 +87,8 @@ namespace BookApplication.Web.Controllers
             {
                 return NotFound();
             }
-            ViewData["AuthorId"] = new SelectList(_authorService.GetAllAuthors(), "Id", "Biography", book.Id);
-            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Email", book.PublisherId);
+            ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", "FullName");
+            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Name", book.PublisherId);
             return View(book);
         }
 
@@ -123,8 +123,8 @@ namespace BookApplication.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_authorService.GetAllAuthors(), "Id", "Biography", book.AuthorId);
-            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Email", book.PublisherId);
+            ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", "FullName");
+            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Name", book.PublisherId);
             return View(book);
         }
 

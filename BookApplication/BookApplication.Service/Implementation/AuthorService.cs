@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookApplication.Domain.DTOs;
 
 namespace BookApplication.Service.Implementation
 {
@@ -19,6 +20,12 @@ namespace BookApplication.Service.Implementation
         }
         public void CreateNewAuthor(Author a)
         {
+            if (a.Image != null)
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(a.Image);
+                a.Image = Convert.ToBase64String(bytes);
+            }
+            
             _authorRepository.Insert(a);
         }
 
@@ -32,6 +39,18 @@ namespace BookApplication.Service.Implementation
         {
             return _authorRepository.GetAll().ToList();
 
+        }
+
+        public IEnumerable<AuthorDTO> GetNamesForAuthors()
+        {
+            var authors = _authorRepository.GetAll()
+                .Select(a => new AuthorDTO
+                {
+                    Id = a.Id,
+                    FullName = a.FirstName + " " + a.LastName
+                }).ToList();
+
+            return authors;
         }
 
         public Author getDetailsForAuthor(Guid? id)
