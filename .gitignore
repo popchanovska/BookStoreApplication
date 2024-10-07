@@ -16,7 +16,7 @@
 *.vs/
 
 # Visual Studio Code settings
-.vscode/
+*.vscode/
 
 # Backup & Log Files
 *.log
