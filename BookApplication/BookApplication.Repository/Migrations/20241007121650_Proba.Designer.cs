@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookApplication.Repository.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241001123053_aaa1")]
-    partial class aaa1
+    [Migration("20241007121650_Proba")]
+    partial class Proba
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,8 +183,8 @@ namespace BookApplication.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("AddressId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
@@ -194,6 +194,8 @@ namespace BookApplication.Repository.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
 
                     b.HasIndex("UserId");
 
@@ -206,8 +208,8 @@ namespace BookApplication.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid?>("AddressId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -225,6 +227,8 @@ namespace BookApplication.Repository.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
 
                     b.ToTable("Publishers");
                 });
@@ -479,13 +483,13 @@ namespace BookApplication.Repository.Migrations
                     b.HasOne("BookApplication.Domain.Domain.Book", "Book")
                         .WithMany()
                         .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("BookApplication.Domain.Domain.Order", "Order")
                         .WithMany("BooksInOrder")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Book");
@@ -514,13 +518,30 @@ namespace BookApplication.Repository.Migrations
 
             modelBuilder.Entity("BookApplication.Domain.Domain.Order", b =>
                 {
+                    b.HasOne("BookApplication.Domain.Domain.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookApplication.Domain.Identity.BookAppUser", "User")
                         .WithMany("Order")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Address");
+
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BookApplication.Domain.Domain.Publisher", b =>
+                {
+                    b.HasOne("BookApplication.Domain.Domain.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId");
+
+                    b.Navigation("Address");
                 });
 
             modelBuilder.Entity("BookApplication.Domain.Domain.ShoppingCart", b =>

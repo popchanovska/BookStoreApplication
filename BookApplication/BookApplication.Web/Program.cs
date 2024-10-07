@@ -27,6 +27,7 @@ builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<IBookService, BookService>();
 builder.Services.AddTransient<IAuthorService, AuthorService>();
 builder.Services.AddTransient<IPublisherService, PublisherService>();
+builder.Services.AddTransient<IAddressService, AddressService>();
 
 
 

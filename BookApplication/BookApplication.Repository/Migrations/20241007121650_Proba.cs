@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookApplication.Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class aaa : Migration
+    public partial class Proba : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,40 +15,38 @@ namespace BookApplication.Repository.Migrations
                 name: "FK_Publishers_Addresses_AddressId",
                 table: "Publishers");
 
-            migrationBuilder.DropIndex(
-                name: "IX_Publishers_AddressId",
-                table: "Publishers");
-
-            migrationBuilder.DropColumn(
+            migrationBuilder.AlterColumn<Guid>(
                 name: "AddressId",
-                table: "Publishers");
-
-            migrationBuilder.AddColumn<string>(
-                name: "Address",
                 table: "Publishers",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
+                type: "uniqueidentifier",
+                nullable: true,
+                oldClrType: typeof(Guid),
+                oldType: "uniqueidentifier");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Publishers_Addresses_AddressId",
+                table: "Publishers",
+                column: "AddressId",
+                principalTable: "Addresses",
+                principalColumn: "Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Address",
+            migrationBuilder.DropForeignKey(
+                name: "FK_Publishers_Addresses_AddressId",
                 table: "Publishers");
 
-            migrationBuilder.AddColumn<Guid>(
+            migrationBuilder.AlterColumn<Guid>(
                 name: "AddressId",
                 table: "Publishers",
                 type: "uniqueidentifier",
                 nullable: false,
-                defaultValue: new Guid("00000000-0000-0000-0000-000000000000"));
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Publishers_AddressId",
-                table: "Publishers",
-                column: "AddressId");
+                defaultValue: new Guid("00000000-0000-0000-0000-000000000000"),
+                oldClrType: typeof(Guid),
+                oldType: "uniqueidentifier",
+                oldNullable: true);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Publishers_Addresses_AddressId",

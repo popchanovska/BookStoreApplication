@@ -15,15 +15,19 @@ namespace BookApplication.Web.Controllers
     {
 
         private readonly IPublisherService _publisherService;
-        public PublishersController(IPublisherService publisherService)
+        private readonly IAddressService _addressService;
+        public PublishersController(IPublisherService publisherService, IAddressService addressService)
         {
             _publisherService=publisherService;
+            _addressService = addressService;
         }
 
         // GET: Publishers
         public IActionResult Index()
         {
+            ViewData["AddressId"] = new SelectList(_addressService.GetAllAddresses(), "Id", "City");
             return View(_publisherService.GetAllPublishers());
+
         }
 
         // GET: Publishers/Details/5
@@ -54,15 +58,28 @@ namespace BookApplication.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Name,Email,Website,PhoneNumber,AddressId,Id")] Publisher publisher)
+        public IActionResult Create([Bind("Name,Email,Website,PhoneNumber,Address")] Publisher publisher)
         {
+            // Ensure Address is not null
+            if (publisher.Address == null)
+            {
+                publisher.Address = new Address();
+            }
+
             if (ModelState.IsValid)
             {
                 publisher.Id = Guid.NewGuid();
+
+                // Save the Address entity
+                _addressService.CreateAddress(publisher.Address);
+
+                // Associate the AddressId with the Publisher and save Publisher
+                publisher.AddressId = publisher.Address.Id;  // Ensure Address has an ID (set by database or manually)
                 _publisherService.CreatePublisher(publisher);
+
                 return RedirectToAction(nameof(Index));
             }
-            //ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "City", publisher.AddressId);
+
             return View(publisher);
         }
 

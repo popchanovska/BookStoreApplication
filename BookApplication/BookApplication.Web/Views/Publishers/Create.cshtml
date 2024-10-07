@@ -1,5 +1,4 @@
 ﻿@model BookApplication.Domain.Domain.Publisher
-
 @{
     ViewData["Title"] = "Create";
 }
@@ -12,30 +11,61 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Publisher Name -->
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
+            <!-- Publisher Email -->
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
+            <!-- Publisher Website -->
             <div class="form-group">
                 <label asp-for="Website" class="control-label"></label>
                 <input asp-for="Website" class="form-control" />
                 <span asp-validation-for="Website" class="text-danger"></span>
             </div>
+
+            <!-- Publisher PhoneNumber -->
             <div class="form-group">
                 <label asp-for="PhoneNumber" class="control-label"></label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
-            <!--<div class="form-group"> -->
-            <!-- <label asp-for="AddressId" class="control-label"></label>-->
-            <!--<select asp-for="AddressId" class ="form-control" asp-items="ViewBag.AddressId"></select> -->
-            @* </div> *@
+
+            <!-- Address Fields (Embedded) -->
+            <h4>Address</h4>
+
+            <!-- Address Street -->
+            <div class="form-group">
+                <label asp-for="Address.Street" class="control-label"></label>
+                <input asp-for="Address.Street" class="form-control" />
+                <span asp-validation-for="Address.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.City" class="control-label"></label>
+                <input asp-for="Address.City" class="form-control" />
+                <span asp-validation-for="Address.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Country" class="control-label"></label>
+                <input asp-for="Address.Country" class="form-control" />
+                <span asp-validation-for="Address.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.ZipCode" class="control-label"></label>
+                <input asp-for="Address.ZipCode" class="form-control" />
+                <span asp-validation-for="Address.ZipCode" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -48,5 +78,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

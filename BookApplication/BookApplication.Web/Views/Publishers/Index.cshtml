@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BookApplication.Domain.Domain.Publisher>
+﻿@using static System.Runtime.InteropServices.JavaScript.JSType
+@model IEnumerable<BookApplication.Domain.Domain.Publisher>
 
 @{
     ViewData["Title"] = "Index";
@@ -46,8 +47,14 @@
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-             @*   @Html.DisplayFor(modelItem => item.Address.City)*@
-            </td>
+                    @{
+                        var address = item.Address;
+                        var addressString = (address != null) ?
+                        string.Join(",", address.Street, address.City, address.ZipCode, address.Country) :
+                        "No Address Available";
+                    }
+                    @addressString
+                </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

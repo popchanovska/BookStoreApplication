@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BookApplication.Domain.Domain
 {
     public class Address : BaseEntity
-    {
+    {  
         public string Street { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
