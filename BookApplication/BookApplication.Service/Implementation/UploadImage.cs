@@ -1,12 +1,11 @@
 using System.Text;
-
-namespace BookApplication.Service.Implementation;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
 using System.Net;
 using System.Text.RegularExpressions;
+namespace BookApplication.Service.Implementation;
 
 public static class UploadImage
 {

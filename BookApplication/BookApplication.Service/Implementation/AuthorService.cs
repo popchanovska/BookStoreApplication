@@ -22,8 +22,7 @@ namespace BookApplication.Service.Implementation
         {
             if (a.Image != null)
             {
-                byte[] bytes = Encoding.UTF8.GetBytes(a.Image);
-                a.Image = Convert.ToBase64String(bytes);
+              a.Image = UploadImage.ConvertImageToBase64(a.Image);
             }
             
             _authorRepository.Insert(a);
