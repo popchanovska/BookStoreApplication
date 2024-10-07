@@ -4,31 +4,50 @@ namespace BookApplication.Service.Implementation;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Net;
+using System.Net;
+using System.Text.RegularExpressions;
 
 public static class UploadImage
 {
-    public static string ConvertImageToBase64(string img)
+ 
+public static string ConvertImageToBase64(string img)
+{
+    byte[] imageBytes;
+
+    if (IsUrl(img))
     {
-        byte[] imageBytes = Encoding.UTF8.GetBytes(img); 
-
-        // Load the image from the byte array using a memory stream
-        using (var ms = new MemoryStream(imageBytes))
+        using (WebClient webClient = new WebClient())
         {
-            using (Image image = Image.FromStream(ms))
-            {
-                // Determine the mime type
-                string mimeType = GetMimeType(image);
-
-                // Convert the image bytes to a base64 string
-                string base64Image = Convert.ToBase64String(imageBytes);
-
-                // Create the Data URI
-                return $"data:{mimeType};base64,{base64Image}";
-            }
+            webClient.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
+            imageBytes = webClient.DownloadData(img);
         }
     }
-    
-    private static string GetMimeType(Image image)
+    else
+    {
+        imageBytes = File.ReadAllBytes(img);
+    }
+
+    // Load the image from the byte array using a memory stream
+    using (var ms = new MemoryStream(imageBytes))
+    {
+        using (Image image = Image.FromStream(ms))
+        {
+            string mimeType = GetMimeType(image);
+            string base64Image = Convert.ToBase64String(imageBytes);
+            return $"data:{mimeType};base64,{base64Image}";
+        }
+    }
+}
+
+// Function to check if the input is a URL
+public static bool IsUrl(string img)
+{
+    return Uri.TryCreate(img, UriKind.Absolute, out Uri uriResult)
+           && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+}
+
+private static string GetMimeType(Image image)
     {
         if (ImageFormat.Jpeg.Equals(image.RawFormat))
             return "image/jpeg";
