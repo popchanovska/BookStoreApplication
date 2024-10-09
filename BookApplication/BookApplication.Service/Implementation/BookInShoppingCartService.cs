@@ -38,11 +38,10 @@ namespace BookApplication.Service.Implementation
             }
         }
 
-        public void DeleteBookFromShoppingCart(Guid id, Book b)
+        public void DeleteBookFromShoppingCart(BookInShoppingCart b)
         {
-            
-            BookInShoppingCart book = _bookInShoppingCartRepository.GetAll().Where(x => x.Book.Id == b.Id).FirstOrDefault();
-            _bookInShoppingCartRepository.Delete(book);
+            BookInShoppingCart bookInShoppingCart = GetBookInShoppingCart(b.Id);
+            _bookInShoppingCartRepository.Delete(bookInShoppingCart);
         }
 
         public void EditBookInShoppingCart(Guid id, Book b)

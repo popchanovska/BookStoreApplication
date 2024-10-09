@@ -11,6 +11,7 @@ using BookApplication.Repository;
 using BookApplication.Service.Implementation;
 using BookApplication.Service.Interface;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Operations;
 
 namespace BookApplication.Web.Controllers
 {
@@ -33,6 +34,9 @@ namespace BookApplication.Web.Controllers
         public IActionResult Index()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            Guid shpId = _shoppingCartService.GetAllShoppingCartsForUser(userId).FirstOrDefault().Id;
+            ViewBag.BookInShoppingCart = _bookInShoppingCartService.GetAllBooksInShoppingCart(shpId);
+
             if(User.Identity.IsAuthenticated == true)
                 return View(_shoppingCartService.GetAllShoppingCartsForUser(userId));
             return Unauthorized();
@@ -174,75 +178,17 @@ namespace BookApplication.Web.Controllers
         {
             return _shoppingCartService.GetDetailsForShoppingCart(id) != null;
         }
-        //public void AddToCart(Guid? Id)
-        //{
-        //    // Check if Id is null
-        //    if (!Id.HasValue)
-        //    {
-        //        throw new ArgumentNullException("Id", "Book Id is null");
-        //    }
-
-        //    Console.WriteLine("Book Id: " + Id);
-
-        //    // Get book details
-        //    var book = _bookService.getDetailsForBook(Id.Value);
-        //    if (book == null)
-        //    {
-        //        throw new Exception($"Book with Id {Id.Value} not found");
-        //    }
-
-        //    // Get user
-        //    var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        //    if (string.IsNullOrEmpty(user))
-        //    {
-        //        throw new Exception("User not authenticated");
-        //    }
-
-        //    // Get user's shopping cart
-        //    var shoppingCart = _shoppingCartService.GetAllShoppingCartsForUser(user).FirstOrDefault();
-        //    if (shoppingCart == null)
-        //    {
-        //        throw new Exception("No shopping cart found for the user");
-        //    }
-
-        //    // Get shopping cart details
-        //    ShoppingCart cartDetails = _shoppingCartService.GetDetailsForShoppingCart(shoppingCart.Id);
-        //    if (cartDetails == null)
-        //    {
-        //        throw new Exception($"No details found for shopping cart with Id {shoppingCart.Id}");
-        //    }
-
-        //    // Add book to shopping cart
-        //    BookInShoppingCart bookInShoppingCart = new BookInShoppingCart
-        //    {
-        //        Book = book,
-        //        BookId = book.Id,
-        //        ShoppingCart = cartDetails,
-        //        ShoppingCartId = cartDetails.Id,
-        //        Quantity = 1
-        //    };
-
-        //    _bookInShoppingCartService.AddBookToShoppingCart(bookInShoppingCart);
-
-        //    // Optionally log the quantity of books in the cart
-        //    var bookInCart = _bookInShoppingCartService.GetAllBooksInShoppingCart(shoppingCart.Id).FirstOrDefault();
-        //    if (bookInCart != null)
-        //    {
-        //        Console.WriteLine("Quantity: " + bookInCart.Quantity);
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("No books found in shopping cart");
-        //    }
-        
-
-
+   
         public IActionResult AddToCart (Guid Id)
         {
             var book = _bookService.getDetailsForBook(Id);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var shoppingCart = _shoppingCartService.GetAllShoppingCartsForUser(userId).FirstOrDefault();
 
+            if(book == null || shoppingCart == null)
+            {
+                return NotFound();
+            }
 
 
             BookInShoppingCart bookInShoppingCart = new BookInShoppingCart
@@ -260,6 +206,15 @@ namespace BookApplication.Web.Controllers
                 Console.Write("SUCCESS: Book added to cart");
             }
 
+            return RedirectToAction("Index");
+        }
+        public IActionResult RemoveBookFromCart(Guid Id) {        
+            
+            var bsc = _bookInShoppingCartService.GetBookInShoppingCart(Id);
+            if(bsc != null)
+            {
+                _bookInShoppingCartService.DeleteBookFromShoppingCart(bsc);
+            }
             return RedirectToAction("Index");
         }
 

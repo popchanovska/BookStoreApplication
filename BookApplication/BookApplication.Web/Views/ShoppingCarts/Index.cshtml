@@ -1,7 +1,11 @@
-﻿@model IEnumerable<BookApplication.Domain.Domain.ShoppingCart>
+﻿@using BookApplication.Domain.Domain
+@model IEnumerable<BookApplication.Domain.Domain.ShoppingCart>
 
 @{
     ViewData["Title"] = "Index";
+    var booksInCart = ViewBag.BookInShoppingCart as List<BookInShoppingCart>;
+
+
 }
 
 <h1>Index</h1>
@@ -31,5 +35,29 @@
             </td>
         </tr>
 }
+    </tbody>
+    <tbody>
+    <tr>
+            <td>
+                <h3>Books in cart</h3>
+            </td>
+        </tr>
+        @foreach (var bookInCart in booksInCart)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => bookInCart.Book.Title)
+                </td>
+                <td>
+                    <img src=bookInCart.Book.ImageUrl alt="Book image" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => bookInCart.Quantity)
+                </td>
+                <td>
+                    <a asp-action="RemoveBookFromCart" asp-route-id="@bookInCart.Id" >Remove</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
