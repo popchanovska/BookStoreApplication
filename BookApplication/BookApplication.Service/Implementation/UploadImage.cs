@@ -9,44 +9,56 @@ namespace BookApplication.Service.Implementation;
 
 public static class UploadImage
 {
- 
-public static string ConvertImageToBase64(string img)
-{
-    byte[] imageBytes;
 
-    if (IsUrl(img))
+    public static string ConvertImageToBase64(string img)
     {
-        using (WebClient webClient = new WebClient())
+        byte[] imageBytes;
+
+        if (IsUrl(img))
         {
-            webClient.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
-            imageBytes = webClient.DownloadData(img);
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
+                imageBytes = webClient.DownloadData(img);
+            }
+        }
+        else if (File.Exists(img))
+        {
+            imageBytes = File.ReadAllBytes(img);
+        }
+        else 
+        {
+            imageBytes = Convert.FromBase64String(img);
+            return null;
+        }
+
+
+        using (var ms = new MemoryStream(imageBytes))
+        {
+            using (Image image = Image.FromStream(ms))
+            {
+                string mimeType = GetMimeType(image);
+                string base64Image = Convert.ToBase64String(imageBytes);
+                return $"data:{mimeType};base64,{base64Image}";
+            }
         }
     }
-    else
+
+    // Helper function to check if a string is a valid URL
+    private static bool IsUrl(string url)
     {
-        imageBytes = File.ReadAllBytes(img);
+        return Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult)
+               && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
     }
 
-    // Load the image from the byte array using a memory stream
-    using (var ms = new MemoryStream(imageBytes))
+    // Helper function to check if a string is a valid base64 string
+    private static bool IsBase64String(string base64)
     {
-        using (Image image = Image.FromStream(ms))
-        {
-            string mimeType = GetMimeType(image);
-            string base64Image = Convert.ToBase64String(imageBytes);
-            return $"data:{mimeType};base64,{base64Image}";
-        }
+        Span<byte> buffer = new Span<byte>(new byte[base64.Length]);
+        return Convert.TryFromBase64String(base64, buffer, out int bytesParsed);
     }
-}
 
-// Function to check if the input is a URL
-public static bool IsUrl(string img)
-{
-    return Uri.TryCreate(img, UriKind.Absolute, out Uri uriResult)
-           && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
-}
-
-private static string GetMimeType(Image image)
+    private static string GetMimeType(Image image)
     {
         if (ImageFormat.Jpeg.Equals(image.RawFormat))
             return "image/jpeg";
