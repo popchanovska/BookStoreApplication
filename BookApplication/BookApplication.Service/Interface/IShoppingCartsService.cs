@@ -16,5 +16,6 @@ namespace BookApplication.Service.Interface
         void UpdateExistingShoppingCart(ShoppingCart s);
         void DeleteShoppingCart(Guid id);
 
+        List<ShoppingCart> GetAllShoppingCartsForUser(string userId);
     }
 }

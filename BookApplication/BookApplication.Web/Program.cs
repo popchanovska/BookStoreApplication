@@ -30,6 +30,9 @@ builder.Services.AddTransient<IAuthorService, AuthorService>();
 builder.Services.AddTransient<IPublisherService, PublisherService>();
 builder.Services.AddTransient<IAddressService, AddressService>();
 builder.Services.AddTransient<IShoppingCartsService,ShoppingCartService>();
+builder.Services.AddTransient<IBookInShoppingCart,BookInShoppingCartService>();
+builder.Services.AddTransient<IOrderService,OrderService>();
+
 
 
 

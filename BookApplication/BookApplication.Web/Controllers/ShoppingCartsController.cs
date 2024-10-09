@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using BookApplication.Domain.Domain;
 using BookApplication.Repository;
 using BookApplication.Service.Implementation;
 using BookApplication.Service.Interface;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BookApplication.Web.Controllers
 {
@@ -16,22 +18,30 @@ namespace BookApplication.Web.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IShoppingCartsService _shoppingCartService;
+        private readonly IBookInShoppingCart _bookInShoppingCartService;
+        private readonly IBookService _bookService;
 
-        public ShoppingCartsController(IShoppingCartsService shoppingCartService, ApplicationDbContext context)
+        public ShoppingCartsController(IShoppingCartsService shoppingCartService, ApplicationDbContext context, IBookInShoppingCart bookInShoppingCartService, IBookService bookService)
         {
-            _shoppingCartService= shoppingCartService;
+            _shoppingCartService = shoppingCartService;
             _context = context;
+            _bookService = bookService; 
+            _bookInShoppingCartService = bookInShoppingCartService;
         }
 
         // GET: ShoppingCarts
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(_shoppingCartService.GetAllShoppingCarts());
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if(User.Identity.IsAuthenticated == true)
+                return View(_shoppingCartService.GetAllShoppingCartsForUser(userId));
+            return Unauthorized();
         }
 
         // GET: ShoppingCarts/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public IActionResult Details(Guid? id)
         {
+            if(User.Identity.IsAuthenticated == true) { 
             if (id == null)
             {
                 return NotFound();
@@ -44,6 +54,8 @@ namespace BookApplication.Web.Controllers
             }
 
             return View(shoppingCart);
+            }
+            return Unauthorized();
         }
 
         // GET: ShoppingCarts/Create
@@ -60,15 +72,21 @@ namespace BookApplication.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("OwnerId,Id")] ShoppingCart shoppingCart)
         {
-            if (ModelState.IsValid)
+            if(User.Identity.IsAuthenticated == true)
             {
-                shoppingCart.Id = Guid.NewGuid();
-                _shoppingCartService.CreateNewShoppingCart(shoppingCart);
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    shoppingCart.Id = Guid.NewGuid();
+                    _shoppingCartService.CreateNewShoppingCart(shoppingCart);
+                    return RedirectToAction(nameof(Index));
+                }
+                ViewData["OwnerId"] = new SelectList(_context.Users, "Id", "Id", shoppingCart.OwnerId);
+                return View(shoppingCart);
             }
-            ViewData["OwnerId"] = new SelectList(_context.Users, "Id", "Id", shoppingCart.OwnerId);
-            return View(shoppingCart);
+           
+            return Unauthorized();
         }
+          
 
         // GET: ShoppingCarts/Edit/5
         public IActionResult Edit(Guid? id)
@@ -152,10 +170,100 @@ namespace BookApplication.Web.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
         private bool ShoppingCartExists(Guid id)
         {
             return _shoppingCartService.GetDetailsForShoppingCart(id) != null;
         }
+        //public void AddToCart(Guid? Id)
+        //{
+        //    // Check if Id is null
+        //    if (!Id.HasValue)
+        //    {
+        //        throw new ArgumentNullException("Id", "Book Id is null");
+        //    }
+
+        //    Console.WriteLine("Book Id: " + Id);
+
+        //    // Get book details
+        //    var book = _bookService.getDetailsForBook(Id.Value);
+        //    if (book == null)
+        //    {
+        //        throw new Exception($"Book with Id {Id.Value} not found");
+        //    }
+
+        //    // Get user
+        //    var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    if (string.IsNullOrEmpty(user))
+        //    {
+        //        throw new Exception("User not authenticated");
+        //    }
+
+        //    // Get user's shopping cart
+        //    var shoppingCart = _shoppingCartService.GetAllShoppingCartsForUser(user).FirstOrDefault();
+        //    if (shoppingCart == null)
+        //    {
+        //        throw new Exception("No shopping cart found for the user");
+        //    }
+
+        //    // Get shopping cart details
+        //    ShoppingCart cartDetails = _shoppingCartService.GetDetailsForShoppingCart(shoppingCart.Id);
+        //    if (cartDetails == null)
+        //    {
+        //        throw new Exception($"No details found for shopping cart with Id {shoppingCart.Id}");
+        //    }
+
+        //    // Add book to shopping cart
+        //    BookInShoppingCart bookInShoppingCart = new BookInShoppingCart
+        //    {
+        //        Book = book,
+        //        BookId = book.Id,
+        //        ShoppingCart = cartDetails,
+        //        ShoppingCartId = cartDetails.Id,
+        //        Quantity = 1
+        //    };
+
+        //    _bookInShoppingCartService.AddBookToShoppingCart(bookInShoppingCart);
+
+        //    // Optionally log the quantity of books in the cart
+        //    var bookInCart = _bookInShoppingCartService.GetAllBooksInShoppingCart(shoppingCart.Id).FirstOrDefault();
+        //    if (bookInCart != null)
+        //    {
+        //        Console.WriteLine("Quantity: " + bookInCart.Quantity);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("No books found in shopping cart");
+        //    }
+        
+
+
+        public IActionResult AddToCart (Guid Id)
+        {
+            var book = _bookService.getDetailsForBook(Id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var shoppingCart = _shoppingCartService.GetAllShoppingCartsForUser(userId).FirstOrDefault();
+
+
+
+            BookInShoppingCart bookInShoppingCart = new BookInShoppingCart
+            { 
+                Id = Guid.NewGuid(),
+                Book = book,
+                BookId = book.Id,
+                ShoppingCart = shoppingCart,
+                ShoppingCartId = shoppingCart.Id,
+                Quantity = 1
+            };
+            
+            if(bookInShoppingCart != null) {
+                _bookInShoppingCartService.AddBookToShoppingCart(bookInShoppingCart);
+                Console.Write("SUCCESS: Book added to cart");
+            }
+
+            return RedirectToAction("Index");
+        }
+
     }
+
+
 }

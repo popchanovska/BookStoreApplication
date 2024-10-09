@@ -12,10 +12,12 @@ namespace BookApplication.Service.Implementation
     public class ShoppingCartService : IShoppingCartsService
     {
         private readonly IRepository<ShoppingCart> _shoppingCartRepository;
+        private readonly IUserRepository _userRepository;
 
-        public ShoppingCartService(IRepository<ShoppingCart> shoppingCartRepository) {
+        public ShoppingCartService(IRepository<ShoppingCart> shoppingCartRepository, IUserRepository userRepository) {
             
             _shoppingCartRepository = shoppingCartRepository;
+            _userRepository=userRepository;
 
         }
         public List<ShoppingCart> GetAllShoppingCarts()
@@ -43,6 +45,19 @@ namespace BookApplication.Service.Implementation
         {
             ShoppingCart shoppingCart = GetDetailsForShoppingCart(id);
             _shoppingCartRepository.Delete(shoppingCart);
+        }
+        //public void AddBookToShoppingCart(Guid id, Book b)
+        //{
+        //    ShoppingCart shoppingCart = GetDetailsForShoppingCart(id);
+        //    shoppingCart.Books.Add(b);
+        //    _shoppingCartRepository.Update(shoppingCart);
+        //}   
+
+        public List<ShoppingCart> GetAllShoppingCartsForUser(string userId)
+        {
+            var user = _userRepository.Get(userId);
+            return _shoppingCartRepository.GetAll().Where(x => x.OwnerId.Equals(user.Id)).ToList();
+
         }
     }
 }

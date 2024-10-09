@@ -42,6 +42,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Publisher)
             </th>
+            <th>Buy</th>
             <th></th>
         </tr>
     </thead>
@@ -86,6 +87,9 @@
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
+            <td>
+                    <a asp-controller="ShoppingCarts" asp-action="AddToCart" asp-route-id="@item.Id">Add to Cart</a>
+                </td>
         </tr>
 }
     </tbody>
