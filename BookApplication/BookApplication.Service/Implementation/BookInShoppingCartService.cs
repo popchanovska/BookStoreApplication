@@ -46,7 +46,7 @@ namespace BookApplication.Service.Implementation
 
         public void EditBookInShoppingCart(Guid id, Book b)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException();//todo
         }
         
      

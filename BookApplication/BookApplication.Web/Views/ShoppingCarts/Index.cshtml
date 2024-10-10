@@ -4,44 +4,19 @@
 @{
     ViewData["Title"] = "Index";
     var booksInCart = ViewBag.BookInShoppingCart as List<BookInShoppingCart>;
-
-
 }
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h1>Books in Shopping Cart</h1>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Owner)
-            </th>
-            <th></th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Quantity</th>
+            <th>Edit</th>
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Owner.Email)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-    <tbody>
-    <tr>
-            <td>
-                <h3>Books in cart</h3>
-            </td>
-        </tr>
         @foreach (var bookInCart in booksInCart)
         {
             <tr>
@@ -49,13 +24,14 @@
                     @Html.DisplayFor(modelItem => bookInCart.Book.Title)
                 </td>
                 <td>
-                    <img src=bookInCart.Book.ImageUrl alt="Book image" />
+                    <img src="@bookInCart.Book.CoverImage" alt="Book image" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => bookInCart.Quantity)
                 </td>
                 <td>
-                    <a asp-action="RemoveBookFromCart" asp-route-id="@bookInCart.Id" >Remove</a>
+                    <a asp-action="RemoveBookFromCart" asp-route-id="@bookInCart.Id">Remove</a>
+                    <a asp-action="EditBookFromCart" asp-route-id="@bookInCart.Id">Edit</a> @*TODO*@
                 </td>
             </tr>
         }

@@ -37,7 +37,7 @@ namespace BookApplication.Web.Controllers
             Guid shpId = _shoppingCartService.GetAllShoppingCartsForUser(userId).FirstOrDefault().Id;
             ViewBag.BookInShoppingCart = _bookInShoppingCartService.GetAllBooksInShoppingCart(shpId);
 
-            if(User.Identity.IsAuthenticated == true)
+            if (User.Identity.IsAuthenticated == true)
                 return View(_shoppingCartService.GetAllShoppingCartsForUser(userId));
             return Unauthorized();
         }
@@ -178,10 +178,12 @@ namespace BookApplication.Web.Controllers
         {
             return _shoppingCartService.GetDetailsForShoppingCart(id) != null;
         }
-   
-        public IActionResult AddToCart (Guid Id)
+
+
+        [HttpPost]
+        public IActionResult AddToCart (Guid BookId, int bookQuantity)
         {
-            var book = _bookService.getDetailsForBook(Id);
+            var book = _bookService.getDetailsForBook(BookId);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var shoppingCart = _shoppingCartService.GetAllShoppingCartsForUser(userId).FirstOrDefault();
 
@@ -198,12 +200,11 @@ namespace BookApplication.Web.Controllers
                 BookId = book.Id,
                 ShoppingCart = shoppingCart,
                 ShoppingCartId = shoppingCart.Id,
-                Quantity = 1
+                Quantity = bookQuantity
             };
             
             if(bookInShoppingCart != null) {
                 _bookInShoppingCartService.AddBookToShoppingCart(bookInShoppingCart);
-                Console.Write("SUCCESS: Book added to cart");
             }
 
             return RedirectToAction("Index");
