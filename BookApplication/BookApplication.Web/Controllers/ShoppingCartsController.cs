@@ -219,6 +219,19 @@ namespace BookApplication.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public IActionResult EditBookQuantity(Guid BookInScId, int BookQuantity)
+        {
+            var book = _bookInShoppingCartService.GetBookInShoppingCart(BookInScId);
+            if (book != null)
+            {
+                book.Quantity = BookQuantity;
+                _bookInShoppingCartService.EditBookInShoppingCart(book);
+            }
+
+            return RedirectToAction("Index");
+        }
+
     }
 
 

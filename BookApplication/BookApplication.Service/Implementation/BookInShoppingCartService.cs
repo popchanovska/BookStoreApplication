@@ -44,20 +44,16 @@ namespace BookApplication.Service.Implementation
             _bookInShoppingCartRepository.Delete(bookInShoppingCart);
         }
 
-        public void EditBookInShoppingCart(Guid id, Book b)
+        public void EditBookInShoppingCart(BookInShoppingCart bsc)
         {
-            throw new NotImplementedException();//todo
+            BookInShoppingCart bookInShoppingCart = GetBookInShoppingCart(bsc.Id);
+            _bookInShoppingCartRepository.Update(bookInShoppingCart);
         }
-        
-     
+
+
         public List<BookInShoppingCart> GetAllBooksInShoppingCart(Guid id)
         {
             return _bookInShoppingCartRepository.GetAll().Where(x => x.ShoppingCart.Id == id).ToList();
-        }
-
-        public BookInShoppingCart GetBookInShoppingCart()
-        {
-            throw new NotImplementedException();
         }
 
         public BookInShoppingCart GetBookInShoppingCart(Guid id)

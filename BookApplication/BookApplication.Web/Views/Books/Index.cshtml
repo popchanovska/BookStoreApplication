@@ -87,11 +87,7 @@
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
-            @* <td>
-                    <a asp-controller="ShoppingCarts" asp-action="AddToCart" asp-route-id="@item.Id">Add to Cart</a>
-                </td> *@
             <td>
-                <!-- Input field for quantity -->
                 <form asp-controller="ShoppingCarts" asp-action="AddToCart" method="post">
                     <input type="hidden" name="BookId" value="@item.Id" />
                     <input type="number" name="bookQuantity" min="1" value="1" class="form-control" style="width: 80px;" />
