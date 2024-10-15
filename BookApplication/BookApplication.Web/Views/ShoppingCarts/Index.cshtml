@@ -1,43 +1,47 @@
 ﻿@using BookApplication.Domain.Domain
-@model IEnumerable<BookApplication.Domain.Domain.ShoppingCart>
-
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Index";
     var booksInCart = ViewBag.BookInShoppingCart as List<BookInShoppingCart>;
+    var totalprice = ViewBag.TotalPrice;
 }
 <h1>Books in Shopping Cart</h1>
 <table class="table">
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Image</th>
-            <th>Quantity</th>
-            <th>Edit</th>
+    <tr>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Quantity</th>
+        <th>Edit</th>
 
-        </tr>
+    </tr>
     </thead>
     <tbody>
-        @foreach (var bookInCart in booksInCart)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => bookInCart.Book.Title)
-                </td>
-                <td>
-                    <img src="@bookInCart.Book.CoverImage" alt="Book image" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => bookInCart.Quantity)
-                    <form asp-controller="ShoppingCarts" asp-action="EditBookQuantity" method="post">
-                        <input type="hidden" name="BookInScId" value="@bookInCart.Id" />
-                        <input type="number" name="BookQuantity" value="@bookInCart.Quantity" class="form-control" style="width: 80px;" />
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                    </form>
-                </td>
-                <td>
-                    <a asp-action="RemoveBookFromCart" asp-route-id="@bookInCart.Id">Remove</a>
-                </td>
-            </tr>
-        }
+    @foreach (var bookInCart in booksInCart)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => bookInCart.Book.Title)
+            </td>
+            <td>
+                <img src="@bookInCart.Book.CoverImage" alt="Book image" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => bookInCart.Quantity)
+                <form asp-controller="ShoppingCarts" asp-action="EditBookQuantity" method="post">
+                    <input type="hidden" name="BookInScId" value="@bookInCart.Id" />
+                    <input type="number" name="BookQuantity" value="@bookInCart.Quantity" class="form-control" style="width: 80px;" />
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </form>
+            </td>
+            <td>
+                <a asp-action="RemoveBookFromCart" asp-route-id="@bookInCart.Id">Remove</a>
+            </td>
+        </tr>
+    }
     </tbody>
 </table>
+
+<h3>
+    Total price: @totalprice.ToString("C", new System.Globalization.CultureInfo("mk-MK"))
+</h3>

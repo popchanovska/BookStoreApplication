@@ -35,7 +35,9 @@ namespace BookApplication.Web.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             Guid shpId = _shoppingCartService.GetAllShoppingCartsForUser(userId).FirstOrDefault().Id;
-            ViewBag.BookInShoppingCart = _bookInShoppingCartService.GetAllBooksInShoppingCart(shpId);
+            var booksInShp = _bookInShoppingCartService.GetAllBooksInShoppingCart(shpId);
+            ViewBag.BookInShoppingCart = booksInShp;
+            ViewBag.TotalPrice = booksInShp.Select(x => x.Book.Price * x.Quantity).Sum();
 
             if (User.Identity.IsAuthenticated == true)
                 return View(_shoppingCartService.GetAllShoppingCartsForUser(userId));
