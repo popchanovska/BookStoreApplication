@@ -25,7 +25,7 @@ namespace BookApplication.Service.Implementation
         {
             var existingBookInCart = _bookInShoppingCartRepository
                    .GetAll()
-                   .FirstOrDefault(x => x.Book.Id == bsc.Book.Id && x.ShoppingCart.Id == bsc.ShoppingCart.Id);
+                   .FirstOrDefault(x => x.Book?.Id == bsc.Book.Id && x.ShoppingCart.Id == bsc.ShoppingCart.Id);
 
             if (existingBookInCart==null)
             {
