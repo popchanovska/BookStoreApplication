@@ -11,5 +11,7 @@ namespace BookApplication.Repository.Interface
     {
         List<Order> GetAllOrders();
         Order GetDetailsForOrder(BaseEntity id);
+        void Insert(Order o);
+        void Delete(BaseEntity id);
     }
 }

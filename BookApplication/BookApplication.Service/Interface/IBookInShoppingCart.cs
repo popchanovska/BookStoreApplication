@@ -13,7 +13,7 @@ namespace BookApplication.Service.Interface
         void AddBookToShoppingCart(BookInShoppingCart bsc);
         void DeleteBookFromShoppingCart(BookInShoppingCart bsc);
         void EditBookInShoppingCart(BookInShoppingCart bsc);
-        List<BookInShoppingCart> GetAllBooksInShoppingCart(Guid id);
+        List<BookInShoppingCart> GetAllBooksInShoppingCart(Guid? id);
 
         BookInShoppingCart GetBookInShoppingCart(Guid id);  
 

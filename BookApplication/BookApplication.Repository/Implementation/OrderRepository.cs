@@ -22,19 +22,38 @@ namespace BookApplication.Repository.Implementation
         public List<Order> GetAllOrders()
         {
             return entities
-                .Include(z => z.BooksInOrder)
+                .Include(z => z.shoppingCart)
                 .Include(z => z.User)
-                .Include("BooksInOrder.Book")
                 .ToList();
         }
 
         public Order GetDetailsForOrder(BaseEntity id)
         {
             return entities
-                .Include(z => z.BooksInOrder)
+                .Include(z => z.shoppingCart)
                 .Include(z => z.User)
-                .Include("BooksInOrder.Book")
                 .SingleOrDefaultAsync(z => z.Id == id.Id).Result;
         }
+
+        public void Insert(Order order)
+        {
+            if (order == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            entities.Add(order);
+            context.SaveChanges();
+        }
+
+        public void Delete(BaseEntity id)
+        {
+            if (id == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            var entity = entities.SingleOrDefault(s => s.Id == id.Id);
+            entities.Remove(entity);
+            context.SaveChanges();
+        }   
     }
 }

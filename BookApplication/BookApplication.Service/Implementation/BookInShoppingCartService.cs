@@ -14,11 +14,13 @@ namespace BookApplication.Service.Implementation
     {
         private readonly IRepository<BookInShoppingCart> _bookInShoppingCartRepository;
         private readonly IShoppingCartsService _shoppingCartService;
+        private readonly IBookService _bookService;
 
-        public BookInShoppingCartService(IRepository<BookInShoppingCart> bookInShoppingCartRepository, IShoppingCartsService shoppingCartService)
+        public BookInShoppingCartService(IRepository<BookInShoppingCart> bookInShoppingCartRepository, IShoppingCartsService shoppingCartService, IBookService bookService)
         {
             _bookInShoppingCartRepository = bookInShoppingCartRepository;
             _shoppingCartService = shoppingCartService;
+            _bookService = bookService;
         }
 
         public void AddBookToShoppingCart(BookInShoppingCart bsc)
@@ -35,30 +37,44 @@ namespace BookApplication.Service.Implementation
             {
                 existingBookInCart.Quantity += bsc.Quantity;
                 _bookInShoppingCartRepository.Update(existingBookInCart);
+
             }
+            _shoppingCartService.UpdateExistingShoppingCart(bsc.ShoppingCart);
         }
 
         public void DeleteBookFromShoppingCart(BookInShoppingCart b)
         {
             BookInShoppingCart bookInShoppingCart = GetBookInShoppingCart(b.Id);
             _bookInShoppingCartRepository.Delete(bookInShoppingCart);
+            _shoppingCartService.UpdateExistingShoppingCart(b.ShoppingCart);
+
         }
 
         public void EditBookInShoppingCart(BookInShoppingCart bsc)
         {
             BookInShoppingCart bookInShoppingCart = GetBookInShoppingCart(bsc.Id);
             _bookInShoppingCartRepository.Update(bookInShoppingCart);
+            _shoppingCartService.UpdateExistingShoppingCart(bsc.ShoppingCart);
+
         }
 
 
-        public List<BookInShoppingCart> GetAllBooksInShoppingCart(Guid id)
+        public List<BookInShoppingCart> GetAllBooksInShoppingCart(Guid? id)
         {
-            return _bookInShoppingCartRepository.GetAll().Where(x => x.ShoppingCart.Id == id).ToList();
+            var booksInShoppingCart = _bookInShoppingCartRepository.GetAll().Where(x => x.ShoppingCartId == id).ToList();
+            foreach(var book in booksInShoppingCart)
+            {
+                book.Book = _bookService.getDetailsForBook(book.BookId);
+            }
+            return booksInShoppingCart;
         }
 
         public BookInShoppingCart GetBookInShoppingCart(Guid id)
         {
-            return _bookInShoppingCartRepository.Get(id);
+            var book = _bookInShoppingCartRepository.Get(id);
+            book.Book = _bookService.getDetailsForBook(book.BookId);
+            book.ShoppingCart = _shoppingCartService.GetDetailsForShoppingCart(book.ShoppingCartId);
+            return book;
         }
     }
 }

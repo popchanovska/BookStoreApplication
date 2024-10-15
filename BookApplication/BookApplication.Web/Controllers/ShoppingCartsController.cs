@@ -21,13 +21,17 @@ namespace BookApplication.Web.Controllers
         private readonly IShoppingCartsService _shoppingCartService;
         private readonly IBookInShoppingCart _bookInShoppingCartService;
         private readonly IBookService _bookService;
+        private readonly IOrderService _orderService;
+        private readonly IAddressService _addressService;
 
-        public ShoppingCartsController(IShoppingCartsService shoppingCartService, ApplicationDbContext context, IBookInShoppingCart bookInShoppingCartService, IBookService bookService)
+        public ShoppingCartsController(IShoppingCartsService shoppingCartService, ApplicationDbContext context, IBookInShoppingCart bookInShoppingCartService, IBookService bookService,IOrderService orderService,IAddressService addressService)
         {
             _shoppingCartService = shoppingCartService;
             _context = context;
-            _bookService = bookService; 
+            _bookService = bookService;
             _bookInShoppingCartService = bookInShoppingCartService;
+            _orderService = orderService;
+            _addressService = addressService;
         }
 
         // GET: ShoppingCarts
@@ -38,6 +42,7 @@ namespace BookApplication.Web.Controllers
             var booksInShp = _bookInShoppingCartService.GetAllBooksInShoppingCart(shpId);
             ViewBag.BookInShoppingCart = booksInShp;
             ViewBag.TotalPrice = booksInShp.Select(x => x.Book.Price * x.Quantity).Sum();
+            ViewBag.ShoppingCartId = shpId;
 
             if (User.Identity.IsAuthenticated == true)
                 return View(_shoppingCartService.GetAllShoppingCartsForUser(userId));
@@ -234,7 +239,75 @@ namespace BookApplication.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        private Address CreateAddress(Address address)
+        {
+
+            if (address != null)
+            { 
+                _addressService.CreateAddress(address);
+                return address;
+            }
+            return null;
+
+        }
+        [HttpPost]
+        public IActionResult CreateOrder(Guid Id, [Bind("Street,City,Country,ZipCode")] Address addr, Double totalPrice)
+        {
+            if (ModelState.IsValid)
+            {
+                var shoppingCart = _shoppingCartService.GetDetailsForShoppingCart(Id);
+                if (shoppingCart != null)
+                {
+                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+                    addr.Id = Guid.NewGuid();
+                    var address = CreateAddress(addr);
+                    if (user != null && address != null)
+                    {
+                        Order order = new Order
+                        {
+                            Id = Guid.NewGuid(),
+                            Address = address,
+                            AddressId = address.Id,
+                            User = user,
+                            UserId = user.Id,
+                            shoppingCart = shoppingCart,
+                            TotalPrice = totalPrice,
+                        };
+                        _orderService.AddNewOrder(order);
+
+                        return RedirectToAction("Success", new { orderId = order.Id });
+
+                    }
+                }
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
+            return RedirectToAction("Index");
+        }
+            public ActionResult Success(Guid orderId)
+            {
+         
+            BaseEntity Id = new BaseEntity
+                {
+                    Id = orderId
+                };
+                var order = _orderService.GetDetailsForOrder(Id);
+
+            var shpId = _orderService.GetDetailsForOrder(Id).shoppingCart.Id;
+            ViewBag.ShoppingCartId = shpId;
+            ViewBag.TotalPrice = _orderService.GetDetailsForOrder(Id).TotalPrice;
+            var booksInShp = _bookInShoppingCartService.GetAllBooksInShoppingCart(shpId);
+            ViewBag.BooksInShoppingCart = booksInShp;
+
+            if (order == null)
+                {
+                    return NotFound(); // Handle case where the order is not found
+                }
+
+                return View(order); // Pass the order to the Success view
+            }
+
+        }
+
+
     }
-
-
-}

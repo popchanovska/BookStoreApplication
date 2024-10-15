@@ -4,6 +4,7 @@ using BookApplication.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,6 @@ namespace BookApplication.Service.Implementation
             
             _shoppingCartRepository = shoppingCartRepository;
             _userRepository=userRepository;
-
         }
         public List<ShoppingCart> GetAllShoppingCarts()
         {
@@ -28,7 +28,10 @@ namespace BookApplication.Service.Implementation
 
         public ShoppingCart GetDetailsForShoppingCart(Guid? id)
         {
-                return _shoppingCartRepository.Get(id);
+            var shoppingCart = _shoppingCartRepository.Get(id);
+            //shoppingCart.BooksInShoppingCart = 
+           
+            return shoppingCart;
         }
 
         public void CreateNewShoppingCart(ShoppingCart s)
@@ -38,7 +41,8 @@ namespace BookApplication.Service.Implementation
 
         public void UpdateExistingShoppingCart(ShoppingCart s)
         {
-            _shoppingCartRepository.Update(s);
+            ShoppingCart tmp = GetDetailsForShoppingCart(s.Id);
+            _shoppingCartRepository.Update(tmp);
         }
 
         public void DeleteShoppingCart(Guid id)

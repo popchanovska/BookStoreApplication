@@ -29,10 +29,9 @@ namespace BookApplication.Service.Implementation
             _addressRepository.Delete(a);
         }
 
-        public string GetAddress(Guid id)
+        public Address GetAddress(Guid id)
         {
-            Address a = _addressRepository.Get(id);
-            return a.Street + " " + a.City + " " + a.Country + " " + a.ZipCode;
+            return _addressRepository.Get(id);
         }
 
         public List<Address> GetAllAddresses()

@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
     var booksInCart = ViewBag.BookInShoppingCart as List<BookInShoppingCart>;
     var totalprice = ViewBag.TotalPrice;
+    var shoppingCartId = ViewBag.ShoppingCartId;
 }
 <h1>Books in Shopping Cart</h1>
 <table class="table">
@@ -12,6 +13,7 @@
         <th>Title</th>
         <th>Image</th>
         <th>Quantity</th>
+        <th>Price</th>
         <th>Edit</th>
 
     </tr>
@@ -27,12 +29,15 @@
                 <img src="@bookInCart.Book.CoverImage" alt="Book image" />
             </td>
             <td>
-                @Html.DisplayFor(modelItem => bookInCart.Quantity)
-                <form asp-controller="ShoppingCarts" asp-action="EditBookQuantity" method="post">
+@*                 @Html.DisplayFor(modelItem => bookInCart.Quantity) *@ 
+                        <form asp-controller="ShoppingCarts" asp-action="EditBookQuantity" method="post">
                     <input type="hidden" name="BookInScId" value="@bookInCart.Id" />
                     <input type="number" name="BookQuantity" value="@bookInCart.Quantity" class="form-control" style="width: 80px;" />
                     <button type="submit" class="btn btn-primary">Edit</button>
                 </form>
+            </td>
+            <td>
+                <p>@(bookInCart.Book.Price * bookInCart.Quantity) ден.<p>
             </td>
             <td>
                 <a asp-action="RemoveBookFromCart" asp-route-id="@bookInCart.Id">Remove</a>
@@ -45,3 +50,14 @@
 <h3>
     Total price: @totalprice.ToString("C", new System.Globalization.CultureInfo("mk-MK"))
 </h3>
+
+<form asp-controller="ShoppingCarts" asp-action="CreateOrder">
+    <input type="hidden" name="Id" value="@shoppingCartId" />
+    <input type="text" name="Street" />
+    <input type="text" name="City" />
+    <input type="text" name="Country" />
+    <input type="text" name="ZipCode"/>
+    <input type="hidden" name="totalPrice" value="@totalprice" />
+
+    <button type="submit" class="btn btn-primary">Order</button>
+</form>
