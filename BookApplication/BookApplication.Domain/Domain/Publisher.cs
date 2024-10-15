@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookApplication.Domain.Domain
 {
@@ -15,5 +12,13 @@ namespace BookApplication.Domain.Domain
         public Guid? AddressId { get; set; }
         public Address? Address { get; set; }
         public ICollection<Book>? Books { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
+        public string PublisherDisplay => ToString();
+
+
     }
 }

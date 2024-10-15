@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,5 +15,10 @@ namespace BookApplication.Domain.Domain
         public DateOnly DateOfBirth { get; set; }
         public string? Image { get; set; }
         public ICollection<Book>? Books { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }
