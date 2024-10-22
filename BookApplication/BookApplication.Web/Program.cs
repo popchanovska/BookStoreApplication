@@ -2,6 +2,7 @@ using BookApplication.Domain.Identity;
 using BookApplication.Repository;
 using BookApplication.Repository.Implementation;
 using BookApplication.Repository.Interface;
+using BookApplication.Service;
 using BookApplication.Service.Implementation;
 using BookApplication.Service.Interface;
 using Microsoft.AspNetCore.Identity;
@@ -24,6 +25,7 @@ builder.Services.AddScoped(typeof(IUserRepository),typeof(UserRepository));
 builder.Services.AddScoped(typeof(IOrderRepository),typeof(OrderRepository));
 
 
+
 builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<IBookService, BookService>();
 builder.Services.AddTransient<IAuthorService, AuthorService>();
@@ -34,6 +36,7 @@ builder.Services.AddTransient<IBookInShoppingCart,BookInShoppingCartService>();
 builder.Services.AddTransient<IOrderService,OrderService>();
 builder.Services.AddTransient<IBookInOrderService,BookInOrderService>();
 
+builder.Services.AddTransient<MainService>();
 
 
 

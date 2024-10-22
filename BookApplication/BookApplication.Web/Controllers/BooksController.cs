@@ -8,25 +8,22 @@ using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
 using BookApplication.Repository;
 using BookApplication.Service.Interface;
+using BookApplication.Service;
 
 namespace BookApplication.Web.Controllers
 {
     public class BooksController : Controller
     {
-        private readonly IBookService _bookService;
-        private readonly IAuthorService _authorService;
-        private readonly IPublisherService _publisherService;
-        public BooksController(IBookService bookService, IAuthorService authorService, IPublisherService publisherService)
+        private readonly MainService mainService;
+        public BooksController(MainService _mainService)
         {
-            _bookService = bookService;
-            _authorService = authorService;
-            _publisherService = publisherService;   
+            mainService = _mainService;
         }
 
         // GET: Books
         public IActionResult Index()
         {
-            return View(_bookService.GetAllBooks());
+            return View(mainService.Book.GetAllBooks());
         }
 
         // GET: Books/Details/5
@@ -37,7 +34,7 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var book = _bookService.getDetailsForBook(id);
+            var book = mainService.Book.getDetailsForBook(id);
             if (book == null)
             {
                 return NotFound();
@@ -50,9 +47,9 @@ namespace BookApplication.Web.Controllers
         public IActionResult Create()
         {
             // ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", _authorService.GetNamesForAuthors().ToString());
-            ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", "FullName");
+            ViewData["AuthorId"] = new SelectList(mainService.Author.GetNamesForAuthors(), "Id", "FullName");
 
-            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Name");
+            ViewData["PublisherId"] = new SelectList(mainService.Publisher.GetAllPublishers(), "Id", "Name");
             return View();
         }
 
@@ -66,11 +63,11 @@ namespace BookApplication.Web.Controllers
             if (ModelState.IsValid)
             {
                 book.Id = Guid.NewGuid();
-                _bookService.CreateNewBook(book);
+                mainService.Book.CreateNewBook(book);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", "FullName");
-            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Name", book.PublisherId);
+            ViewData["AuthorId"] = new SelectList(mainService.Author.GetNamesForAuthors(), "Id", "FullName");
+            ViewData["PublisherId"] = new SelectList(mainService.Publisher.GetAllPublishers(), "Id", "Name", book.PublisherId);
             return View(book);
         }
 
@@ -82,13 +79,13 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var book = _bookService.getDetailsForBook(id);
+            var book = mainService.Book.getDetailsForBook(id);
             if (book == null)
             {
                 return NotFound();
             }
-            ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", "FullName");
-            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Name", book.PublisherId);
+            ViewData["AuthorId"] = new SelectList(mainService.Author.GetNamesForAuthors(), "Id", "FullName");
+            ViewData["PublisherId"] = new SelectList(mainService.Publisher.GetAllPublishers(), "Id", "Name", book.PublisherId);
             return View(book);
         }
 
@@ -108,7 +105,7 @@ namespace BookApplication.Web.Controllers
             {
                 try
                 {
-                    _bookService.UpdateExistingBook(book);
+                    mainService.Book.UpdateExistingBook(book);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -123,8 +120,8 @@ namespace BookApplication.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", "FullName");
-            ViewData["PublisherId"] = new SelectList(_publisherService.GetAllPublishers(), "Id", "Name", book.PublisherId);
+            ViewData["AuthorId"] = new SelectList(mainService.Author.GetNamesForAuthors(), "Id", "FullName");
+            ViewData["PublisherId"] = new SelectList(mainService.Publisher.GetAllPublishers(), "Id", "Name", book.PublisherId);
             return View(book);
         }
 
@@ -136,13 +133,13 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var book = _bookService.getDetailsForBook(id);
+            var book = mainService.Book.getDetailsForBook(id);
             if (book == null)
             {
                 return NotFound();
             }
 
-            _bookService.DeleteBook(id);
+            mainService.Book.DeleteBook(id);
 
             return View(book);
         }
@@ -152,10 +149,10 @@ namespace BookApplication.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)
         {
-            var book = _bookService.getDetailsForBook(id);
+            var book = mainService.Book.getDetailsForBook(id);
             if (book != null)
             {
-                _bookService.DeleteBook(id);
+                mainService.Book.DeleteBook(id);
             }
 
             return RedirectToAction(nameof(Index));
@@ -163,7 +160,7 @@ namespace BookApplication.Web.Controllers
 
         private bool BookExists(Guid id)
         {
-            return _bookService.getDetailsForBook(id)!=null;
+            return mainService.Book.getDetailsForBook(id) != null;
         }
     }
 }

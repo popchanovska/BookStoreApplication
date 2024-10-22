@@ -8,25 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
 using BookApplication.Repository;
 using BookApplication.Service.Interface;
+using BookApplication.Service;
 
 namespace BookApplication.Web.Controllers
 {
     public class PublishersController : Controller
     {
 
-        private readonly IPublisherService _publisherService;
-        private readonly IAddressService _addressService;
-        public PublishersController(IPublisherService publisherService, IAddressService addressService)
+        private readonly MainService mainService;
+        public PublishersController(MainService _mainService)
         {
-            _publisherService=publisherService;
-            _addressService = addressService;
+            mainService = _mainService;
         }
 
         // GET: Publishers
         public IActionResult Index()
         {
-            ViewData["AddressId"] = new SelectList(_addressService.GetAllAddresses(), "Id", "City");
-            return View(_publisherService.GetAllPublishers());
+            ViewData["AddressId"] = new SelectList(mainService.Address.GetAllAddresses(), "Id", "City");
+            return View(mainService.Publisher.GetAllPublishers());
 
         }
 
@@ -38,7 +37,7 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var publisher = _publisherService.GetPublisher(id);
+            var publisher = mainService.Publisher.GetPublisher(id);
             {
                 return NotFound();
             }
@@ -71,11 +70,11 @@ namespace BookApplication.Web.Controllers
                 publisher.Id = Guid.NewGuid();
 
                 // Save the Address entity
-                _addressService.CreateAddress(publisher.Address);
+                mainService.Address.CreateAddress(publisher.Address);
 
                 // Associate the AddressId with the Publisher and save Publisher
                 publisher.AddressId = publisher.Address.Id;  // Ensure Address has an ID (set by database or manually)
-                _publisherService.CreatePublisher(publisher);
+                mainService.Publisher.CreatePublisher(publisher);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -91,12 +90,12 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var publisher = _publisherService.GetPublisher(id);
+            var publisher = mainService.Publisher.GetPublisher(id);
             if (publisher == null)
             {
                 return NotFound();
             }
-           // ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "City", publisher.AddressId);
+            // ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "City", publisher.AddressId);
             return View(publisher);
         }
 
@@ -116,7 +115,7 @@ namespace BookApplication.Web.Controllers
             {
                 try
                 {
-                    _publisherService.UpdatePublisher(publisher);
+                    mainService.Publisher.UpdatePublisher(publisher);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -131,7 +130,7 @@ namespace BookApplication.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-           // ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "City", publisher.AddressId);
+            // ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "City", publisher.AddressId);
             return View(publisher);
         }
 
@@ -143,7 +142,7 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var publisher = _publisherService.GetPublisher(id);
+            var publisher = mainService.Publisher.GetPublisher(id);
             if (publisher == null)
             {
                 return NotFound();
@@ -157,10 +156,10 @@ namespace BookApplication.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)
         {
-            var publisher = _publisherService.GetPublisher(id);
+            var publisher = mainService.Publisher.GetPublisher(id);
             if (publisher != null)
             {
-                _publisherService.DeletePublisher(id);
+                mainService.Publisher.DeletePublisher(id);
             }
 
             return RedirectToAction(nameof(Index));
@@ -168,7 +167,7 @@ namespace BookApplication.Web.Controllers
 
         private bool PublisherExists(Guid id)
         {
-            return _publisherService.GetPublisher(id)!=null;
+            return mainService.Publisher.GetPublisher(id) != null;
         }
     }
 }
