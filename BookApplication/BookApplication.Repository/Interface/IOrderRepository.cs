@@ -13,5 +13,6 @@ namespace BookApplication.Repository.Interface
         Order GetDetailsForOrder(BaseEntity id);
         void Insert(Order o);
         void Delete(BaseEntity id);
+        void Update(Order o);
     }
 }

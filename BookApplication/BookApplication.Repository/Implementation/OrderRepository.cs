@@ -54,6 +54,17 @@ namespace BookApplication.Repository.Implementation
             var entity = entities.SingleOrDefault(s => s.Id == id.Id);
             entities.Remove(entity);
             context.SaveChanges();
-        }   
+        }
+
+        public void Update(Order o)
+        {
+            if (o == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            entities.Update(o);
+            context.SaveChanges();
+
+        }
     }
 }

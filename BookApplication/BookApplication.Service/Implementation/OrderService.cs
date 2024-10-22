@@ -9,14 +9,12 @@ public class OrderService : IOrderService
     private readonly IOrderRepository _orderRepository;
     private readonly IAddressService  _addressService;
     private readonly IBookInShoppingCart _bookInShoppingCart;
-    private readonly IRepository<Order> _iOrderRepository;
 
-    public OrderService(IOrderRepository orderRepository, IAddressService addressService, IBookInShoppingCart bookInShoppingCart, IRepository<Order> iOrderRepository)
+    public OrderService(IOrderRepository orderRepository, IAddressService addressService, IBookInShoppingCart bookInShoppingCart)
     {
         _orderRepository = orderRepository;
         _addressService = addressService;
         _bookInShoppingCart = bookInShoppingCart;
-        _iOrderRepository = iOrderRepository;
     }
 
 
@@ -59,6 +57,6 @@ public class OrderService : IOrderService
 
     public void UpdateOrder(Order o)
     {
-        _iOrderRepository.Update(o);
+        _orderRepository.Update(o);
     }
 }

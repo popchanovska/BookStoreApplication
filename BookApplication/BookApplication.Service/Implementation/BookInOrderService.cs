@@ -7,14 +7,12 @@ namespace BookApplication.Service.Implementation;
 public class BookInOrderService : IBookInOrderService
 {
     private readonly IRepository<BookInOrder> _bookInOrderRepository;
-    private readonly IRepository<Book> _bookRepository;
     private readonly IRepository<Order> _orderRepository;
 
-    public BookInOrderService(IRepository<BookInOrder> repository, IRepository<Order> orderRepository, IRepository<Book> bookRepository)
+    public BookInOrderService(IRepository<BookInOrder> repository, IRepository<Order> orderRepository)
     {
         _bookInOrderRepository = repository;
         _orderRepository = orderRepository;
-        _bookRepository = bookRepository;
     }
 
     public void AddBookInOrder(BookInOrder bookInOrder)
