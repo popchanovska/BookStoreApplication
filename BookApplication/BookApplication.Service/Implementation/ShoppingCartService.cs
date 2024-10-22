@@ -26,6 +26,7 @@ namespace BookApplication.Service.Implementation
 
         }
 
+    
         public ShoppingCart GetDetailsForShoppingCart(Guid? id)
         {
             var shoppingCart = _shoppingCartRepository.Get(id);

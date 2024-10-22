@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using BookApplication.Domain.Domain;
 using BookApplication.Repository;
+using BookApplication.Repository.Implementation;
 using BookApplication.Service.Implementation;
 using BookApplication.Service.Interface;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -23,8 +24,10 @@ namespace BookApplication.Web.Controllers
         private readonly IBookService _bookService;
         private readonly IOrderService _orderService;
         private readonly IAddressService _addressService;
-
-        public ShoppingCartsController(IShoppingCartsService shoppingCartService, ApplicationDbContext context, IBookInShoppingCart bookInShoppingCartService, IBookService bookService,IOrderService orderService,IAddressService addressService)
+        private readonly IBookInOrderService _bookInOrderService;
+        
+            
+        public ShoppingCartsController(IShoppingCartsService shoppingCartService, ApplicationDbContext context, IBookInShoppingCart bookInShoppingCartService, IBookService bookService,IOrderService orderService,IAddressService addressService, IBookInOrderService bookInOrderService)
         {
             _shoppingCartService = shoppingCartService;
             _context = context;
@@ -32,6 +35,8 @@ namespace BookApplication.Web.Controllers
             _bookInShoppingCartService = bookInShoppingCartService;
             _orderService = orderService;
             _addressService = addressService;
+            _bookInOrderService = bookInOrderService;
+            
         }
 
         // GET: ShoppingCarts
@@ -250,6 +255,27 @@ namespace BookApplication.Web.Controllers
             return null;
 
         }
+
+        private List<BookInOrder> CreateBookInOrder(List<BookInShoppingCart> bookInShoppingCarts, Guid orderId)
+        {
+            List<BookInOrder> booksInOrder = new List<BookInOrder>();
+
+            foreach (var book in bookInShoppingCarts)
+            {
+                var bookInOrder = new BookInOrder()
+                {
+                    Id = new Guid(),
+                    OrderId = orderId,
+                    BookId = book.BookId,
+                    Quantity = book.Quantity,
+                };
+                _bookInOrderService.AddBookInOrder(bookInOrder);
+                booksInOrder.Add(bookInOrder);
+            }
+            
+            return booksInOrder;
+        }
+        
         [HttpPost]
         public IActionResult CreateOrder(Guid Id, [Bind("Street,City,Country,ZipCode")] Address addr, Double totalPrice)
         {
@@ -264,18 +290,23 @@ namespace BookApplication.Web.Controllers
                     var address = CreateAddress(addr);
                     if (user != null && address != null)
                     {
+                        Guid orderId = Guid.NewGuid();
                         Order order = new Order
                         {
-                            Id = Guid.NewGuid(),
+                            Id = orderId,
                             Address = address,
                             AddressId = address.Id,
                             User = user,
                             UserId = user.Id,
                             shoppingCart = shoppingCart,
                             TotalPrice = totalPrice,
+                            // BooksInOrder = CreateBookInOrder(_bookInShoppingCartService.GetAllBooksInShoppingCart(Id),orderId)
                         };
-                        _orderService.AddNewOrder(order);
 
+                        _orderService.AddNewOrder(order);
+                        order.BooksInOrder = CreateBookInOrder(_bookInShoppingCartService.GetAllBooksInShoppingCart(Id), orderId);
+                        _orderService.UpdateOrder(order);
+                        _bookInShoppingCartService.EmptyCart(Id);
                         return RedirectToAction("Success", new { orderId = order.Id });
 
                     }
@@ -301,10 +332,10 @@ namespace BookApplication.Web.Controllers
 
             if (order == null)
                 {
-                    return NotFound(); // Handle case where the order is not found
+                    return NotFound(); 
                 }
 
-                return View(order); // Pass the order to the Success view
+                return View(order); 
             }
 
         }

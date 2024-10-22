@@ -42,6 +42,11 @@ namespace BookApplication.Service.Implementation
             _shoppingCartService.UpdateExistingShoppingCart(bsc.ShoppingCart);
         }
 
+        public void EmptyCart(Guid Id)
+        {
+            GetAllBooksInShoppingCart(Id).ToList().ForEach(x => _bookInShoppingCartRepository.Delete(x));
+        }
+        
         public void DeleteBookFromShoppingCart(BookInShoppingCart b)
         {
             BookInShoppingCart bookInShoppingCart = GetBookInShoppingCart(b.Id);

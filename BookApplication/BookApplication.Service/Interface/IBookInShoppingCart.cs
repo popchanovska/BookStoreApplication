@@ -14,7 +14,7 @@ namespace BookApplication.Service.Interface
         void DeleteBookFromShoppingCart(BookInShoppingCart bsc);
         void EditBookInShoppingCart(BookInShoppingCart bsc);
         List<BookInShoppingCart> GetAllBooksInShoppingCart(Guid? id);
-
+        void EmptyCart(Guid Id);
         BookInShoppingCart GetBookInShoppingCart(Guid id);  
 
     }

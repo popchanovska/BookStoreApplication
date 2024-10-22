@@ -32,6 +32,7 @@ builder.Services.AddTransient<IAddressService, AddressService>();
 builder.Services.AddTransient<IShoppingCartsService,ShoppingCartService>();
 builder.Services.AddTransient<IBookInShoppingCart,BookInShoppingCartService>();
 builder.Services.AddTransient<IOrderService,OrderService>();
+builder.Services.AddTransient<IBookInOrderService,BookInOrderService>();
 
 
 

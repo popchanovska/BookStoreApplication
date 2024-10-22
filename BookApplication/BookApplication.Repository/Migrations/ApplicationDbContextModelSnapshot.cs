@@ -183,6 +183,9 @@ namespace BookApplication.Repository.Migrations
                     b.Property<Guid>("AddressId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
 
