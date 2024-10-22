@@ -9,22 +9,24 @@ using BookApplication.Domain.Domain;
 using BookApplication.Repository;
 using Microsoft.AspNetCore.Authorization;
 using BookApplication.Service.Interface;
+using BookApplication.Service;
 
 namespace BookApplication.Web.Controllers
 {
     public class AuthorsController : Controller
     {
-        private readonly IAuthorService _authorService;
+      //  private readonly IAuthorService _authorService;
+        private readonly MainService mainService;
 
-        public AuthorsController(IAuthorService authorService)
+        public AuthorsController(MainService _mainService)
         {
-            _authorService = authorService;
+            mainService = _mainService;
         }
 
         // GET: Authors
         public IActionResult Index()
         {
-            return View(_authorService.GetAllAuthors());
+            return View(mainService.Author.GetAllAuthors());
         }
 
         // GET: Authors/Details/5
@@ -35,7 +37,7 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var author = _authorService.getDetailsForAuthor(id);
+            var author = mainService.Author.getDetailsForAuthor(id);
             if (author == null)
             {
                 return NotFound();
@@ -60,7 +62,7 @@ namespace BookApplication.Web.Controllers
             if (ModelState.IsValid)
             {
                 author.Id = Guid.NewGuid();
-                _authorService.CreateNewAuthor(author);
+                mainService.Author.CreateNewAuthor(author);
                 return RedirectToAction(nameof(Index));
             }
             return View(author);
@@ -74,7 +76,7 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var author = _authorService.getDetailsForAuthor(id);
+            var author = mainService.Author.getDetailsForAuthor(id);
             if (author == null)
             {
                 return NotFound();
@@ -98,7 +100,7 @@ namespace BookApplication.Web.Controllers
             {
                 try
                 {
-                    _authorService.UpdateExistingAuthor(author);
+                    mainService.Author.UpdateExistingAuthor(author);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -124,7 +126,7 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var author = _authorService.getDetailsForAuthor(id) as Author;
+            var author = mainService.Author.getDetailsForAuthor(id) as Author;
             if (author == null)
             {
                 return NotFound();
@@ -140,7 +142,7 @@ namespace BookApplication.Web.Controllers
         {
             if (id != null)
             {
-                _authorService.DeleteAuthor(id);
+                mainService.Author.DeleteAuthor(id);
             }
 
             return RedirectToAction(nameof(Index));
@@ -148,7 +150,7 @@ namespace BookApplication.Web.Controllers
 
         private bool AuthorExists(Guid id)
         {
-            return _authorService.getDetailsForAuthor(id) != null;
+            return mainService.Author.getDetailsForAuthor(id) != null;
         }
     }
 }

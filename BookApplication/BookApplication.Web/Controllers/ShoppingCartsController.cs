@@ -13,63 +13,54 @@ using BookApplication.Service.Implementation;
 using BookApplication.Service.Interface;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Operations;
+using BookApplication.Service;
 
 namespace BookApplication.Web.Controllers
 {
     public class ShoppingCartsController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly IShoppingCartsService _shoppingCartService;
-        private readonly IBookInShoppingCart _bookInShoppingCartService;
-        private readonly IBookService _bookService;
-        private readonly IOrderService _orderService;
-        private readonly IAddressService _addressService;
-        private readonly IBookInOrderService _bookInOrderService;
-      
-            
-        public ShoppingCartsController(IShoppingCartsService shoppingCartService, ApplicationDbContext context, IBookInShoppingCart bookInShoppingCartService, IBookService bookService,IOrderService orderService,IAddressService addressService, IBookInOrderService bookInOrderService)
+        private readonly MainService mainService;
+
+
+        public ShoppingCartsController(MainService _mainService, ApplicationDbContext context)
         {
-            _shoppingCartService = shoppingCartService;
+            mainService = _mainService;
             _context = context;
-            _bookService = bookService;
-            _bookInShoppingCartService = bookInShoppingCartService;
-            _orderService = orderService;
-            _addressService = addressService;
-            _bookInOrderService = bookInOrderService;
-            
         }
 
         // GET: ShoppingCarts
         public IActionResult Index()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            Guid shpId = _shoppingCartService.GetAllShoppingCartsForUser(userId).FirstOrDefault().Id;
-            var booksInShp = _bookInShoppingCartService.GetAllBooksInShoppingCart(shpId);
+            Guid shpId = mainService.ShoppingCart.GetAllShoppingCartsForUser(userId).FirstOrDefault().Id;
+            var booksInShp = mainService.BookInShoppingCart.GetAllBooksInShoppingCart(shpId);
             ViewBag.BookInShoppingCart = booksInShp;
             ViewBag.TotalPrice = booksInShp.Select(x => x.Book.Price * x.Quantity).Sum();
             ViewBag.ShoppingCartId = shpId;
 
             if (User.Identity.IsAuthenticated == true)
-                return View(_shoppingCartService.GetAllShoppingCartsForUser(userId));
+                return View(mainService.ShoppingCart.GetAllShoppingCartsForUser(userId));
             return Unauthorized();
         }
 
         // GET: ShoppingCarts/Details/5
         public IActionResult Details(Guid? id)
         {
-            if(User.Identity.IsAuthenticated == true) { 
-            if (id == null)
+            if (User.Identity.IsAuthenticated == true)
             {
-                return NotFound();
-            }
+                if (id == null)
+                {
+                    return NotFound();
+                }
 
-            var shoppingCart = _shoppingCartService.GetDetailsForShoppingCart(id);
-            if (shoppingCart == null)
-            {
-                return NotFound();
-            }
+                var shoppingCart = mainService.ShoppingCart.GetDetailsForShoppingCart(id);
+                if (shoppingCart == null)
+                {
+                    return NotFound();
+                }
 
-            return View(shoppingCart);
+                return View(shoppingCart);
             }
             return Unauthorized();
         }
@@ -88,21 +79,21 @@ namespace BookApplication.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("OwnerId,Id")] ShoppingCart shoppingCart)
         {
-            if(User.Identity.IsAuthenticated == true)
+            if (User.Identity.IsAuthenticated == true)
             {
                 if (ModelState.IsValid)
                 {
                     shoppingCart.Id = Guid.NewGuid();
-                    _shoppingCartService.CreateNewShoppingCart(shoppingCart);
+                    mainService.ShoppingCart.CreateNewShoppingCart(shoppingCart);
                     return RedirectToAction(nameof(Index));
                 }
                 ViewData["OwnerId"] = new SelectList(_context.Users, "Id", "Id", shoppingCart.OwnerId);
                 return View(shoppingCart);
             }
-           
+
             return Unauthorized();
         }
-          
+
 
         // GET: ShoppingCarts/Edit/5
         public IActionResult Edit(Guid? id)
@@ -112,7 +103,7 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var shoppingCart = _shoppingCartService.GetDetailsForShoppingCart(id);
+            var shoppingCart = mainService.ShoppingCart.GetDetailsForShoppingCart(id);
             if (shoppingCart == null)
             {
                 return NotFound();
@@ -137,7 +128,7 @@ namespace BookApplication.Web.Controllers
             {
                 try
                 {
-                    _shoppingCartService.UpdateExistingShoppingCart(shoppingCart);
+                    mainService.ShoppingCart.UpdateExistingShoppingCart(shoppingCart);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -156,6 +147,10 @@ namespace BookApplication.Web.Controllers
             return View(shoppingCart);
         }
 
+        private bool ShoppingCartExists(Guid id)
+        {
+            return mainService.ShoppingCart.GetDetailsForShoppingCart(id) != null;
+        }
         // GET: ShoppingCarts/Delete/5
         public IActionResult Delete(Guid? id)
         {
@@ -164,7 +159,7 @@ namespace BookApplication.Web.Controllers
                 return NotFound();
             }
 
-            var shoppingCart = _shoppingCartService.GetDetailsForShoppingCart(id);
+            var shoppingCart = mainService.ShoppingCart.GetDetailsForShoppingCart(id);
             if (shoppingCart == null)
             {
                 return NotFound();
@@ -178,35 +173,29 @@ namespace BookApplication.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var shoppingCart = _shoppingCartService.GetDetailsForShoppingCart(id);
+            var shoppingCart = mainService.ShoppingCart.GetDetailsForShoppingCart(id);
             if (shoppingCart != null)
             {
-                _shoppingCartService.DeleteShoppingCart(id);
+                mainService.ShoppingCart.DeleteShoppingCart(id);
             }
 
             return RedirectToAction(nameof(Index));
         }
-        private bool ShoppingCartExists(Guid id)
-        {
-            return _shoppingCartService.GetDetailsForShoppingCart(id) != null;
-        }
-
 
         [HttpPost]
-        public IActionResult AddToCart (Guid BookId, int bookQuantity)
+        public IActionResult AddToCart(Guid BookId, int bookQuantity)
         {
-            var book = _bookService.getDetailsForBook(BookId);
+            var book = mainService.Book.getDetailsForBook(BookId);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var shoppingCart = _shoppingCartService.GetAllShoppingCartsForUser(userId).FirstOrDefault();
+            var shoppingCart = mainService.ShoppingCart.GetAllShoppingCartsForUser(userId).FirstOrDefault();
 
-            if(book == null || shoppingCart == null)
+            if (book == null || shoppingCart == null)
             {
                 return NotFound();
             }
 
-
             BookInShoppingCart bookInShoppingCart = new BookInShoppingCart
-            { 
+            {
                 Id = Guid.NewGuid(),
                 Book = book,
                 BookId = book.Id,
@@ -214,19 +203,22 @@ namespace BookApplication.Web.Controllers
                 ShoppingCartId = shoppingCart.Id,
                 Quantity = bookQuantity
             };
-            
-            if(bookInShoppingCart != null) {
-                _bookInShoppingCartService.AddBookToShoppingCart(bookInShoppingCart);
+
+            if (bookInShoppingCart != null)
+            {
+                mainService.BookInShoppingCart.AddBookToShoppingCart(bookInShoppingCart);
             }
 
             return RedirectToAction("Index");
         }
-        public IActionResult RemoveBookFromCart(Guid Id) {        
-            
-            var bsc = _bookInShoppingCartService.GetBookInShoppingCart(Id);
-            if(bsc != null)
+
+        public IActionResult RemoveBookFromCart(Guid Id)
+        {
+
+            var bsc = mainService.BookInShoppingCart.GetBookInShoppingCart(Id);
+            if (bsc != null)
             {
-                _bookInShoppingCartService.DeleteBookFromShoppingCart(bsc);
+                mainService.BookInShoppingCart.DeleteBookFromShoppingCart(bsc);
             }
             return RedirectToAction("Index");
         }
@@ -234,11 +226,11 @@ namespace BookApplication.Web.Controllers
         [HttpPost]
         public IActionResult EditBookQuantity(Guid BookInScId, int BookQuantity)
         {
-            var book = _bookInShoppingCartService.GetBookInShoppingCart(BookInScId);
+            var book = mainService.BookInShoppingCart.GetBookInShoppingCart(BookInScId);
             if (book != null)
             {
                 book.Quantity = BookQuantity;
-                _bookInShoppingCartService.EditBookInShoppingCart(book);
+                mainService.BookInShoppingCart.EditBookInShoppingCart(book);
             }
 
             return RedirectToAction("Index");
@@ -246,14 +238,12 @@ namespace BookApplication.Web.Controllers
 
         private Address CreateAddress(Address address)
         {
-
             if (address != null)
-            { 
-                _addressService.CreateAddress(address);
+            {
+                mainService.Address.CreateAddress(address);
                 return address;
             }
             return null;
-
         }
 
         private List<BookInOrder> CreateBookInOrder(List<BookInShoppingCart> bookInShoppingCarts, Guid orderId)
@@ -269,19 +259,19 @@ namespace BookApplication.Web.Controllers
                     BookId = book.BookId,
                     Quantity = book.Quantity,
                 };
-                _bookInOrderService.AddBookInOrder(bookInOrder);
+                mainService.BookInOrder.AddBookInOrder(bookInOrder);
                 booksInOrder.Add(bookInOrder);
             }
-            
+
             return booksInOrder;
         }
-        
+
         [HttpPost]
         public IActionResult CreateOrder(Guid Id, [Bind("Street,City,Country,ZipCode")] Address addr, Double totalPrice)
         {
             if (ModelState.IsValid)
             {
-                var shoppingCart = _shoppingCartService.GetDetailsForShoppingCart(Id);
+                var shoppingCart = mainService.ShoppingCart.GetDetailsForShoppingCart(Id);
                 if (shoppingCart != null)
                 {
                     var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -300,13 +290,13 @@ namespace BookApplication.Web.Controllers
                             UserId = user.Id,
                             shoppingCart = shoppingCart,
                             TotalPrice = totalPrice,
-                            // BooksInOrder = CreateBookInOrder(_bookInShoppingCartService.GetAllBooksInShoppingCart(Id),orderId)
+                            // BooksInOrder = CreateBookInOrder(mainService.BookInShoppingCart.GetAllBooksInShoppingCart(Id),orderId)
                         };
 
-                        _orderService.AddNewOrder(order);
-                        order.BooksInOrder = CreateBookInOrder(_bookInShoppingCartService.GetAllBooksInShoppingCart(Id), orderId);
-                        _orderService.UpdateOrder(order);
-                        _bookInShoppingCartService.EmptyCart(Id);
+                        mainService.Order.AddNewOrder(order);
+                        order.BooksInOrder = CreateBookInOrder(mainService.BookInShoppingCart.GetAllBooksInShoppingCart(Id), orderId);
+                        mainService.Order.UpdateOrder(order);
+                        mainService.BookInShoppingCart.EmptyCart(Id);
                         return RedirectToAction("Success", new { orderId = order.Id });
 
                     }
@@ -315,30 +305,29 @@ namespace BookApplication.Web.Controllers
             }
             return RedirectToAction("Index");
         }
-            public ActionResult Success(Guid orderId)
-            {
-         
-            BaseEntity Id = new BaseEntity
-                {
-                    Id = orderId
-                };
-                var order = _orderService.GetDetailsForOrder(Id);
 
-            var shpId = _orderService.GetDetailsForOrder(Id).shoppingCart.Id;
+        public ActionResult Success(Guid orderId)
+        {
+            BaseEntity Id = new BaseEntity
+            {
+                Id = orderId
+            };
+            var order = mainService.Order.GetDetailsForOrder(Id);
+
+            var shpId = mainService.Order.GetDetailsForOrder(Id).shoppingCart.Id;
             ViewBag.ShoppingCartId = shpId;
-            ViewBag.TotalPrice = _orderService.GetDetailsForOrder(Id).TotalPrice;
-            var booksInShp = _bookInShoppingCartService.GetAllBooksInShoppingCart(shpId);
+            ViewBag.TotalPrice = mainService.Order.GetDetailsForOrder(Id).TotalPrice;
+            var booksInShp = mainService.BookInShoppingCart.GetAllBooksInShoppingCart(shpId);
             ViewBag.BooksInShoppingCart = booksInShp;
 
             if (order == null)
-                {
-                    return NotFound(); 
-                }
-
-                return View(order); 
+            {
+                return NotFound();
             }
 
+            return View(order);
         }
+    }
 
 
     }
