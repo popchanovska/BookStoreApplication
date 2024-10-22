@@ -1,12 +1,6 @@
 ﻿using BookApplication.Domain.Domain;
 using BookApplication.Repository.Interface;
 using BookApplication.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.WebSockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookApplication.Service.Implementation
 {
@@ -42,7 +36,7 @@ namespace BookApplication.Service.Implementation
 
         public void UpdateExistingShoppingCart(ShoppingCart s)
         {
-            ShoppingCart tmp = GetDetailsForShoppingCart(s.Id);
+             ShoppingCart tmp = GetDetailsForShoppingCart(s.Id);
             _shoppingCartRepository.Update(tmp);
         }
 

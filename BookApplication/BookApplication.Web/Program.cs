@@ -5,8 +5,6 @@ using BookApplication.Repository.Interface;
 using BookApplication.Service;
 using BookApplication.Service.Implementation;
 using BookApplication.Service.Interface;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

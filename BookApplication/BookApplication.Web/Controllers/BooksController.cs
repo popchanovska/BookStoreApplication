@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
-using BookApplication.Repository;
-using BookApplication.Service.Interface;
 using BookApplication.Service;
 
 namespace BookApplication.Web.Controllers

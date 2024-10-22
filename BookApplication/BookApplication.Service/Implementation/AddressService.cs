@@ -1,12 +1,6 @@
 ﻿using BookApplication.Domain.Domain;
 using BookApplication.Repository.Interface;
 using BookApplication.Service.Interface;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookApplication.Service.Implementation
 {
