@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
 using BookApplication.Service;
+using Newtonsoft.Json;
 
 namespace BookApplication.Web.Controllers
 {
@@ -156,5 +157,7 @@ namespace BookApplication.Web.Controllers
         {
             return mainService.Book.getDetailsForBook(id) != null;
         }
+     
     }
+
 }

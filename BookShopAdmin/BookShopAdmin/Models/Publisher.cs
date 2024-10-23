@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BookApplication.Domain.Domain
-{
+﻿
+namespace BookShopAdmin.Models{
     public class Publisher : BaseEntity
     {
         public string Name { get; set; }
@@ -11,7 +8,7 @@ namespace BookApplication.Domain.Domain
         public string? PhoneNumber { get; set; }
         public Guid? AddressId { get; set; }
         public Address? Address { get; set; }
-        //public ICollection<Book>? Books { get; set; }
+        public ICollection<Book>? Books { get; set; }
 
         public override string ToString()
         {

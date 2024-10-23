@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookShopAdmin.Models;
 
-namespace BookApplication.Domain.Domain
+
+namespace BookShopAdmin.Models
 {
     public class Author : BaseEntity
     {
@@ -14,7 +10,6 @@ namespace BookApplication.Domain.Domain
         public string Biography { get; set; }
         public DateOnly DateOfBirth { get; set; }
         public string? Image { get; set; }
-        //public ICollection<Book>? Books { get; set; }
 
         public override string ToString()
         {

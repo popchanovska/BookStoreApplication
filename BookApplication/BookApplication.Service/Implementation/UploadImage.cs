@@ -26,10 +26,13 @@ public static class UploadImage
         {
             imageBytes = File.ReadAllBytes(img);
         }
+        //else if (IsBase64String(img))
+        //{
+        //    return img;
+        //}
         else 
         {
-            imageBytes = Convert.FromBase64String(img);
-            return null;
+            return img;
         }
 
 

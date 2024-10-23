@@ -4,6 +4,7 @@ using BookApplication.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookApplication.Repository.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241023185359_fixes")]
+    partial class fixes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -473,7 +476,7 @@ namespace BookApplication.Repository.Migrations
                         .IsRequired();
 
                     b.HasOne("BookApplication.Domain.Domain.Publisher", "Publisher")
-                        .WithMany()
+                        .WithMany("Books")
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -620,6 +623,11 @@ namespace BookApplication.Repository.Migrations
             modelBuilder.Entity("BookApplication.Domain.Domain.Order", b =>
                 {
                     b.Navigation("BooksInOrder");
+                });
+
+            modelBuilder.Entity("BookApplication.Domain.Domain.Publisher", b =>
+                {
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("BookApplication.Domain.Domain.ShoppingCart", b =>
