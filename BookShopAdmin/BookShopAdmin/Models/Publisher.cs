@@ -1,5 +1,6 @@
 ﻿
-namespace BookShopAdmin.Models{
+namespace BookShopAdmin.Models
+{
     public class Publisher : BaseEntity
     {
         public string Name { get; set; }

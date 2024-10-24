@@ -1,7 +1,4 @@
-﻿using BookShopAdmin.Models;
-
-
-namespace BookShopAdmin.Models
+﻿namespace BookShopAdmin.Models
 {
     public class Author : BaseEntity
     {
@@ -10,6 +7,9 @@ namespace BookShopAdmin.Models
         public string Biography { get; set; }
         public DateOnly DateOfBirth { get; set; }
         public string? Image { get; set; }
+
+        public string FullName => $"{FirstName} {LastName}";  // Add this property
+
 
         public override string ToString()
         {

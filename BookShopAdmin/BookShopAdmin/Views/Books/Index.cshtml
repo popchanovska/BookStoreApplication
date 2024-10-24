@@ -1,83 +1,92 @@
-﻿@model IEnumerable<BookShopAdmin.Models.Book>
+﻿    @model IEnumerable<BookShopAdmin.Models.Book>
 
-@{
-    ViewData["Title"] = "Index";
-}
-@{
-    Layout = "_Layout";
-}
-<h1>Index</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ISBN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>Cover Image</th> <!-- Add a heading for the image -->
+    @{
+        ViewData["Title"] = "Index";
+    }
+    @{
+        Layout = "_Layout";
+    }
+    <h1>Index</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Author)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ISBN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>Cover Image</th> <!-- Add a heading for the image -->
 
-            <th>
-                @Html.DisplayNameFor(model => model.PublicatonYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsHardcover)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Publisher)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author.FirstName)
-                @Html.DisplayFor(modelItem => item.Author.LastName)
+                <th>
+                    @Html.DisplayNameFor(model => model.PublicatonYear)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsHardcover)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Publisher)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author.FirstName)
+                    @Html.DisplayFor(modelItem => item.Author.LastName)
 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ISBN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                    <img src="@item.CoverImage" alt="Cover Image" style="max-width: 100px;" />
                 </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublicatonYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsHardcover)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Publisher.Name)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ISBN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                        <img src="@item.CoverImage" alt="Cover Image" style="max-width: 100px;" />
+                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicatonYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsHardcover)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Publisher.Name)
+                </td>
+                
+                <td>
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+                <td>
+                    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                </td>
+
+                
+            </tr>
+                }
+        </tbody>
+    </table>

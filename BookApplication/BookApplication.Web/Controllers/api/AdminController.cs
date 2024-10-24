@@ -10,6 +10,7 @@ namespace BookApplication.Web.Controllers.api
     public class AdminController : ControllerBase
     {
         private readonly MainService mainService;
+
         public AdminController(MainService _mainService)
         {
             mainService = _mainService;
@@ -56,7 +57,32 @@ namespace BookApplication.Web.Controllers.api
             var book = mainService.Book.getDetailsForBook(id);
             return Ok(book); // Use Ok() to ensure a proper JSON response
         }
-        
+
+        // POST: api/Books/EditBook
+        [HttpPut]
+        [Route("api/Books/EditBook")]
+        public IActionResult EditBook([FromBody] Book book)
+        {
+            mainService.Book.UpdateExistingBook(book);
+            return Ok(); // Use Ok() to ensure a proper JSON response
+        }
+
+        // POST: api/Books/CreateBook
+        [HttpPost]
+        [Route("api/Books/CreateBook")]
+        public IActionResult CreateBook([FromBody] Book book)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+
+            }
+            mainService.Book.CreateNewBook(book);
+            return Ok(); // Use Ok() to ensure a proper JSON response
+
+        }
+
+
 
 
     }

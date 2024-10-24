@@ -17,7 +17,7 @@
 //    public double TotalPrice { get; set; }
 //    public IEnumerable<BookInOrder>? BooksInOrder { get; set; }
 //    public ShoppingCart shoppingCart { get; set; }
-    
-    
+
+
 //}
 

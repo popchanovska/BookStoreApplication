@@ -1,0 +1,105 @@
+﻿@model BookShopAdmin.Models.Book
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+
+<h1>Edit Book</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- AuthorId Dropdown -->
+            <div class="form-group">
+                <label asp-for="AuthorId" class="control-label"></label>
+                <select asp-for="AuthorId" class="form-control" asp-items="ViewBag.Authors"></select>
+                <span asp-validation-for="AuthorId" class="text-danger"></span>
+            </div>
+
+            <!-- Title Input -->
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <!-- ISBN Input -->
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label"></label>
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+
+            <!-- Price Input -->
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <!-- Cover Image Input -->
+            <div class="form-group">
+                <label asp-for="CoverImage" class="control-label"></label>
+                <input asp-for="CoverImage" class="form-control" />
+                <span asp-validation-for="CoverImage" class="text-danger"></span>
+            </div>
+
+            <!-- Publication Year Input -->
+            <div class="form-group">
+                <label asp-for="PublicatonYear" class="control-label"></label>
+                <input asp-for="PublicatonYear" class="form-control" />
+                <span asp-validation-for="PublicatonYear" class="text-danger"></span>
+            </div>
+
+            <!-- IsHardcover Checkbox -->
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsHardcover" /> @Html.DisplayNameFor(model => model.IsHardcover)
+                </label>
+            </div>
+
+            <!-- Rating Input -->
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+
+            <!-- Genre Input -->
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <select asp-for="Genre" class="form-control"></select>
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+
+            <!-- PublisherId Dropdown -->
+            <div class="form-group">
+                <label asp-for="PublisherId" class="control-label"></label>
+                <select asp-for="PublisherId" class="form-control" asp-items="ViewBag.Publishers"></select>
+                <span asp-validation-for="PublisherId" class="text-danger"></span>
+            </div>
+
+            <!-- Hidden ID Input -->
+            <input type="hidden" asp-for="Id" />
+
+            <!-- Save Button -->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

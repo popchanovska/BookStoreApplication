@@ -14,7 +14,7 @@ namespace BookApplication.Domain.Domain
         public string Biography { get; set; }
         public DateOnly DateOfBirth { get; set; }
         public string? Image { get; set; }
-        //public ICollection<Book>? Books { get; set; }
+        public string FullName => $"{FirstName} {LastName}";  // Add this property
 
         public override string ToString()
         {
