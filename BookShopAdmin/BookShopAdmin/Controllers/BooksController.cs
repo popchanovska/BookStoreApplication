@@ -121,6 +121,10 @@ namespace BookShopAdmin.Controllers
             Console.WriteLine($"Book: {book.Title}, AuthorId: {book.AuthorId}, PublisherId: {book.PublisherId}");
             Console.WriteLine($"Authors count: {authors.Count}, Publishers count: {publishers.Count}");
 
+            if(ModelState.IsValid)
+            {
+                System.Console.WriteLine("Model is valid");
+            }
             // Populate the ViewBag with the authors and publishers
             ViewData["AuthorId"] = new SelectList(authors, "Id", "FullName");
             ViewData["PublisherId"] = new SelectList(publishers, "Id", "Name");
@@ -128,12 +132,14 @@ namespace BookShopAdmin.Controllers
             return View(book);
         }
 
-
+        //[ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> Edit(Book book)
+        public async Task<IActionResult> Edit(Guid id, [Bind("AuthorId,Title,ISBN,Price,CoverImage,PublicatonYear,IsHardcover,Rating,Genre,PublisherId,Id")] Book book)
         {
+            System.Console.WriteLine(book.Title);
             if (!ModelState.IsValid)
             {
+                var book1 = FetchBook(book.Id);
                 // Fetch the authors and publishers again if validation fails
                 var allAuthors = FetchAuthors();
                 var allPublishers = FetchPublishers();
@@ -143,7 +149,7 @@ namespace BookShopAdmin.Controllers
                 ViewData["PublisherId"] = new SelectList(allPublishers, "Id", "Name");
 
                 // Return the view to allow corrections
-                return View(book);
+                return View(book1);
             }
 
             using (HttpClient client = new HttpClient())
@@ -165,7 +171,7 @@ namespace BookShopAdmin.Controllers
             ViewData["AuthorId"] = new SelectList(authors, "Id", "FullName");
             ViewData["PublisherId"] = new SelectList(publishers, "Id", "Name");
 
-            return View(book);
+            return Redirect("Index");
         }
 
         // GET: Books/Create

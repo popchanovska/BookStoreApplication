@@ -33,7 +33,7 @@ public class BookService : IBookService
     public Book getDetailsForBook(Guid? id)
     {
         var book = _bookRepository.Get(id);
-        book.Author=_authorRepository.Get(book.AuthorId);
+            book.Author=_authorRepository.Get(book.AuthorId);
         book.Publisher = _publisherRepository.Get(book.PublisherId);
 
         return book;
