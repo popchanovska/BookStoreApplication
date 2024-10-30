@@ -1,13 +1,22 @@
-﻿@model BookShopAdmin.Models.Book
+﻿@using BookShopAdmin.Models
+@model BookShopAdmin.Models.Book
 
 @{
     ViewData["Title"] = "Edit";
     Layout = "_Layout";
+    System.Console.WriteLine(ViewBag.AuthorId);
+    // var authors = ViewBag.AuthorId;
+
+    foreach (var item in ViewData["PublisherId"] as SelectList)
+    {
+        Console.WriteLine($"Value: {item.Value}, Text: {item.Text}, Selected: {item.Selected}");
+    }
 }
 
 <h1>Edit Book</h1>
 
 <hr />
+  
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -15,72 +24,80 @@
 
             <!-- AuthorId Dropdown -->
             <div class="form-group">
-                <label asp-for="AuthorId" class="control-label"></label>
-                <select asp-for="AuthorId" class="form-control" asp-items="ViewBag.Authors"></select>
-                <span asp-validation-for="AuthorId" class="text-danger"></span>
+                <select asp-for="AuthorId" class="form-control">
+                    @foreach (var author in ViewBag.AuthorId)
+                    {
+                        <option value="@author.Value">@author.Text</option>
+                    }
+                </select>
             </div>
+
 
             <!-- Title Input -->
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
+                <input asp-for="Title" class="form-control" value="@Model.Title"/>
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
 
             <!-- ISBN Input -->
             <div class="form-group">
                 <label asp-for="ISBN" class="control-label"></label>
-                <input asp-for="ISBN" class="form-control" />
+                <input asp-for="ISBN" class="form-control" value="@Model.ISBN"/>
                 <span asp-validation-for="ISBN" class="text-danger"></span>
             </div>
 
             <!-- Price Input -->
             <div class="form-group">
                 <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
+                <input asp-for="Price" class="form-control" value="@Model.Price"/>
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
 
             <!-- Cover Image Input -->
             <div class="form-group">
                 <label asp-for="CoverImage" class="control-label"></label>
-                <input asp-for="CoverImage" class="form-control" />
+                <input asp-for="CoverImage" class="form-control" value="@Model.CoverImage"/>
                 <span asp-validation-for="CoverImage" class="text-danger"></span>
             </div>
 
             <!-- Publication Year Input -->
             <div class="form-group">
                 <label asp-for="PublicatonYear" class="control-label"></label>
-                <input asp-for="PublicatonYear" class="form-control" />
+                <input asp-for="PublicatonYear" class="form-control" value="@Model.PublicatonYear"/>
                 <span asp-validation-for="PublicatonYear" class="text-danger"></span>
             </div>
 
             <!-- IsHardcover Checkbox -->
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsHardcover" /> @Html.DisplayNameFor(model => model.IsHardcover)
+                    @Html.CheckBoxFor(model => model.IsHardcover)
+                    @Html.LabelFor(model => model.IsHardcover)
                 </label>
             </div>
 
             <!-- Rating Input -->
             <div class="form-group">
                 <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
+                <input asp-for="Rating" class="form-control" value="@Model.Rating" />
                 <span asp-validation-for="Rating" class="text-danger"></span>
             </div>
 
             <!-- Genre Input -->
             <div class="form-group">
                 <label asp-for="Genre" class="control-label"></label>
-                <select asp-for="Genre" class="form-control"></select>
+                <select asp-for="Genre" class="form-control" asp-items="@(Html.GetEnumSelectList<BookShopAdmin.Models.Enums.Genre>())"></select>
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
 
             <!-- PublisherId Dropdown -->
             <div class="form-group">
-                <label asp-for="PublisherId" class="control-label"></label>
-                <select asp-for="PublisherId" class="form-control" asp-items="ViewBag.Publishers"></select>
-                <span asp-validation-for="PublisherId" class="text-danger"></span>
+                <select asp-for="AuthorId" class="form-control">
+                    @foreach (var publisher in ViewBag.PublisherId)
+                    {
+                        <option value="@publisher.Value">@publisher.Text</option>
+                    }
+                </select>
             </div>
 
             <!-- Hidden ID Input -->

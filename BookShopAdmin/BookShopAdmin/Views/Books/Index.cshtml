@@ -79,10 +79,10 @@
                 </td>
                 
                 <td>
-                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-primary"  asp-controller="BooksController" asp-action="Details" asp-route-id="@item.Id">Details</a>
                 </td>
                 <td>
-                    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-secondary" asp-controller="BooksController" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                 </td>
 
                 

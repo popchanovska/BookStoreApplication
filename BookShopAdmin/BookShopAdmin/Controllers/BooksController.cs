@@ -1,6 +1,4 @@
-﻿using System.Net;
-using BookShopAdmin.Data;
-using BookShopAdmin.Models;
+﻿using BookShopAdmin.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +9,7 @@ namespace BookShopAdmin.Controllers
     public class BooksController : Controller
     {
 
-        public BooksController(ApplicationDbContext context)
+        public BooksController()
         {
         }
 
@@ -123,16 +121,10 @@ namespace BookShopAdmin.Controllers
             Console.WriteLine($"Book: {book.Title}, AuthorId: {book.AuthorId}, PublisherId: {book.PublisherId}");
             Console.WriteLine($"Authors count: {authors.Count}, Publishers count: {publishers.Count}");
 
-            ViewBag.Authors = new SelectList(
-                authors.Select(a => new
-                {
-                    Id = a.Id,
-                    FullName = $"{a.FirstName} {a.LastName}"
-                }),
-                "Id", "FullName", book.AuthorId
-            );
+            // Populate the ViewBag with the authors and publishers
+            ViewData["AuthorId"] = new SelectList(authors, "Id", "FullName");
+            ViewData["PublisherId"] = new SelectList(publishers, "Id", "Name");
 
-            ViewBag.Publishers = new SelectList(publishers, "Id", "Name", book.PublisherId);
             return View(book);
         }
 
@@ -143,12 +135,12 @@ namespace BookShopAdmin.Controllers
             if (!ModelState.IsValid)
             {
                 // Fetch the authors and publishers again if validation fails
-                var authors = FetchAuthors();
-                var publishers = FetchPublishers();
+                var allAuthors = FetchAuthors();
+                var allPublishers = FetchPublishers();
 
                 // Re-populate ViewBag for dropdowns
-                ViewBag.Authors = new SelectList(authors, "Id", "FullName", book.AuthorId);
-                ViewBag.Publishers = new SelectList(publishers, "Id", "Name", book.PublisherId);
+                ViewData["AuthorId"] = new SelectList(allAuthors, "Id", "FullName");
+                ViewData["PublisherId"] = new SelectList(allPublishers, "Id", "Name");
 
                 // Return the view to allow corrections
                 return View(book);
@@ -167,11 +159,11 @@ namespace BookShopAdmin.Controllers
             }
 
             // If the update failed, re-populate dropdowns
-            var allAuthors = FetchAuthors();
-            var allPublishers = FetchPublishers();
+            var authors = FetchAuthors();
+            var publishers = FetchPublishers();
 
-            ViewBag.Authors = new SelectList(allAuthors, "Id", "FullName", book.AuthorId);
-            ViewBag.Publishers = new SelectList(allPublishers, "Id", "Name", book.PublisherId);
+            ViewData["AuthorId"] = new SelectList(authors, "Id", "FullName");
+            ViewData["PublisherId"] = new SelectList(publishers, "Id", "Name");
 
             return View(book);
         }
