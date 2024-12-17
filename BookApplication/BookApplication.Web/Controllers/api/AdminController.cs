@@ -9,11 +9,11 @@ namespace BookApplication.Web.Controllers.api
     [ApiController]
     public class AdminController : ControllerBase
     {
-        private readonly MainService mainService;
+        private readonly MainService _mainService;
 
-        public AdminController(MainService _mainService)
+        public AdminController(MainService mainService)
         {
-            mainService = _mainService;
+            _mainService = mainService;
         }
 
         // GET: api/Books/GetAllBooks
@@ -21,13 +21,13 @@ namespace BookApplication.Web.Controllers.api
         [Route("api/Books/GetAllBooks")]
         public IActionResult GetAllBooks()
         {
-            var books = mainService.Book.GetAllBooks().ToList();
+            var books = _mainService.Book.GetAllBooks().ToList();
             //foreach (var book in books)
             //{
             //    book.CoverImage = "";
             //    book.Author.Image = "";
             //}
-            return Ok(books); // Use Ok() to ensure a proper JSON response
+            return Ok(books);
         }
 
         // GET: api/Authors/GetAllAuthors
@@ -35,8 +35,8 @@ namespace BookApplication.Web.Controllers.api
         [Route("api/Authors/GetAllAuthors")]
         public IActionResult GetAllAuthors()
         {
-            var authors = mainService.Author.GetAllAuthors().ToList();
-            return Ok(authors); // Use Ok() to ensure a proper JSON response
+            var authors = _mainService.Author.GetAllAuthors().ToList();
+            return Ok(authors);
         }
 
 
@@ -45,8 +45,8 @@ namespace BookApplication.Web.Controllers.api
         [Route("api/Publishers/GetAllPublishers")]
         public IActionResult GetAllPublishers()
         {
-            var publishers = mainService.Publisher.GetAllPublishers().ToList();
-            return Ok(publishers); // Use Ok() to ensure a proper JSON response
+            var publishers = _mainService.Publisher.GetAllPublishers().ToList();
+            return Ok(publishers);
         }
 
         // GET: api/Books/GetBook/{id}
@@ -54,8 +54,8 @@ namespace BookApplication.Web.Controllers.api
         [Route("api/Books/GetBook/{id}")]
         public IActionResult GetBook(Guid id)
         {
-            var book = mainService.Book.getDetailsForBook(id);
-            return Ok(book); // Use Ok() to ensure a proper JSON response
+            var book = _mainService.Book.getDetailsForBook(id);
+            return Ok(book);
         }
 
         // POST: api/Books/EditBook
@@ -63,8 +63,8 @@ namespace BookApplication.Web.Controllers.api
         [Route("api/Books/EditBook")]
         public IActionResult EditBook([FromBody] Book book)
         {
-            mainService.Book.UpdateExistingBook(book);
-            return Ok(); // Use Ok() to ensure a proper JSON response
+            _mainService.Book.UpdateExistingBook(book);
+            return Ok();
         }
 
         // POST: api/Books/CreateBook
@@ -77,13 +77,9 @@ namespace BookApplication.Web.Controllers.api
                 return BadRequest(ModelState);
 
             }
-            mainService.Book.CreateNewBook(book);
-            return Ok(); // Use Ok() to ensure a proper JSON response
+            _mainService.Book.CreateNewBook(book);
+            return Ok();
 
         }
-
-
-
-
     }
 }
