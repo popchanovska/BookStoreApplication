@@ -123,7 +123,7 @@ namespace BookShopAdmin.Controllers
 
             if(ModelState.IsValid)
             {
-                System.Console.WriteLine("Model is valid");
+                // System.Console.WriteLine("Model is valid");
             }
             // Populate the ViewBag with the authors and publishers
             ViewData["AuthorId"] = new SelectList(authors, "Id", "FullName");
@@ -136,9 +136,16 @@ namespace BookShopAdmin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Guid id, [Bind("AuthorId,Title,ISBN,Price,CoverImage,PublicatonYear,IsHardcover,Rating,Genre,PublisherId,Id")] Book book)
         {
-            System.Console.WriteLine(book.Title);
+            Console.WriteLine(book.Title);
+            
             if (!ModelState.IsValid)
             {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                Console.WriteLine("ModelState errors:");
+                foreach (var error in errors)
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
                 var book1 = FetchBook(book.Id);
                 // Fetch the authors and publishers again if validation fails
                 var allAuthors = FetchAuthors();
@@ -149,7 +156,8 @@ namespace BookShopAdmin.Controllers
                 ViewData["PublisherId"] = new SelectList(allPublishers, "Id", "Name");
 
                 // Return the view to allow corrections
-                return View(book1);
+                // return View(book1);
+                return BadRequest("bad request");
             }
 
             using (HttpClient client = new HttpClient())
