@@ -22,7 +22,9 @@ public class BookInOrderService : IBookInOrderService
 
     public List<BookInOrder> GetAllBooksInOrder(Guid? id)
     {
-        return _orderRepository.Get(id).BooksInOrder.ToList();
+        var order = _orderRepository.Get(id);
+        var booksInOrder = order?.BooksInOrder?.ToList();
+        return booksInOrder;
     }
 
     public BookInOrder GetBookInOrder(Guid OrderId, Guid BookId)

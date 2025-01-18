@@ -19,18 +19,21 @@ namespace BookApplication.Repository.Implementation
             this.context = context;
             entities = context.Set<Order>();
         }
+
         public List<Order> GetAllOrders()
         {
             return entities
-                .Include(z => z.shoppingCart)
-                .Include(z => z.User)
+                // .Include(z => z.shoppingCart)
+                // .Include(z => z.User)
                 .ToList();
         }
 
         public Order GetDetailsForOrder(BaseEntity id)
         {
             return entities
-                .Include(z => z.shoppingCart)
+                .Include(z => z.BooksInOrder)
+                .ThenInclude(b => b.Book)
+                // .Include(z => z.shoppingCart)
                 .Include(z => z.User)
                 .SingleOrDefaultAsync(z => z.Id == id.Id).Result;
         }
@@ -41,6 +44,7 @@ namespace BookApplication.Repository.Implementation
             {
                 throw new ArgumentNullException("entity");
             }
+
             entities.Add(order);
             context.SaveChanges();
         }
@@ -51,6 +55,7 @@ namespace BookApplication.Repository.Implementation
             {
                 throw new ArgumentNullException("entity");
             }
+
             var entity = entities.SingleOrDefault(s => s.Id == id.Id);
             entities.Remove(entity);
             context.SaveChanges();
@@ -62,9 +67,9 @@ namespace BookApplication.Repository.Implementation
             {
                 throw new ArgumentNullException("entity");
             }
+
             entities.Update(o);
             context.SaveChanges();
-
         }
     }
 }

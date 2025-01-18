@@ -1,11 +1,9 @@
 ﻿using BookApplication.Domain.Domain;
 using BookApplication.Service;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookApplication.Web.Controllers.api
 {
-    //[Route("api/[controller]")]
     [ApiController]
     public class AdminController : ControllerBase
     {
@@ -22,11 +20,6 @@ namespace BookApplication.Web.Controllers.api
         public IActionResult GetAllBooks()
         {
             var books = _mainService.Book.GetAllBooks().ToList();
-            //foreach (var book in books)
-            //{
-            //    book.CoverImage = "";
-            //    book.Author.Image = "";
-            //}
             return Ok(books);
         }
 
@@ -75,11 +68,22 @@ namespace BookApplication.Web.Controllers.api
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-
             }
+
             _mainService.Book.CreateNewBook(book);
             return Ok();
+        }
 
+        [HttpGet("/api/orders/GetAllOrders")]
+        public List<Order> GetAllOrders()
+        {
+            return _mainService.Order.GetAllOrders();
+        }
+
+        [HttpGet("/api/orders/GetOrder/{id}")]
+        public Order GetOrder(string id)
+        {
+            return _mainService.Order.GetDetailsForOrder(new BaseEntity { Id = Guid.Parse(id) });
         }
     }
 }

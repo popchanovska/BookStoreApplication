@@ -25,11 +25,11 @@ namespace BookApplication.Repository
             base.OnModelCreating(modelBuilder);
 
             //    // Configure relationships for Order and BookInOrder
-            modelBuilder.Entity<BookInOrder>()
-                .HasOne(bio => bio.Order)
-                .WithMany(order => order.BooksInOrder)
-                .HasForeignKey(bio => bio.OrderId)
-                .OnDelete(DeleteBehavior.Cascade); // Change to Restrict or SetNull
+            // modelBuilder.Entity<BookInOrder>()
+                // .HasOne(bio => bio.Order)
+                // .WithMany(order => order.BooksInOrder)
+                // .HasForeignKey(bio => bio.OrderId)
+                // .OnDelete(DeleteBehavior.Cascade); // Change to Restrict or SetNull
 
             //    modelBuilder.Entity<BookInOrder>()
             //        .HasOne(bio => bio.Book)
