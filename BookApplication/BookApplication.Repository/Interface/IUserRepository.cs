@@ -11,6 +11,7 @@ namespace BookApplication.Repository.Interface
     {
         IEnumerable<BookAppUser> GetAll();
         BookAppUser Get(string? id);
+        string GetOnlyUsername(string? id);
         void Insert(BookAppUser entity);
         void Update(BookAppUser entity);
         void Delete(BookAppUser entity);

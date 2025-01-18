@@ -7,25 +7,12 @@ namespace BookApplication.Service.Implementation;
 public class OrderService : IOrderService
 {
     private readonly IOrderRepository _orderRepository;
-    private readonly IAddressService _addressService;
-    private readonly IBookInShoppingCart _bookInShoppingCart;
-    private readonly IUserRepository _userRepository;
-    private readonly IBookInOrderService _bookInOrderService;
-    private readonly IShoppingCartsService _shoppingCartsService;
 
-    public OrderService(IOrderRepository orderRepository, IAddressService addressService,
-        IBookInShoppingCart bookInShoppingCart, IUserRepository userRepository, IBookInOrderService bookInOrderService,
-        IShoppingCartsService shoppingCartsService)
+    public OrderService(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
-        _addressService = addressService;
-        _bookInShoppingCart = bookInShoppingCart;
-        _userRepository = userRepository;
-        _bookInOrderService = bookInOrderService;
-        _shoppingCartsService = shoppingCartsService;
     }
-
-
+    
     public List<Order> GetAllOrders()
     {
         return _orderRepository.GetAllOrders();
@@ -34,8 +21,6 @@ public class OrderService : IOrderService
     public Order GetDetailsForOrder(BaseEntity id)
     {
         var order = _orderRepository.GetDetailsForOrder(id);
-        order.Address = _addressService.GetAddress(order.AddressId);
-        // order.User = _userRepository.Get(order.UserId);
         return order;
     }
 

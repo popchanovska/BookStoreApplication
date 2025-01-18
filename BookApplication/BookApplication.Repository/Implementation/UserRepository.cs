@@ -20,6 +20,7 @@ namespace BookApplication.Repository.Implementation
             this.context = context;
             entities = context.Set<BookAppUser>();
         }
+
         public IEnumerable<BookAppUser> GetAll()
         {
             return entities.AsEnumerable();
@@ -28,17 +29,25 @@ namespace BookApplication.Repository.Implementation
         public BookAppUser Get(string id)
         {
             return entities
-               .Include(z => z.ShoppingCart)
-               .Include("ShoppingCart.BooksInShoppingCart")
-               .Include("ShoppingCart.BooksInShoppingCart.Book")
-               .SingleOrDefault(s => s.Id == id);
+                .Include(z => z.ShoppingCart)
+                .Include("ShoppingCart.BooksInShoppingCart")
+                .Include("ShoppingCart.BooksInShoppingCart.Book")
+                .SingleOrDefault(s => s.Id == id);
         }
+
+        public string GetOnlyUsername(string? id)
+        {
+            var user = entities.FirstOrDefault(z => z.Id == id);
+            return user?.UserName ?? string.Empty;
+        }
+
         public void Insert(BookAppUser entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
+
             entities.Add(entity);
             context.SaveChanges();
         }
@@ -49,6 +58,7 @@ namespace BookApplication.Repository.Implementation
             {
                 throw new ArgumentNullException("entity");
             }
+
             entities.Update(entity);
             context.SaveChanges();
         }
@@ -59,6 +69,7 @@ namespace BookApplication.Repository.Implementation
             {
                 throw new ArgumentNullException("entity");
             }
+
             entities.Remove(entity);
             context.SaveChanges();
         }

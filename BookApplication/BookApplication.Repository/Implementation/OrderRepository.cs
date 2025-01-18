@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookApplication.Domain.Domain;
+﻿using BookApplication.Domain.Domain;
 using BookApplication.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,8 +18,11 @@ namespace BookApplication.Repository.Implementation
         public List<Order> GetAllOrders()
         {
             return entities
-                // .Include(z => z.shoppingCart)
-                // .Include(z => z.User)
+                .Include(z => z.BooksInOrder)
+                .ThenInclude(b => b.Book)
+                .ThenInclude(z => z.Author)
+                .Include(z => z.Address)
+                .Include(z => z.User)
                 .ToList();
         }
 
@@ -33,6 +31,8 @@ namespace BookApplication.Repository.Implementation
             return entities
                 .Include(z => z.BooksInOrder)
                 .ThenInclude(b => b.Book)
+                .ThenInclude(z => z.Author)
+                .Include(z => z.Address)
                 // .Include(z => z.shoppingCart)
                 .Include(z => z.User)
                 .SingleOrDefaultAsync(z => z.Id == id.Id).Result;
