@@ -92,7 +92,7 @@ namespace BookApplication.Repository.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Website = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -101,8 +101,7 @@ namespace BookApplication.Repository.Migrations
                         name: "FK_Publishers_Addresses_AddressId",
                         column: x => x.AddressId,
                         principalTable: "Addresses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -212,32 +211,6 @@ namespace BookApplication.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Orders",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TotalPrice = table.Column<double>(type: "float", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Orders_Addresses_AddressId",
-                        column: x => x.AddressId,
-                        principalTable: "Addresses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Orders_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ShoppingCarts",
                 columns: table => new
                 {
@@ -288,29 +261,37 @@ namespace BookApplication.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BookInOrders",
+                name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    BookId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TotalPrice = table.Column<double>(type: "float", nullable: false),
+                    shoppingCartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BookInOrders", x => x.Id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BookInOrders_Books_BookId",
-                        column: x => x.BookId,
-                        principalTable: "Books",
+                        name: "FK_Orders_Addresses_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Addresses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BookInOrders_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
+                        name: "FK_Orders_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Orders_ShoppingCarts_shoppingCartId",
+                        column: x => x.shoppingCartId,
+                        principalTable: "ShoppingCarts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -335,6 +316,32 @@ namespace BookApplication.Repository.Migrations
                         name: "FK_BookInShoppingCarts_ShoppingCarts_ShoppingCartId",
                         column: x => x.ShoppingCartId,
                         principalTable: "ShoppingCarts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BookInOrders",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BookId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BookInOrders", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BookInOrders_Books_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Books",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BookInOrders_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -412,6 +419,11 @@ namespace BookApplication.Repository.Migrations
                 name: "IX_Orders_AddressId",
                 table: "Orders",
                 column: "AddressId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_shoppingCartId",
+                table: "Orders",
+                column: "shoppingCartId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_UserId",

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookApplication.Repository.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241022120025_DEJTTAJM")]
-    partial class DEJTTAJM
+    [Migration("20250118124933_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -150,7 +150,7 @@ namespace BookApplication.Repository.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("BookInOrder");
+                    b.ToTable("BookInOrders");
                 });
 
             modelBuilder.Entity("BookApplication.Domain.Domain.BookInShoppingCart", b =>
@@ -470,13 +470,13 @@ namespace BookApplication.Repository.Migrations
             modelBuilder.Entity("BookApplication.Domain.Domain.Book", b =>
                 {
                     b.HasOne("BookApplication.Domain.Domain.Author", "Author")
-                        .WithMany("Books")
+                        .WithMany()
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BookApplication.Domain.Domain.Publisher", "Publisher")
-                        .WithMany("Books")
+                        .WithMany()
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -620,19 +620,9 @@ namespace BookApplication.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BookApplication.Domain.Domain.Author", b =>
-                {
-                    b.Navigation("Books");
-                });
-
             modelBuilder.Entity("BookApplication.Domain.Domain.Order", b =>
                 {
                     b.Navigation("BooksInOrder");
-                });
-
-            modelBuilder.Entity("BookApplication.Domain.Domain.Publisher", b =>
-                {
-                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("BookApplication.Domain.Domain.ShoppingCart", b =>

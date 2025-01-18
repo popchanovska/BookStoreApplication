@@ -147,7 +147,7 @@ namespace BookApplication.Repository.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("BookInOrder");
+                    b.ToTable("BookInOrders");
                 });
 
             modelBuilder.Entity("BookApplication.Domain.Domain.BookInShoppingCart", b =>
