@@ -7,7 +7,6 @@ namespace BookAdminApplication.Controllers
 {
     public class OrderController : Controller
     {
-        // GET: controller
         public IActionResult Index()
         {
             HttpClient client = new HttpClient();

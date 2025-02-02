@@ -38,6 +38,14 @@ namespace BookApplication.Repository.Implementation
                 .SingleOrDefaultAsync(z => z.Id == id.Id).Result;
         }
 
+        public Guid GetShoppingCartIdForOrder(BaseEntity id)
+        {
+            return entities
+                .Where(z => z.Id == id.Id)
+                .Select(z => z.shoppingCart.Id)
+                .SingleOrDefault();
+        }
+
         public void Insert(Order order)
         {
             if (order == null)

@@ -12,7 +12,7 @@ public class OrderService : IOrderService
     {
         _orderRepository = orderRepository;
     }
-    
+
     public List<Order> GetAllOrders()
     {
         return _orderRepository.GetAllOrders();
@@ -22,6 +22,11 @@ public class OrderService : IOrderService
     {
         var order = _orderRepository.GetDetailsForOrder(id);
         return order;
+    }
+
+    public Guid GetShoppingCartId(BaseEntity id)
+    {
+        return _orderRepository.GetShoppingCartIdForOrder(id);
     }
 
     public void AddNewOrder(Order o)

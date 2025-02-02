@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using BookApplication.Domain.Domain;
 using BookApplication.Repository;
-using BookApplication.Repository.Implementation;
-using BookApplication.Service.Implementation;
-using BookApplication.Service.Interface;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Operations;
 using BookApplication.Service;
 
 namespace BookApplication.Web.Controllers
@@ -62,6 +53,7 @@ namespace BookApplication.Web.Controllers
 
                 return View(shoppingCart);
             }
+
             return Unauthorized();
         }
 
@@ -87,6 +79,7 @@ namespace BookApplication.Web.Controllers
                     mainService.ShoppingCart.CreateNewShoppingCart(shoppingCart);
                     return RedirectToAction(nameof(Index));
                 }
+
                 ViewData["OwnerId"] = new SelectList(_context.Users, "Id", "Id", shoppingCart.OwnerId);
                 return View(shoppingCart);
             }
@@ -108,6 +101,7 @@ namespace BookApplication.Web.Controllers
             {
                 return NotFound();
             }
+
             ViewData["OwnerId"] = new SelectList(_context.Users, "Id", "Id", shoppingCart.OwnerId);
             return View(shoppingCart);
         }
@@ -141,8 +135,10 @@ namespace BookApplication.Web.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["OwnerId"] = new SelectList(_context.Users, "Id", "Id", shoppingCart.OwnerId);
             return View(shoppingCart);
         }
@@ -151,6 +147,7 @@ namespace BookApplication.Web.Controllers
         {
             return mainService.ShoppingCart.GetDetailsForShoppingCart(id) != null;
         }
+
         // GET: ShoppingCarts/Delete/5
         public IActionResult Delete(Guid? id)
         {
@@ -214,12 +211,12 @@ namespace BookApplication.Web.Controllers
 
         public IActionResult RemoveBookFromCart(Guid Id)
         {
-
             var bsc = mainService.BookInShoppingCart.GetBookInShoppingCart(Id);
             if (bsc != null)
             {
                 mainService.BookInShoppingCart.DeleteBookFromShoppingCart(bsc);
             }
+
             return RedirectToAction("Index");
         }
 
@@ -243,6 +240,7 @@ namespace BookApplication.Web.Controllers
                 mainService.Address.CreateAddress(address);
                 return address;
             }
+
             return null;
         }
 
@@ -294,15 +292,17 @@ namespace BookApplication.Web.Controllers
                         };
 
                         mainService.Order.AddNewOrder(order);
-                        order.BooksInOrder = CreateBookInOrder(mainService.BookInShoppingCart.GetAllBooksInShoppingCart(Id), orderId);
+                        order.BooksInOrder =
+                            CreateBookInOrder(mainService.BookInShoppingCart.GetAllBooksInShoppingCart(Id), orderId);
                         mainService.Order.UpdateOrder(order);
                         mainService.BookInShoppingCart.EmptyCart(Id);
                         return RedirectToAction("Success", new { orderId = order.Id });
-
                     }
                 }
+
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
+
             return RedirectToAction("Index");
         }
 
@@ -314,7 +314,7 @@ namespace BookApplication.Web.Controllers
             };
             var order = mainService.Order.GetDetailsForOrder(Id);
 
-            var shpId = mainService.Order.GetDetailsForOrder(Id).shoppingCart.Id;
+            var shpId = mainService.Order.GetShoppingCartId(Id);
             ViewBag.ShoppingCartId = shpId;
             ViewBag.TotalPrice = mainService.Order.GetDetailsForOrder(Id).TotalPrice;
             var booksInShp = mainService.BookInShoppingCart.GetAllBooksInShoppingCart(shpId);
@@ -328,6 +328,4 @@ namespace BookApplication.Web.Controllers
             return View(order);
         }
     }
-
-
-    }
+}

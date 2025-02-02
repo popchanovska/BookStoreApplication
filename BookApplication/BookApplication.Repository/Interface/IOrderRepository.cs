@@ -11,6 +11,7 @@ namespace BookApplication.Repository.Interface
     {
         List<Order> GetAllOrders();
         Order GetDetailsForOrder(BaseEntity id);
+        Guid GetShoppingCartIdForOrder(BaseEntity id);
         void Insert(Order o);
         void Delete(BaseEntity id);
         void Update(Order o);
