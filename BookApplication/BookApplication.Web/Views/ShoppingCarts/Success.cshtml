@@ -1,11 +1,12 @@
 ﻿@using BookApplication.Domain.Domain
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
 @model BookApplication.Domain.Domain.Order
 
 @{
     ViewBag.Title = "Order Details";
     var totalPrice = ViewBag.TotalPrice;
     var ShoppingCartId = ViewBag.ShoppingCartId;
-    var booksInShoppingCart = ViewBag.booksInShoppingCart as List<BookInShoppingCart>;
+    var booksInOrder = ViewBag.booksInOrder as List<BookInOrder>;
 
 }
 
@@ -15,8 +16,7 @@
     <div class="card mt-4">
         <div class="card-body">
             <h4 class="card-title">User Information</h4>
-            <p><strong>Name:</strong> @Model.User?.FirstName</p> <!-- Assuming FullName is a property in BookAppUser -->
-            <p><strong>Email:</strong> @Model.User?.Email</p> <!-- Assuming Email is a property in BookAppUser -->
+            <p><strong>Email:</strong> @Model.User?.Email</p> 
         </div>
     </div>
 
@@ -36,11 +36,11 @@
             <p><strong>Total Price:</strong> @totalPrice</p>
             <h5 class="mt-3">Books in Order:</h5>
             <ul class="list-group">
-                @foreach (var bookInCart in booksInShoppingCart)
+                @foreach (var book in booksInOrder)
                 {
                     <li class="list-group-item">
-                        <p><b>@bookInCart.Book.Title</b></p>
-                        <span class="text-muted">Quantity: @bookInCart.Quantity</span>
+                        <p><b>@book.Book.Title</b></p>
+                        <span class="text-muted">Quantity: @book.Quantity</span>
                     </li>
                 }
             </ul>

@@ -317,8 +317,8 @@ namespace BookApplication.Web.Controllers
             var shpId = mainService.Order.GetShoppingCartId(Id);
             ViewBag.ShoppingCartId = shpId;
             ViewBag.TotalPrice = mainService.Order.GetDetailsForOrder(Id).TotalPrice;
-            var booksInShp = mainService.BookInShoppingCart.GetAllBooksInShoppingCart(shpId);
-            ViewBag.BooksInShoppingCart = booksInShp;
+            var booksInOder = mainService.BookInOrder.GetAllBooksInOrder(order.Id);
+            ViewBag.BooksInOrder = booksInOder;
 
             if (order == null)
             {
