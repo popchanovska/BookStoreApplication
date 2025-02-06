@@ -1,80 +1,86 @@
 ﻿@model BookApplication.Domain.Domain.Book
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details - Book Shop";
 }
 
-<h1>Details</h1>
+<!-- Link the details.css -->
+<link rel="stylesheet" href="~/css/Books/book_details.css" asp-append-version="true" />
 
-<div>
-    <h4>Book</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Author.FirstName)
-            @Html.DisplayFor(model => model.Author.LastName)
+<div class="container mt-4">
+    <div class="row">
+        <!-- Left side: Book Details -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Title</h5>
+                    <p class="card-text">by @($"{Model.Author.FirstName} {Model.Author.LastName}")</p>
+                    <div class="mt-4">
+                        <dl class="row">
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.ISBN)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.ISBN)
+                            </dd>
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.Price)
+                            </dt>
+                            <dd class="col-sm-8">
+                                $@Html.DisplayFor(model => model.Price)
+                            </dd>
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.PublicatonYear)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.PublicatonYear)
+                            </dd>
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.IsHardcover)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @if (Model.IsHardcover)
+                                {
+                                    <span class="emoji">✅</span>
+                                }
+                                else
+                                {
+                                    <span class="emoji">❌</span>
+                                }
+                            </dd>
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.Rating)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Rating)
+                            </dd>
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.Genre)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Genre)
+                            </dd>
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.Publisher)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Publisher.Name)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+                    <a class="btn btn-primary btn-sm" asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </div>
 
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ISBN)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ISBN)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            <img src="@Model.CoverImage" />
-        </dt>
-        <dd class = "col-sm-10">
-            <img src="@Model.CoverImage" />
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PublicatonYear)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PublicatonYear)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IsHardcover)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsHardcover)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Genre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Publisher)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Publisher.Name)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+        <!-- Right side: Book Cover Image -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="@Model.CoverImage" class="card-img-top" alt="Book Cover" style="max-height: 350px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
 </div>

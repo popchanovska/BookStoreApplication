@@ -1,0 +1,106 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h4 {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: #5a2d68;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 30px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.col-md-4 {
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Form Styling */
+form {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #5a2d68;
+}
+
+input.form-control, select.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+input.form-control:focus, select.form-control:focus {
+    border-color: #6a4c9c;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #5a2d68;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #4b2251;
+}
+
+.text-danger {
+    font-size: 0.875rem;
+    color: #e74c3c;
+}
+
+.form-check-label {
+    color: #5a2d68;
+}
+
+/* Back to List Link */
+a {
+    color: #6a4c9c;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #5a2d68;
+}
+
+a:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        width: 90%;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+}

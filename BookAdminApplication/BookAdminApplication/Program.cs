@@ -1,5 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
 
+var handler = new HttpClientHandler()
+{
+    ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true
+};
+var client = new HttpClient(handler);
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

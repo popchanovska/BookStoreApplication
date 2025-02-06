@@ -1,12 +1,21 @@
-﻿services:
-  sql-db:
-    container_name: sqlserver
-    hostname: sql-db
+version: '3.8'
+
+services:
+  sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    pull_policy: missing
-    environment:
-      "ACCEPT_EULA":"Y"
-      "MSSQL_SA_PASSWORD": ${MSSQL_SA_PASSWORD}
-      "MSSQL_PID": ${MSSQL_PID}
+    container_name: sqlserver
+    restart: "no"
     ports:
       - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Test@123"
+      MSSQL_PID: "developer"
+      MSSQL_RPC_PORT: "135"
+    networks:
+      - mssql_network
+    entrypoint: ["/opt/mssql/bin/permissions_check.sh", "/opt/mssql/bin/sqlservr"]
+
+networks:
+  mssql_network:
+    driver: bridge

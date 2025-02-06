@@ -1,101 +1,43 @@
 ﻿@model IEnumerable<BookApplication.Domain.Domain.Book>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Books - Book Shop";
 }
 
-<h1>Index</h1>
+<link rel="stylesheet" href="~/css/Books/book_index.css" asp-append-version="true" />
 
-<p>
-    <a asp-action="Create">Create New</a>
+<div class="text-center">
+    <h1 class="display-4">Explore Our Collection</h1>
+    <p class="lead">Find your next great read from our wide selection of books.</p>
+</div>
+
+<p class="text-center">
+    <a class="btn btn-secondary" asp-action="Create">Add a New Book</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ISBN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CoverImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublicatonYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsHardcover)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Publisher)
-            </th>
-            <th>Buy</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @($"{item.Author.FirstName} {item.Author.LastName}")
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ISBN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                    @*  @Html.DisplayFor(modelItem => item.CoverImage)*@
-                    <img class="card-img-top" src="@item.CoverImage" alt="Card image cap">
 
-
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublicatonYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsHardcover)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Publisher.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-            <td>
-                <form asp-controller="ShoppingCarts" asp-action="AddToCart" method="post">
-                    <input type="hidden" name="BookId" value="@item.Id" />
-                    <input type="number" name="bookQuantity" min="1" value="1" class="form-control" style="width: 80px;" />
-                    <button type="submit" class="btn btn-primary">Add to Cart</button>
-                </form>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container mt-4">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="@item.CoverImage" class="card-img-top" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">by @($"{item.Author.FirstName} {item.Author.LastName}")</p>
+                        <p class="card-text"><strong>Genre:</strong> @item.Genre</p>
+                        <p class="card-text"><strong>Price:</strong> $@item.Price</p>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary">View Details</a>
+                    </div>
+                    <div class="card-footer text-center">
+                        <form asp-controller="ShoppingCarts" asp-action="AddToCart" method="post">
+                            <input type="hidden" name="BookId" value="@item.Id" />
+                            <input type="number" name="bookQuantity" min="1" value="1" class="form-control d-inline w-auto" />
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

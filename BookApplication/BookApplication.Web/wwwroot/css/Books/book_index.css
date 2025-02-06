@@ -1,0 +1,155 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, .display-4 {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: #5a2d68;
+}
+
+p.lead {
+    font-style: italic;
+    color: #6a4c9c;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+/* Button Styles */
+.btn-secondary {
+    background-color: #6a4c9c;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a2d68;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 0; 
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 150px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card-footer {
+    border-top: 1px solid #ddd;
+}
+
+.card-footer form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-footer .btn-primary {
+    background-color: #5a2d68;
+    color: white;
+    padding: 10px 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.card-footer .btn-primary:hover {
+    background-color: #4b2251;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-md-4 {
+    flex: 0 0 20%;
+    margin-bottom: 10px; 
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 48%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+    }
+}
+
+/* Header Styles */
+.text-center {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    transition: background-color 0.3s ease;
+}
+
+.card-body:hover {
+    background-color: #f7f7f7;
+}
+
+/* Form Inputs */
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #6a4c9c;
+}

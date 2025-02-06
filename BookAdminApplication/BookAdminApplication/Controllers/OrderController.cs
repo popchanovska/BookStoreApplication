@@ -10,7 +10,7 @@ namespace BookAdminApplication.Controllers
         public IActionResult Index()
         {
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:7295/api/orders/GetAllOrders";
+            string URL = "http://localhost:5285/api/orders/GetAllOrders";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
             var data = response.Content.ReadAsAsync<List<Order>>().Result;
@@ -21,7 +21,7 @@ namespace BookAdminApplication.Controllers
         public IActionResult Details(string id)
         {
             HttpClient client = new HttpClient();
-            string URL = $"https://localhost:7295/api/orders/GetOrder/{id}";
+            string URL = $"http://localhost:5285/api/orders/GetOrder/{id}";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
 
