@@ -32,6 +32,7 @@ namespace BookApplication.Web.Controllers
             }
 
             var publisher = mainService.Publisher.GetPublisher(id);
+            if(publisher == null)
             {
                 return NotFound();
             }

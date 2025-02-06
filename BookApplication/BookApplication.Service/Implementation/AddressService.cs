@@ -23,7 +23,7 @@ namespace BookApplication.Service.Implementation
             _addressRepository.Delete(a);
         }
 
-        public Address GetAddress(Guid id)
+        public Address GetAddress(Guid? id)
         {
             return _addressRepository.Get(id);
         }

@@ -4,6 +4,8 @@
     ViewData["Title"] = "Details";
 }
 
+<link rel="stylesheet" href="~/css/Author/a_details.css" asp-append-version="true" />
+
 <div>
     <hr/>
     <dl class="row">
@@ -35,7 +37,9 @@
             @Html.DisplayNameFor(model => model.Address)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Address.Street + " " + model.Address.City + " " + model.Address.Country)
+            @Html.DisplayFor(model => model.Address.Street),
+            @Html.DisplayFor(model => model.Address.City),
+            @Html.DisplayFor(model => model.Address.Country)
         </dd>
     </dl>
 </div>

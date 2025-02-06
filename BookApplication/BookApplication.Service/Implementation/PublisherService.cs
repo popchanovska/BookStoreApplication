@@ -7,10 +7,12 @@ namespace BookApplication.Service.Implementation
     public class PublisherService : IPublisherService
     {
         private readonly IRepository<Publisher> _publisherRepository;
+        private readonly IAddressService _addressService;
 
-        public PublisherService(IRepository<Publisher> publisherRepository) {
+        public PublisherService(IRepository<Publisher> publisherRepository, IAddressService addressService)
+        {
             _publisherRepository = publisherRepository;
-        
+            _addressService = addressService;
         }
 
         public void CreatePublisher(Publisher publisher)
@@ -31,7 +33,9 @@ namespace BookApplication.Service.Implementation
 
         public Publisher GetPublisher(Guid id)
         {
-            return _publisherRepository.Get(id);
+            var publisher = _publisherRepository.Get(id);
+            publisher.Address = _addressService.GetAddress(publisher.AddressId);
+            return publisher;
         }
 
         public void UpdatePublisher(Publisher publisher)
