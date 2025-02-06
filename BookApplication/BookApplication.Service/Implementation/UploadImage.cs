@@ -26,10 +26,6 @@ public static class UploadImage
         {
             imageBytes = File.ReadAllBytes(img);
         }
-        //else if (IsBase64String(img))
-        //{
-        //    return img;
-        //}
         else 
         {
             return img;
@@ -46,15 +42,11 @@ public static class UploadImage
             }
         }
     }
-
-    // Helper function to check if a string is a valid URL
     private static bool IsUrl(string url)
     {
         return Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult)
                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
     }
-
-    // Helper function to check if a string is a valid base64 string
     private static bool IsBase64String(string base64)
     {
         Span<byte> buffer = new Span<byte>(new byte[base64.Length]);
