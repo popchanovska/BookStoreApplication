@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.App/containerApps/bookapplicationweb-app-202502062/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsWebApp_E3DAA1684E",
+      "secretStore": "AzureContainerApp",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/bookapplicationwebdbserver/databases/BookApplication.Web_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:WebApp"
+    }
+  }
+}
