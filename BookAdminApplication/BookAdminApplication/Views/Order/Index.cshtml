@@ -12,19 +12,19 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OrderDate)
+                Order date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.UserName)
+                Username
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                Address
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TotalPrice)
+                Total price
             </th>
             <th>
-                BooksInOrder
+                No. of books in order
             </th>
             <th>Details</th>
             <th></th>
@@ -50,10 +50,10 @@
             </td>
             <td>
                 @item.BooksInOrder?.Count()
-                @* todo: ova dava kolku razlicni knigi imame a ne kolku vkupno knigi ima vo narackata. pr vraka 1 iako od edna kniga imas 3 primeroci poracano *@
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a asp-action="CreateInvoice" asp-route-id="@item.Id">Create Invoice</a>
             </td>
         </tr>
 }
