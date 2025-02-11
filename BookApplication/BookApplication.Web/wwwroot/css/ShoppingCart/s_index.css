@@ -1,15 +1,17 @@
 body {
-    font-family: 'Georgia', serif;
     background-color: #f4f4f9;
     color: #333;
 }
-
-h1 {
-    font-family: 'Georgia', serif;
+.text-center h4 {
+    color: #5e4b8b;
     font-weight: bold;
-    color: #5a2d68;
-    text-align: center;
-    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.text-center p.lead {
+    color: #6c757d;
+    font-size: 16px;
 }
 
 h3 {
@@ -63,12 +65,12 @@ td form button:hover {
     background-color: #4b2251;
 }
 
-a {
+.a {
     color: #6a4c9c;
     text-decoration: none;
 }
 
-a:hover {
+.a:hover {
     text-decoration: underline;
     color: #5a2d68;
 }
@@ -96,6 +98,81 @@ form button {
 
 form button:hover {
     background-color: #4b2251;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #6c63ff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5a54e1;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 768px) {

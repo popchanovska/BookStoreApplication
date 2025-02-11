@@ -1,102 +1,86 @@
 body {
-    font-family: 'Georgia', serif;
-}
-
-h1, h4 {
-    font-family: 'Georgia', serif;
-    font-weight: bold;
-    color: #5a2d68;
-    text-align: center;
-}
-
-h1 {
-    margin-top: 30px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
 }
 
 .row {
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.col-md-4 {
-    width: 80%;
-    max-width: 800px;
+.text-center h4 {
+    color: #5e4b8b;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 17px;
 }
 
-/* Form Styling */
+.text-center p.lead {
+    color: #6c757d;
+    font-size: 16px;
+}
+
 form {
-    background-color: white;
+    background: #ffffff;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
     margin-bottom: 15px;
 }
 
-label {
-    font-weight: bold;
-    color: #5a2d68;
-}
-
-input.form-control, select.form-control {
-    padding: 10px;
-    font-size: 1rem;
+.form-control {
     border: 1px solid #ccc;
-    width: 100%;
+    transition: border-color 0.3s ease;
 }
 
-input.form-control:focus, select.form-control:focus {
-    border-color: #6a4c9c;
-    outline: none;
-}
-
-input[type="submit"] {
-    background-color: #5a2d68;
-    color: white;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-input[type="submit"]:hover {
-    background-color: #4b2251;
-}
-
-.text-danger {
-    font-size: 0.875rem;
-    color: #e74c3c;
+.form-control:focus {
+    border-color: #6a5acd;
+    box-shadow: 0 0 5px rgba(106, 90, 205, 0.5);
 }
 
 .form-check-label {
-    color: #5a2d68;
+    font-weight: 500;
+    color: #555;
 }
 
-a {
-    color: #6a4c9c;
-    font-size: 1rem;
-    text-decoration: none;
-    display: block;
-    text-align: center;
+.btn-primary {
+    background-color: #6a5acd;
+    border: none;
+    padding: 10px 20px;
+    transition: background 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #5a2d68;
+.btn-primary:hover {
+    background-color: #5a4dbf;
 }
 
-a:focus {
-    outline: none;
+div a {
+    display: inline-block;
+    color: #6a5acd;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+div a:hover {
+    color: #5a4dbf;
+}
+
+.btn {
+    border-radius: 2px;
 }
 
 @media (max-width: 768px) {
     .col-md-4 {
-        width: 90%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
-    .form-group {
-        margin-bottom: 10px;
+    form {
+        padding: 15px;
     }
 }

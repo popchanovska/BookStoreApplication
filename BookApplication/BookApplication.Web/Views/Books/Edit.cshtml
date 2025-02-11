@@ -5,6 +5,14 @@
 }
 
 <link rel="stylesheet" href="~/css/Books/books_edit.css" asp-append-version="true" />
+<div>
+    <a asp-action="Index" class="btn btn-outline-secondary">Назад</a>
+</div>
+
+<div class="text-center">
+    <h4 class="display-4">Ох ни пронајде грешка ли?</h4>
+    <p class="lead">Слободно помогни ни со тоа што ќе ја поправиш книгата :)</p>
+</div>
 
 <hr />
 <div class="row">
@@ -12,65 +20,61 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="AuthorId" class="control-label"></label>
+                <label asp-for="AuthorId" class="control-label">Автор</label>
                 <select asp-for="AuthorId" class="form-control" asp-items="ViewBag.AuthorId"></select>
                 <span asp-validation-for="AuthorId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
+                <label asp-for="Title" class="control-label">Наслов</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ISBN" class="control-label"></label>
+                <label asp-for="ISBN" class="control-label">ISBN</label>
                 <input asp-for="ISBN" class="form-control" />
                 <span asp-validation-for="ISBN" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
+                <label asp-for="Price" class="control-label">Цена</label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CoverImage" class="control-label"></label>
+                <label asp-for="CoverImage" class="control-label">Слика</label>
                 <input asp-for="CoverImage" class="form-control" />
                 <span asp-validation-for="CoverImage" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PublicatonYear" class="control-label"></label>
+                <label asp-for="PublicatonYear" class="control-label">Година на издавање</label>
                 <input asp-for="PublicatonYear" class="form-control" />
                 <span asp-validation-for="PublicatonYear" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsHardcover" /> @Html.DisplayNameFor(model => model.IsHardcover)
+                    <input class="form-check-input" asp-for="IsHardcover" />Тврда корица
                 </label>
             </div>
             <div class="form-group">
-                <label asp-for="Rating" class="control-label"></label>
+                <label asp-for="Rating" class="control-label">Оценка</label>
                 <input asp-for="Rating" class="form-control" />
                 <span asp-validation-for="Rating" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
+                <label asp-for="Genre" class="control-label">Жанр</label>
                 <select asp-for="Genre" class="form-control" asp-items="@(Html.GetEnumSelectList<BookApplication.Domain.Enums.Genre>())"></select>
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PublisherId" class="control-label"></label>
+                <label asp-for="PublisherId" class="control-label">Издавачка куќа</label>
                 <select asp-for="PublisherId" class="form-control" asp-items="ViewBag.PublisherId"></select>
                 <span asp-validation-for="PublisherId" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Зачувај" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div class="last-btn">
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

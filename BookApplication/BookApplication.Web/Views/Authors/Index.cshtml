@@ -6,26 +6,31 @@
 
 <link rel="stylesheet" href="~/css/Publishers/p_index.css" asp-append-version="true" />
 
+<div class="text-center">
+    <h4 class="display-4">Здраво, ние сме авторите на книгите!</h4>
+    <p class="lead">Мило ми е што се запознавме.</p>
+</div>
+
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-secondary">Додади</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                Име
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                Презиме
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Biography)
+                Биографија
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
+                Дата на раѓање
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Image)
+                Слика
             </th>
             <th></th>
         </tr>
@@ -49,9 +54,9 @@
                     <img class="card-img-top" src="@item.Image" alt="Card image cap">
                 </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Измени</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Избриши</a>
             </td>
         </tr>
 }

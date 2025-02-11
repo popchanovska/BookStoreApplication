@@ -7,26 +7,30 @@
 
 <link rel="stylesheet" href="~/css/Publishers/p_index.css" asp-append-version="true" />
 
+<div class="text-center">
+    <h4 class="display-4">Што мислиш за овие издавачки куќа...?</h4>
+</div>
+
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-secondary">Додади</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Име
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Мејл
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Website)
+                Вебстрана
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                Телефон
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                Адреса
             </th>
             <th></th>
         </tr>
@@ -50,15 +54,15 @@
                     @{
                         var address = item.Address;
                         var addressString = (address != null) ?
-                        string.Join(",", address.Street, address.City, address.ZipCode, address.Country) :
+                        string.Join(", ", address.Street, address.City, address.Country) :
                         "No Address Available";
                     }
                     @addressString
                 </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <td colspan="3">
+                <a asp-action="Edit" class="btn-a" asp-route-id="@item.Id">Измени</a> |
+                <a asp-action="Details" class="btn-a" asp-route-id="@item.Id">Детали</a> |
+                <a asp-action="Delete" class="btn-a" asp-route-id="@item.Id">Избриши</a>
             </td>
         </tr>
 }

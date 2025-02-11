@@ -1,5 +1,5 @@
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
@@ -7,7 +7,6 @@ body {
 }
 
 h1, h3, h4 {
-    font-family: 'Georgia', serif;
     font-weight: bold;
     color: #e74c3c; 
     text-align: center;
@@ -54,7 +53,6 @@ div {
     border-top: 1px solid #ddd;
 }
 
-/* Form Styling */
 form {
     background-color: white;
     padding: 20px;

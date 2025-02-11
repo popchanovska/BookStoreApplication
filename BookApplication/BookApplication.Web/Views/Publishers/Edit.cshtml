@@ -6,28 +6,32 @@
 
 <link rel="stylesheet" href="~/css/Publishers/p_edit.css" asp-append-version="true" />
 
+<div class="text-center">
+    <h4 class="display-4">Измени ја оваа издавачка куќа!</h4>
+</div>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="control-label">Име</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label">Мејл</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Website" class="control-label"></label>
+                <label asp-for="Website" class="control-label">Вебстрана</label>
                 <input asp-for="Website" class="form-control" />
                 <span asp-validation-for="Website" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
+                <label asp-for="PhoneNumber" class="control-label">Телефон</label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
@@ -38,14 +42,14 @@
             </div>*@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Зачувај" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div class="back-to-list">
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-secondary">Назад</a>
 </div>
 
 @section Scripts {

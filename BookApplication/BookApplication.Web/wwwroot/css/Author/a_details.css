@@ -1,11 +1,21 @@
 body {
-    font-family: 'Georgia', serif;
     background-color: #f4f4f9;
     color: #333;
 }
 
+.text-center h4 {
+    color: #5e4b8b;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.text-center p.lead {
+    color: #6c757d;
+    font-size: 16px;
+}
+
 h1 {
-    font-family: 'Georgia', serif;
     font-weight: bold;
     color: #5a2d68;
     text-align: center;

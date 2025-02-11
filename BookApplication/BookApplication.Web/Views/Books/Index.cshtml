@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="~/css/Books/book_index.css" asp-append-version="true" />
 
 <div class="text-center">
-    <h1 class="display-4">Explore Our Collection</h1>
-    <p class="lead">Find your next great read from our wide selection of books.</p>
+    <h4 class="display-4">Дознај ја нашата колекција на книги!</h4>
+    <p class="lead">Само три чекори те делат до влез во нов униврзум! Купи книга и влези во нова авантура...</p>
 </div>
 
 <p class="text-center">
-    <a class="btn btn-secondary" asp-action="Create">Add a New Book</a>
+    <a class="btn btn-secondary" asp-action="Create">Додади книга</a>
 </p>
 
 <div class="container mt-4">
@@ -24,16 +24,16 @@
                     <img src="@item.CoverImage" class="card-img-top" alt="Book Cover">
                     <div class="card-body">
                         <h5 class="card-title">@item.Title</h5>
-                        <p class="card-text">by @($"{item.Author.FirstName} {item.Author.LastName}")</p>
-                        <p class="card-text"><strong>Genre:</strong> @item.Genre</p>
-                        <p class="card-text"><strong>Price:</strong> $@item.Price</p>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary">View Details</a>
+                        <p class="card-text author">од @($"{item.Author.FirstName} {item.Author.LastName}")</p>
+                        <p class="card-text text-t"><strong>Жанр:</strong> @item.Genre</p>
+                        <p class="card-text text-t"><strong>Цена:</strong> @item.Price ден.</p>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary btn-b">Детали</a>
                     </div>
                     <div class="card-footer text-center">
                         <form asp-controller="ShoppingCarts" asp-action="AddToCart" method="post">
                             <input type="hidden" name="BookId" value="@item.Id" />
                             <input type="number" name="bookQuantity" min="1" value="1" class="form-control d-inline w-auto" />
-                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            <button type="submit" class="btn btn-primary">Додади во кошничка</button>
                         </form>
                     </div>
                 </div>

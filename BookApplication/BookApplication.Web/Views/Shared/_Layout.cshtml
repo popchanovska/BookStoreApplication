@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BookApplication.Web.styles.css" asp-append-version="true" />
+    <style>
+        .login-container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,19 +27,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Почетна</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="Index">Книги</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Authors" asp-action="Index">Authors</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Authors" asp-action="Index">Автори</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Publishers" asp-action="Index">Publishers</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Publishers" asp-action="Index">Издавачки куќи</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingCarts" asp-action="Index">Shopping Cart</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingCarts" asp-action="Index">Кошничка</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -45,12 +52,6 @@
             @RenderBody()
         </main>
     </div>
-
-    @*<footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - BookApplication.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
