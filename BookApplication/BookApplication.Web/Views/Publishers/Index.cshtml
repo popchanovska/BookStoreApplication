@@ -11,9 +11,13 @@
     <h4 class="display-4">Што мислиш за овие издавачки куќа...?</h4>
 </div>
 
+@if(User.Identity.IsAuthenticated){
+
 <p>
     <a asp-action="Create" class="btn btn-outline-secondary">Додади</a>
+                
 </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -60,10 +64,18 @@
                     @addressString
                 </td>
             <td colspan="3">
-                <a asp-action="Edit" class="btn-a" asp-route-id="@item.Id">Измени</a> |
-                <a asp-action="Details" class="btn-a" asp-route-id="@item.Id">Детали</a> |
-                <a asp-action="Delete" class="btn-a" asp-route-id="@item.Id">Избриши</a>
-            </td>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <a asp-action="Edit" class="btn-a" asp-route-id="@item.Id">Измени</a>
+                    }
+                    |
+                    <a asp-action="Details" class="btn-a" asp-route-id="@item.Id">Детали</a> |
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-action="Delete" class="btn-a" asp-route-id="@item.Id">Избриши</a>
+                    }
+                </td>
         </tr>
 }
     </tbody>

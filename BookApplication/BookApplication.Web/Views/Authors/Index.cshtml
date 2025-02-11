@@ -10,10 +10,12 @@
     <h4 class="display-4">Здраво, ние сме авторите на книгите!</h4>
     <p class="lead">Мило ми е што се запознавме.</p>
 </div>
-
+ @if (User.Identity.IsAuthenticated)
+                    {
 <p>
     <a asp-action="Create" class="btn btn-outline-secondary">Додади</a>
 </p>
+                    }
 <table class="table">
     <thead>
         <tr>
@@ -51,13 +53,22 @@
                 @Html.DisplayFor(modelItem => item.DateOfBirth)
             </td>
             <td>
-                    <img class="card-img-top" src="@item.Image" alt="Card image cap">
+                    <img class="card-img-top" src="@item.Image" alt="Card image cap" style="width:150px; border-radius: 1px">
                 </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Измени</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Детали</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Избриши</a>
-            </td>
+               @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <a asp-action="Edit" asp-route-id="@item.Id">Измени</a>
+                    }
+                    |
+                    <a asp-action="Details" asp-route-id="@item.Id">Детали</a> |
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <a asp-action="Delete" asp-route-id="@item.Id">Избриши</a>
+                    }
+                </td>
         </tr>
 }
     </tbody>

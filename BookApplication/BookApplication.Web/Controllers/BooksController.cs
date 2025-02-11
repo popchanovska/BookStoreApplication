@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
 using BookApplication.Service;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookApplication.Web.Controllers
 {
@@ -39,6 +40,7 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Books/Create
+        [Authorize]
         public IActionResult Create()
         {
             // ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", _authorService.GetNamesForAuthors().ToString());
@@ -51,6 +53,7 @@ namespace BookApplication.Web.Controllers
         // POST: Books/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("AuthorId,Title,ISBN,Price,CoverImage,PublicatonYear,IsHardcover,Rating,Genre,PublisherId,Id")] Book book)
@@ -67,6 +70,7 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Books/Edit/5
+        [Authorize]
         public IActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -87,6 +91,7 @@ namespace BookApplication.Web.Controllers
         // POST: Books/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Guid id, [Bind("AuthorId,Title,ISBN,Price,CoverImage,PublicatonYear,IsHardcover,Rating,Genre,PublisherId,Id")] Book book)
@@ -121,6 +126,7 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Books/Delete/5
+        [Authorize]
         public IActionResult Delete(Guid id)
         {
             if (id == null)
@@ -140,6 +146,7 @@ namespace BookApplication.Web.Controllers
         }
 
         // POST: Books/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)

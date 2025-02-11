@@ -55,3 +55,4 @@ ScaffoldingReadMe.txt
 *.patch
 *.orig
 *.rej
+/BookApplication/BookApplication.Web/appsettings.json

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
 using BookApplication.Service;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace BookApplication.Web.Controllers
 {
@@ -41,15 +43,17 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Publishers/Create
+        [Authorize]
         public IActionResult Create()
         {
-            // ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "City");
             return View();
         }
 
         // POST: Publishers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Name,Email,Website,PhoneNumber,Address")] Publisher publisher)
@@ -64,11 +68,8 @@ namespace BookApplication.Web.Controllers
             {
                 publisher.Id = Guid.NewGuid();
 
-                // Save the Address entity
                 mainService.Address.CreateAddress(publisher.Address);
-
-                // Associate the AddressId with the Publisher and save Publisher
-                publisher.AddressId = publisher.Address.Id;  // Ensure Address has an ID (set by database or manually)
+                publisher.AddressId = publisher.Address.Id; 
                 mainService.Publisher.CreatePublisher(publisher);
 
                 return RedirectToAction(nameof(Index));
@@ -78,6 +79,8 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Publishers/Edit/5
+        [Authorize  ]
+
         public IActionResult Edit(Guid id)
         {
             if (id == null)
@@ -90,13 +93,13 @@ namespace BookApplication.Web.Controllers
             {
                 return NotFound();
             }
-            // ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "City", publisher.AddressId);
             return View(publisher);
         }
 
         // POST: Publishers/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Guid id, [Bind("Name,Email,Website,PhoneNumber,AddressId,Id")] Publisher publisher)
@@ -125,9 +128,9 @@ namespace BookApplication.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            // ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "City", publisher.AddressId);
             return View(publisher);
         }
+        [Authorize]
 
         // GET: Publishers/Delete/5
         public IActionResult Delete(Guid id)
@@ -145,6 +148,7 @@ namespace BookApplication.Web.Controllers
 
             return View(publisher);
         }
+        [Authorize]
 
         // POST: Publishers/Delete/5
         [HttpPost, ActionName("Delete")]

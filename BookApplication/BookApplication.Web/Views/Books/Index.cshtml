@@ -10,10 +10,12 @@
     <h4 class="display-4">Дознај ја нашата колекција на книги!</h4>
     <p class="lead">Само три чекори те делат до влез во нов униврзум! Купи книга и влези во нова авантура...</p>
 </div>
-
+ @if (User.Identity.IsAuthenticated)
+                    {
 <p class="text-center">
     <a class="btn btn-secondary" asp-action="Create">Додади книга</a>
 </p>
+                    }
 
 <div class="container mt-4">
     <div class="row">

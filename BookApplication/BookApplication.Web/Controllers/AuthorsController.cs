@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
 using BookApplication.Service;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookApplication.Web.Controllers
 {
@@ -39,6 +40,8 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Authors/Create
+        [Authorize]
+
         public IActionResult Create()
         {
             return View();
@@ -79,6 +82,8 @@ namespace BookApplication.Web.Controllers
         // POST: Authors/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Guid id, [Bind("FirstName,LastName,Biography,DateOfBirth,Image,Id")] Author author)
@@ -111,6 +116,8 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Authors/Delete/5
+        [Authorize]
+
         public IActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -128,6 +135,8 @@ namespace BookApplication.Web.Controllers
         }
 
         // POST: Authors/Delete/5
+        [Authorize]
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)

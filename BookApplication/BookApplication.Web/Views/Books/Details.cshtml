@@ -74,7 +74,10 @@
                     </div>
                 </div>
                 <div class="card-footer text-center">
-                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@Model?.Id">Измени</a>
+                     @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@Model?.Id">Измени</a>
+                    }
                     <a class="btn btn-primary btn-sm" asp-action="Index">Назад</a>
                 </div>
             </div>

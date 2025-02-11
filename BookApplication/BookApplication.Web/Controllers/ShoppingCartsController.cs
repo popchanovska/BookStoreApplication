@@ -5,9 +5,11 @@ using System.Security.Claims;
 using BookApplication.Domain.Domain;
 using BookApplication.Repository;
 using BookApplication.Service;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookApplication.Web.Controllers
 {
+    [Authorize]
     public class ShoppingCartsController : Controller
     {
         private readonly ApplicationDbContext _context;
