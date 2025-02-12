@@ -51,6 +51,9 @@
      @if (User.Identity.IsAuthenticated)
     {
         <a asp-action="Edit" asp-route-id="@Model?.Id">Измени</a>
+        <a asp-action="Delete" asp-route-id="@Model?.Id">Избриши</a>
+
+
     }
     |
     <a asp-action="Index">Назад</a>

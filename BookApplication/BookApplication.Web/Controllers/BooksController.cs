@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookApplication.Domain.Domain;
 using BookApplication.Service;
+using Microsoft.Identity;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace BookApplication.Web.Controllers
 {
@@ -15,15 +17,9 @@ namespace BookApplication.Web.Controllers
         {
             mainService = _mainService;
         }
-
-        // GET: Books
-        //public IActionResult Index()
-        //{
-        //    return View(mainService.Book.GetAllBooks());
-        //}
         public IActionResult Index(string searchString)
         {
-            ViewData["CurrentFilter"] = searchString; // To retain the search term in the view
+            ViewData["CurrentFilter"] = searchString; 
 
             var books = mainService.Book.GetAllBooks();
 
@@ -61,7 +57,6 @@ namespace BookApplication.Web.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            // ViewData["AuthorId"] = new SelectList(_authorService.GetNamesForAuthors(), "Id", _authorService.GetNamesForAuthors().ToString());
             ViewData["AuthorId"] = new SelectList(mainService.Author.GetNamesForAuthors(), "Id", "FullName");
 
             ViewData["PublisherId"] = new SelectList(mainService.Publisher.GetAllPublishers(), "Id", "Name");
@@ -69,8 +64,6 @@ namespace BookApplication.Web.Controllers
         }
 
         // POST: Books/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -107,8 +100,6 @@ namespace BookApplication.Web.Controllers
         }
 
         // POST: Books/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
