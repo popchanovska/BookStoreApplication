@@ -148,9 +148,7 @@ namespace BookApplication.Web.Controllers
             {
                 return NotFound();
             }
-
-            mainService.Book.DeleteBook(id);
-
+            
             return View(book);
         }
 
