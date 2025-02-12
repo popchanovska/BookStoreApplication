@@ -11,14 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var partnerConnectionString = builder.Configuration.GetConnectionString("PartnerStoreConnection") ?? throw new InvalidOperationException("Connection string 'PartnerConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-// builder.Services.AddControllers().AddJsonOptions(options =>
-// {
-//     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
-// });
+builder.Services.AddDbContext<ApplicationDbContextPartner>(options =>
+    options.UseSqlServer(partnerConnectionString));
 
 builder.Services.AddDefaultIdentity<BookAppUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();

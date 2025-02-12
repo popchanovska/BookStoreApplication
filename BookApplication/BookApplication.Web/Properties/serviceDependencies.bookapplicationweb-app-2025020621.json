@@ -7,6 +7,12 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:WebApp",
       "dynamicId": null
+    },
+    "mssql1": {
+      "serviceConnectorResourceId": "",
+      "secretStore": "AzureContainerApp",
+      "type": "mssql.onprem",
+      "connectionId": "PartnerStoreConnection"
     }
   }
 }

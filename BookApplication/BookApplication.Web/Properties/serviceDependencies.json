@@ -4,6 +4,10 @@
       "type": "mssql",
       "connectionId": "ConnectionStrings:WebApp",
       "dynamicId": null
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "PartnerStoreConnection"
     }
   }
 }

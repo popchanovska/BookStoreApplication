@@ -17,9 +17,27 @@ namespace BookApplication.Web.Controllers
         }
 
         // GET: Books
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    return View(mainService.Book.GetAllBooks());
+        //}
+        public IActionResult Index(string searchString)
         {
-            return View(mainService.Book.GetAllBooks());
+            ViewData["CurrentFilter"] = searchString; // To retain the search term in the view
+
+            var books = mainService.Book.GetAllBooks();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                books = books.Where(b =>
+                    (b.Title != null && b.Title.Contains(searchString, StringComparison.OrdinalIgnoreCase)) ||
+                    (b.ISBN != null && b.ISBN.Contains(searchString, StringComparison.OrdinalIgnoreCase)) ||
+                    (b.Author != null && b.Author.FullName != null &&
+                     b.Author.FullName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+                ).ToList();
+            }
+
+            return View(books);
         }
 
         // GET: Books/Details/5
