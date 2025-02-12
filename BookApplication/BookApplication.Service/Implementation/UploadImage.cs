@@ -1,15 +1,16 @@
-using System.Text;
-using System.Drawing;
-using System.Drawing.Imaging;
+using System;
 using System.IO;
 using System.Net;
-using System.Net;
-using System.Text.RegularExpressions;
-namespace BookApplication.Service.Implementation;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats;
+using SixLabors.ImageSharp.Formats.Bmp;
+using SixLabors.ImageSharp.Formats.Gif;
+using SixLabors.ImageSharp.Formats.Jpeg;
+using SixLabors.ImageSharp.Formats.Png;
+using SixLabors.ImageSharp.Formats.Tiff;
 
 public static class UploadImage
 {
-
     public static string ConvertImageToBase64(string img)
     {
         byte[] imageBytes;
@@ -26,46 +27,38 @@ public static class UploadImage
         {
             imageBytes = File.ReadAllBytes(img);
         }
-        else 
+        else
         {
             return img;
         }
 
-
         using (var ms = new MemoryStream(imageBytes))
         {
-            using (Image image = Image.FromStream(ms))
-            {
-                string mimeType = GetMimeType(image);
-                string base64Image = Convert.ToBase64String(imageBytes);
-                return $"data:{mimeType};base64,{base64Image}";
-            }
+            IImageFormat format = Image.DetectFormat(ms);
+            string mimeType = format != null ? GetMimeType(format) : "image/png";
+            string base64Image = Convert.ToBase64String(imageBytes);
+            return $"data:{mimeType};base64,{base64Image}";
         }
     }
+
     private static bool IsUrl(string url)
     {
         return Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult)
                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
     }
-    private static bool IsBase64String(string base64)
-    {
-        Span<byte> buffer = new Span<byte>(new byte[base64.Length]);
-        return Convert.TryFromBase64String(base64, buffer, out int bytesParsed);
-    }
 
-    private static string GetMimeType(Image image)
+    private static string GetMimeType(IImageFormat format)
     {
-        if (ImageFormat.Jpeg.Equals(image.RawFormat))
+        if (format == JpegFormat.Instance)
             return "image/jpeg";
-        if (ImageFormat.Png.Equals(image.RawFormat))
+        if (format == PngFormat.Instance)
             return "image/png";
-        if (ImageFormat.Gif.Equals(image.RawFormat))
+        if (format == GifFormat.Instance)
             return "image/gif";
-        if (ImageFormat.Bmp.Equals(image.RawFormat))
+        if (format == BmpFormat.Instance)
             return "image/bmp";
-        if (ImageFormat.Tiff.Equals(image.RawFormat))
+        if (format == TiffFormat.Instance)
             return "image/tiff";
-    
         return "image/png";
     }
 }

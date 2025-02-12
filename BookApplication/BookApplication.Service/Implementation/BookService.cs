@@ -21,7 +21,7 @@ public class BookService : IBookService
 
     public List<Book> GetAllBooks()
     {
-        var books = _bookRepository.GetAll();
+        var books = _bookRepository.GetAll().ToList();
         foreach(var book in books)
         {
             book.Publisher= _publisherRepository.Get(book.PublisherId);
