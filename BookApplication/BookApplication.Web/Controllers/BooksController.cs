@@ -30,7 +30,7 @@ namespace BookApplication.Web.Controllers
                     (b.ISBN != null && b.ISBN.Contains(searchString, StringComparison.OrdinalIgnoreCase)) ||
                     (b.Author != null && b.Author.FullName != null &&
                      b.Author.FullName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
-                ).ToList();
+                    ).ToList();
             }
 
             return View(books);
