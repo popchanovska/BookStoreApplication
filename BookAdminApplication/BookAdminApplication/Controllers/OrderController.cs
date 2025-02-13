@@ -10,6 +10,7 @@ namespace BookAdminApplication.Controllers
 {
     public class OrderController : Controller
     {
+        string baseURL = "https://bookapplicationweb-app-202502062.orangeriver-3635bf67.eastus.azurecontainerapps.io";
         public OrderController()
         {
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -18,8 +19,7 @@ namespace BookAdminApplication.Controllers
         public IActionResult Index()
         {
             HttpClient client = new HttpClient();
-            string URL =
-                "https://bookapplicationweb-app-202502062.orangeriver-3635bf67.eastus.azurecontainerapps.io/api/orders/GetAllOrders";
+            string URL = baseURL+"/api/orders/GetAllOrders";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
             var data = response.Content.ReadAsAsync<List<Order>>().Result;
@@ -30,8 +30,7 @@ namespace BookAdminApplication.Controllers
         public IActionResult Details(string id)
         {
             HttpClient client = new HttpClient();
-            string URL =
-                $"https://bookapplicationweb-app-202502062.orangeriver-3635bf67.eastus.azurecontainerapps.io/api/orders/GetOrder/{id}";
+            string URL =baseURL+$"/api/orders/GetOrder/{id}";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
 
@@ -45,8 +44,7 @@ namespace BookAdminApplication.Controllers
         {
             HttpClient client = new HttpClient();
 
-            string URL =
-                $"https://bookapplicationweb-app-202502062.orangeriver-3635bf67.eastus.azurecontainerapps.io/api/orders/GetOrder/{id}";
+            string URL = baseURL+$"/api/orders/GetOrder/{id}";
             var model = new
             {
                 Id = id
@@ -83,8 +81,7 @@ namespace BookAdminApplication.Controllers
         public IActionResult Orders()
         {
             HttpClient client = new HttpClient();
-            string URL =
-                "https://bookapplicationweb-app-202502062.orangeriver-3635bf67.eastus.azurecontainerapps.io/api/orders/GetAllOrders";
+            string URL = baseURL + "/api/orders/GetAllOrders";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
             var orders = response.Content.ReadAsAsync<List<Order>>().Result;
